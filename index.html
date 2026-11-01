@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Midas Media Marketing — Social media advertising for business</title>
+<meta name="description" content="Midas Media Marketing plans, launches and manages social media ad campaigns that bring businesses real orders, leads and sales.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23E2B33C'/%3E%3Ctext x='32' y='41' font-family='Arial' font-weight='700' font-size='22' text-anchor='middle' fill='%23111111'%3EMMM%3C/text%3E%3C/svg%3E">
+<style>
+:root{--ink:#111111;--ink2:#1C1C1A;--line-d:#2F2E2B;--line-d2:#3A3936;--paper:#FFFFFF;--sand:#F4F2EE;--line:#D9D6CF;--text2:#45433F;--mute-d:#D9D6CF;--mute-d2:#BDB9B0;--gold:#E2B33C;--gold-ink:#6B5A1E}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:16px}
+body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+h1,h2,h3,h4,.display{font-family:"Space Grotesk",system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.sec{padding:104px 0}
+.dark{background:var(--ink);color:#fff}
+.sand{background:var(--sand)}
+.eyebrow{margin:0;font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold-ink)}
+.dark .eyebrow{color:var(--gold)}
+.h2{margin:0;font-weight:700;font-size:clamp(32px,4vw,48px);line-height:1.1;letter-spacing:-1px}
+.lead{margin:0;font-size:18px;color:var(--text2)}
+.dark .lead{color:var(--mute-d)}
+.head{display:flex;flex-direction:column;gap:14px;max-width:720px;margin-bottom:48px}
+.gold{color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.grid-300{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;border-radius:999px;text-decoration:none;font-weight:600;font-size:17px;border:0;cursor:pointer;font-family:inherit;transition:transform .18s ease,box-shadow .18s ease,filter .18s ease,border-color .18s ease,color .18s ease}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-ghost{background:transparent;color:#fff;border:1px solid #5a5853}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(226,179,60,.38);filter:brightness(1.07)}
+.btn:active{transform:none;box-shadow:none}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);box-shadow:0 0 0 3px rgba(226,179,60,.15)}
+.card{transition:transform .22s ease,box-shadow .22s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(17,17,17,.14)}
+.badge{display:inline-flex;align-items:center;padding:3px 9px;border-radius:999px;border:1px solid #5a5853;color:var(--mute-d2);font-size:11px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;white-space:nowrap}
+/* header */
+.site-header{background:var(--ink);border-bottom:1px solid #2a2a28;position:relative;z-index:40}
+.hdr{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;padding-bottom:18px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+.logo-mark{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:var(--gold);color:var(--ink);font-family:"Space Grotesk",system-ui,sans-serif;font-weight:700;font-size:15px;letter-spacing:-.5px}
+.logo-text{font-family:"Space Grotesk",system-ui,sans-serif;font-weight:600;font-size:18px}
+.nav{display:flex;flex-wrap:wrap;align-items:center;gap:18px}
+.nav-link,.dd-btn{color:var(--mute-d);text-decoration:none;font-size:15px;transition:color .15s ease}
+.nav-link:hover,.dd-btn:hover,.dd.open>.dd-btn{color:var(--gold)}
+.dd{position:relative}
+.dd-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 10px;border:0;background:transparent;cursor:pointer;font-family:inherit;font-weight:600;font-size:14px;color:#fff}
+.menu-wrap{position:absolute;top:100%;left:0;padding-top:8px;display:none;z-index:30}
+.dd-right .menu-wrap{left:auto;right:0}
+.dd.open>.menu-wrap{display:block}
+@media (hover:hover){.dd:hover>.menu-wrap{display:block}}
+.menu{min-width:200px;padding:6px;border-radius:14px;background:var(--ink2);border:1px solid var(--line-d2);box-shadow:0 12px 32px rgba(0,0,0,.35);display:flex;flex-direction:column;gap:2px}
+.menu-item{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:44px;padding:0 14px;border:0;border-radius:10px;background:transparent;color:#fff;cursor:pointer;text-align:left;font-family:inherit;font-size:15px;font-weight:500;text-decoration:none;transition:background-color .15s ease,color .15s ease}
+.menu-item:hover{background:#2A2A28;color:var(--gold)}
+.menu-item.is-on{background:#2A2A28;color:var(--gold);font-weight:600}
+.menu-item small{font-size:13px;color:var(--mute-d2)}
+.dd-sub{position:relative}
+.sub-wrap{position:absolute;top:-6px;left:100%;padding-left:8px;display:none;z-index:31}
+.dd-sub.open>.sub-wrap{display:block}
+@media (hover:hover){.dd-sub:hover>.sub-wrap{display:block}}
+.sub-wrap .menu{min-width:230px}
+.sub-name{display:inline-flex;align-items:center;gap:10px;font-weight:600}
+@media (max-width:720px){.sub-wrap{position:static;padding-left:0;margin-top:4px}}
+/* hero */
+.hero{padding:112px 0 120px}
+.hero-in{display:flex;flex-direction:column;gap:28px}
+.hero h1{margin:0;max-width:960px;font-weight:700;font-size:clamp(44px,7vw,88px);line-height:1.02;letter-spacing:-2px}
+.hero .eyebrow{color:var(--gold)}
+.hero-sub{margin:0;max-width:660px;font-size:20px;color:var(--mute-d)}
+.row{display:flex;flex-wrap:wrap;gap:14px}
+.trust{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:16px;font-size:15px;color:var(--mute-d2)}
+/* cards */
+.svc{padding:28px;border-radius:16px;background:var(--sand);display:flex;flex-direction:column;gap:12px}
+.svc .n{font-family:"Space Grotesk",system-ui,sans-serif;font-weight:700;font-size:15px;color:var(--gold-ink)}
+.svc h3{margin:0;font-size:22px;font-weight:600}
+.svc p,.step p{margin:0;color:var(--text2)}
+.why{max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:24px}
+.why h2{margin:0;font-weight:700;font-size:clamp(34px,5vw,56px);line-height:1.08;letter-spacing:-1.5px}
+.why p{margin:0;font-size:20px;line-height:1.6;color:#2E2D2A}
+.why p.strong{font-weight:600;color:var(--ink)}
+.step{display:flex;flex-direction:column;gap:12px;padding-top:20px;border-top:2px solid var(--ink)}
+.step h3{margin:0;font-size:21px;font-weight:600}
+/* platforms */
+.tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:40px}
+.tab{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;border-radius:999px;cursor:pointer;font-family:inherit;font-size:15px;font-weight:600;border:1px solid var(--line-d2);background:transparent;color:#fff;transition:border-color .18s ease,color .18s ease}
+.tab:hover{border-color:var(--gold);color:var(--gold)}
+.tab[aria-selected="true"]{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.net-head{display:flex;flex-direction:column;gap:8px;padding-bottom:18px;border-bottom:1px solid var(--line-d);margin-bottom:24px}
+.net-head h2{margin:0;font-size:34px;font-weight:700;letter-spacing:-.5px;color:var(--gold);display:inline-flex;align-items:center;gap:14px;flex-wrap:wrap}
+.net-head p{margin:0;font-size:17px;color:var(--mute-d)}
+.pf{padding:28px;border-radius:16px;background:var(--ink2);border:1px solid var(--line-d);display:flex;flex-direction:column;gap:12px;scroll-margin-top:24px}
+.pf h3{margin:0;font-size:22px;font-weight:600}
+.pf .where{margin:0;font-size:13px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--gold)}
+.pf p{margin:0;color:var(--mute-d)}
+/* pricing */
+.price-card{padding:36px;border-radius:20px;border:1px solid var(--line);display:flex;flex-direction:column;gap:16px}
+.price-card.dark{border-color:var(--ink)}
+.price-card h3{margin:0;font-size:22px;font-weight:600}
+.pill{align-self:flex-start;padding:4px 10px;border-radius:999px;background:#FBF3DC;color:var(--gold-ink);font-size:12px;font-weight:600;letter-spacing:.4px}
+.dark .pill{background:#2A2A28;color:var(--gold)}
+.price-row{display:flex;flex-wrap:wrap;align-items:baseline;gap:14px}
+.old{font-family:"Space Grotesk",system-ui,sans-serif;font-size:24px;font-weight:600;color:#75726B;text-decoration:line-through}
+.dark .old{color:#9A978F}
+.price{margin:0;font-family:"Space Grotesk",system-ui,sans-serif;font-size:44px;font-weight:700;letter-spacing:-1px}
+.price-card p.desc{margin:0;color:var(--text2)}
+.price-card.dark p.desc{color:var(--mute-d)}
+.note{margin:24px 0;max-width:860px;font-size:16px;color:var(--text2)}
+.offer{padding:28px 32px;border-radius:20px;background:var(--sand);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.offer h3{margin:0 0 6px;font-size:21px;font-weight:600}
+.offer p{margin:0;color:var(--text2);max-width:760px}
+.addons{margin-top:56px;display:flex;flex-direction:column;gap:20px}
+.addons h3.t{margin:0;font-size:28px;font-weight:700;letter-spacing:-.5px}
+.addon{padding:24px;border-radius:16px;border:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.addon h4{margin:0;font-size:20px;font-weight:600}
+.addon .p{margin:0;font-family:"Space Grotesk",system-ui,sans-serif;font-size:26px;font-weight:700;letter-spacing:-.5px;color:var(--gold-ink)}
+.addon p{margin:0;color:var(--text2)}
+.faq{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:32px 48px}
+.faq h3{margin:0 0 8px;font-family:Inter,system-ui,sans-serif;font-size:18px;font-weight:600}
+.faq p{margin:0;color:var(--text2)}
+/* careers */
+.role{padding:28px;border-radius:16px;background:#fff;border:1px solid #E4E1DA;display:flex;flex-direction:column;gap:12px}
+.role .tag{align-self:flex-start;padding:4px 10px;border-radius:999px;background:var(--sand);color:var(--gold-ink);font-size:12px;font-weight:600;letter-spacing:.6px;text-transform:uppercase}
+.role h3{margin:0;font-size:22px;font-weight:600}
+.role p{margin:0;color:var(--text2)}
+.apply{margin-top:48px;padding:28px 32px;border-radius:20px;background:var(--ink);color:#fff;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.apply p{margin:0;max-width:680px;font-size:18px;color:var(--mute-d)}
+/* contact/footer */
+.contact-in{display:flex;flex-direction:column;align-items:flex-start;gap:24px}
+.contact h2{margin:0;max-width:860px;font-weight:700;font-size:clamp(36px,5vw,64px);line-height:1.05;letter-spacing:-1.5px}
+.contact p{margin:0;max-width:640px;font-size:19px;color:var(--mute-d)}
+.contact .small{font-size:15px;color:var(--mute-d2)}
+.site-footer{background:var(--ink);border-top:1px solid #2a2a28;padding:28px 0;font-size:14px;color:var(--mute-d2)}
+.site-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+@media (max-width:720px){.sec{padding:72px 0}.hero{padding:72px 0 80px}.price{font-size:36px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.card,.tab,.menu-item,.nav-link{transition:none}.btn:hover,.card:hover{transform:none}}
+</style>
+</head>
+<body>
+<div id="app"><noscript><p style="padding:24px">Midas Media Marketing — please enable JavaScript to view this site.</p></noscript></div>
+<script>
+var MMM_I18N = {
+  en: {
+    mEyebrow: "Why advertising matters", mTitle: "A great product no longer sells itself.",
+    mP1: "Your customers spend hours on their phones every day — and that’s where they decide where to eat, who to book and what to buy. If you’re not there, they choose whoever they see.",
+    mP2: "Word of mouth still works, but it’s too slow when a competitor down the street is already showing ads to your future customers. Today, advertising isn’t an expense — it’s how the right people notice you at the right moment.",
+    mP3: "We’re here to make every dollar you invest in ads work for your growth. You focus on your business. We make sure people know about it.",
+    teaserTitle: "Simple pricing that grows with you",
+    teaserText: "Founding clients start from $300 per month, with a one-time setup from $300. See exactly what’s included and how pricing scales with your budget.",
+    teaserBtn: "See full pricing", platTeaserBtn: "Learn more",
+    navServices: "Services", navProcess: "How it works", navPlatforms: "Platforms", navCareers: "Careers", navPricing: "Pricing", navCta: "Free ad audit",
+    eyebrow: "Social media advertising for businesses in the US",
+    heroA: "Turning business into ", heroB: "gold.",
+    heroSub: "We plan, launch and manage social media ad campaigns that bring businesses of every size real orders, leads and sales — not just likes.",
+    cta1: "Get a free ad audit", cta2: "See pricing",
+    trust: ["Clear, upfront pricing", "Monthly results reports", "You own your ad account"],
+    servicesEyebrow: "What we do", servicesTitle: "Everything your ads need, handled for you",
+    services: [
+      { n: "01", title: "Strategy & setup", text: "We study your business, pick the right goal and audience, and set up campaigns, pixel and tracking properly from day one." },
+      { n: "02", title: "Ad management", text: "We watch your campaigns closely, cut what doesn’t work and scale what does, so every dollar works harder." },
+      { n: "03", title: "Creative & copy", text: "Ad copy, headlines and creative ideas built to stop the scroll, plus testing to find the versions that sell." },
+      { n: "04", title: "Clear reporting", text: "A simple monthly report in plain English: what you spent, what you got, and what we’ll do next." }
+    ],
+    fitLabel: "We work with:",
+    fit: ["Local businesses", "E-commerce brands", "Restaurants & hospitality", "Beauty & wellness", "Clinics & healthcare", "Apps & online services", "B2B companies"],
+    platformsEyebrow: "Platforms", platformsTitle: "Your customers are everywhere. So are your ads.",
+    platformsSub: "We run campaigns across Meta, Google, TikTok and Reddit and choose the platforms and placements that fit your business best.",
+    platforms: [
+      { id: "pf-facebook", name: "Facebook", where: "Feed · Stories · Reels · Marketplace · Search", text: "The widest reach among adults 30+. Great for local services, restaurants and events, with detailed targeting by location and interests." },
+      { id: "pf-instagram", name: "Instagram", where: "Feed · Stories · Reels · Explore", text: "The most visual platform. Perfect for food, beauty, fashion and anything that looks great in photos and short videos." },
+      { id: "pf-whatsapp", name: "WhatsApp", where: "Click-to-WhatsApp ads · Status", text: "Ads that open a chat with your business in one tap. Ideal when customers like to ask questions before they order or book." },
+      { id: "pf-messenger", name: "Messenger", where: "Click-to-Messenger ads · Inbox", text: "Start conversations straight from an ad, then answer questions, take orders or book appointments in chat." },
+      { id: "pf-threads", name: "Threads", where: "Feed ads", text: "Meta’s newest text-based app. A growing audience and, so far, fewer advertisers competing for attention." },
+      { id: "pf-audience-network", name: "Audience Network", where: "Partner apps and websites", text: "Extends your campaign beyond Meta’s own apps to partner apps, adding extra reach at a low cost." }
+    ],
+    soonLabel: "Coming soon",
+    netIntro: {"meta": "One ad account for Facebook, Instagram, WhatsApp, Messenger, Threads and partner apps.", "google": "Show up when people search, watch and navigate — right when they’re looking for you.", "tiktok": "Short, authentic videos that reach younger audiences and spread fast.", "reddit": "Reach engaged communities discussing exactly what you sell."},
+    google: [
+      { id: "pf-google-search", name: "Google Search", where: "Text ads above search results", text: "Appear at the exact moment people search for what you offer, like “bakery near me”." },
+      { id: "pf-youtube", name: "YouTube", where: "In-stream · In-feed · Shorts", text: "Video ads on the world’s largest video platform, from skippable ads before videos to vertical Shorts." },
+      { id: "pf-google-maps", name: "Google Maps", where: "Promoted pins · Local search", text: "Put your business on top when people nearby look for places to go, call or get directions." },
+      { id: "pf-display", name: "Display Network", where: "Banners on partner sites and apps", text: "Visual ads across millions of websites and apps — great for bringing back people who already visited your site." },
+      { id: "pf-pmax", name: "Performance Max", where: "All Google channels in one campaign", text: "One campaign that uses Google’s AI to show your ads across Search, YouTube, Display, Gmail, Maps and Discover." }
+    ],
+    tiktok: [
+      { id: "pf-tiktok-infeed", name: "In-Feed Ads", where: "For You feed", text: "Full-screen video ads between videos in the For You feed, made to feel like native TikTok content." },
+      { id: "pf-tiktok-spark", name: "Spark Ads", where: "Boosted organic posts", text: "Promote your own or creators’ TikTok posts as ads, keeping the likes, comments and authentic feel." },
+      { id: "pf-tiktok-topview", name: "TopView", where: "First ad when the app opens", text: "Premium full-screen placement for big launches and maximum attention. Best for larger budgets." },
+      { id: "pf-tiktok-search", name: "Search Ads", where: "Ads in search results", text: "Reach people searching TikTok for ideas, products and reviews." }
+    ],
+    reddit: [
+      { id: "pf-reddit-feed", name: "Feed Ads", where: "Home feed · Community feeds", text: "Promoted posts that look like regular Reddit posts and appear in the feeds of the communities you choose." },
+      { id: "pf-reddit-conversation", name: "Conversation Ads", where: "Inside comment threads", text: "Ads placed within discussions, in front of people actively reading about topics related to your business." },
+      { id: "pf-reddit-communities", name: "Community Targeting", where: "Targeting by subreddit", text: "Reach people by the exact communities they belong to, from local city subreddits to niche hobbies." }
+    ],
+    processEyebrow: "How it works", processTitle: "From first call to first results",
+    steps: [
+      { title: "1. Free audit", text: "We review your social media, website and any current ads, and show you where the quick wins are." },
+      { title: "2. Plan & agreement", text: "You get a clear plan with goals, budget and audience. Once you’re happy, we sign a simple agreement." },
+      { title: "3. Setup & launch", text: "We build the campaigns, prepare the ads and launch. The first weeks are for testing what works best." },
+      { title: "4. Optimize & report", text: "We keep improving results every week and send you a monthly report with clear next steps." }
+    ],
+    pricingEyebrow: "Pricing", pricingTitle: "Simple pricing. No surprises.",
+    pricingSub: "Your ad budget is paid directly to the ad platform from your own card. Our fee covers the work.",
+    discountBadge: "Founding clients · first 3 months · budgets up to $5,000/mo", setupOld: "$500", mgmtOld: "15% of ad spend",
+    tiersNote: "Standard pricing: setup from $500. Monthly management: $500 for ad budgets up to $3,000, then 15% of ad spend, 12% from $10,000 and 10% from $25,000 per month.",
+    setupTitle: "One-time setup", setupPrice: "$300",
+    setupText: "Audit, strategy, account and tracking setup, audiences, first campaigns and ad copy. Paid when we sign.",
+    mgmtTitle: "Monthly management", mgmtPrice: "10% of ad spend",
+    mgmtText: "Minimum $300 per month instead of $500. Ongoing optimization, creative testing and a monthly report. Billed in advance at the start of each month.",
+    offerTitle: "Founding client offer",
+    offerText: "Founding clients with ad budgets up to $5,000 per month get these launch rates for the first 3 months, in exchange for an honest review and permission to share their results. Spots are limited.",
+    offerBtn: "Claim a spot",
+    addonsTitle: "Add-on services",
+    addonsSub: "One-time extras that make your ads work harder. The final price depends on scope and is confirmed before we start.",
+    addons: [
+      { title: "Tracking & analytics setup", price: "from $250", text: "Meta Pixel, Conversions API, Google Analytics 4 and conversion events, so every order and lead is counted." },
+      { title: "Ad creative pack", price: "from $250", text: "5 static ad designs in the key formats — feed, Stories and Reels — built around your brand and offer." },
+      { title: "Video ads & Reels", price: "from $150 / video", text: "Short ad videos edited from your footage. UGC-style videos with real creators from $300 per video." },
+      { title: "Landing page", price: "from $700", text: "A fast, mobile-first page built for one offer and designed to turn ad clicks into customers." }
+    ],
+    faqTitle: "Common questions",
+    faq: [
+      { q: "Do I pay for the ads separately?", a: "Yes. The ad budget goes straight to the ad platform from your card, so you always see exactly what was spent." },
+      { q: "How much should I spend on ads?", a: "It depends on your goals and market. We’ll recommend a realistic budget during your free audit." },
+      { q: "Who owns the ad account?", a: "You do. We work through partner access to your business ad accounts, and you can remove it at any time." },
+      { q: "When will I see results?", a: "The first 2–4 weeks are for testing. After that, we focus the budget on what brings the best results." },
+      { q: "What’s included in the monthly fee?", a: "Campaign management and optimization, up to 4 new ads per month, a monthly report with a short weekly update, one strategy call per month and up to two rounds of edits. Extra work like video production, landing pages or additional reports is quoted separately." }
+    ],
+    careersEyebrow: "Careers", careersTitle: "Grow with Midas Media Marketing",
+    careersSub: "We’re building a remote team of people who love advertising and results. If that sounds like you, we’d love to hear from you.",
+    roles: [
+      { title: "Media Buyer", type: "Remote", text: "Launch and optimize ad campaigns, test audiences and creatives, and turn data into decisions." },
+      { title: "Designer & Video Editor", type: "Remote", text: "Create scroll-stopping images, short videos and Reels for clients across different industries." },
+      { title: "Copywriter", type: "Remote", text: "Write ad copy, headlines and landing page text that make people click and buy." },
+      { title: "Sales Manager", type: "Remote", text: "Find new clients, run first calls and show businesses how advertising can help them grow." }
+    ],
+    applyText: "Don’t see your role? Send us your CV and a few words about yourself anyway.", applyBtn: "Send your CV",
+    contactA: "Ready to see what your ads ", contactB: "could do?",
+    contactText: "Book a free 20-minute ad audit. No pressure, no obligation — just clear ideas for your business.",
+    book: "Book a free audit [CALENDLY LINK]",
+    footer: "Social media advertising for businesses across the US"
+  },
+  ru: {
+    mEyebrow: "Зачем бизнесу реклама", mTitle: "Хороший продукт больше не продаёт себя сам.",
+    mP1: "Ваши клиенты каждый день проводят часы в телефоне, и именно там они решают, где поужинать, к кому записаться и что купить. Если вас там нет, они выбирают того, кого видят.",
+    mP2: "Сарафанное радио по-прежнему работает, но оно слишком медленное, когда конкурент рядом уже показывает рекламу вашим будущим клиентам. Реклама сегодня — это не расход, а способ быть замеченным в нужный момент нужными людьми.",
+    mP3: "Мы здесь, чтобы каждый вложенный в рекламу доллар работал на рост вашего бизнеса. Вы занимаетесь своим делом, а мы делаем так, чтобы о нём узнали.",
+    teaserTitle: "Простые цены, которые растут вместе с вами",
+    teaserText: "Для первых клиентов — от $300 в месяц и разовая настройка от $300. Посмотрите, что входит в гонорар и как цена меняется вместе с бюджетом.",
+    teaserBtn: "Смотреть все цены", platTeaserBtn: "Подробнее",
+    navServices: "Услуги", navProcess: "Как мы работаем", navPlatforms: "Платформы", navCareers: "Вакансии", navPricing: "Цены", navCta: "Бесплатный аудит",
+    eyebrow: "Реклама бизнеса в соцсетях в США",
+    heroA: "Превращаем бизнес в ", heroB: "золото.",
+    heroSub: "Мы планируем, запускаем и ведём рекламу в соцсетях, которая приносит бизнесу любого масштаба реальные заказы, заявки и продажи, а не просто лайки.",
+    cta1: "Получить бесплатный аудит", cta2: "Смотреть цены",
+    trust: ["Понятные цены заранее", "Ежемесячные отчёты о результатах", "Рекламный аккаунт принадлежит вам"],
+    servicesEyebrow: "Что мы делаем", servicesTitle: "Всё, что нужно вашей рекламе, мы берём на себя",
+    services: [
+      { n: "01", title: "Стратегия и настройка", text: "Изучаем ваш бизнес, выбираем правильную цель и аудиторию и с первого дня грамотно настраиваем кампании, пиксель и аналитику." },
+      { n: "02", title: "Ведение рекламы", text: "Внимательно следим за кампаниями, отключаем то, что не работает, и масштабируем то, что приносит результат, чтобы каждый доллар работал эффективнее." },
+      { n: "03", title: "Креативы и тексты", text: "Рекламные тексты, заголовки и идеи для креативов, которые останавливают пролистывание, и тесты, чтобы найти версии, которые продают." },
+      { n: "04", title: "Понятные отчёты", text: "Простой ежемесячный отчёт без жаргона: сколько потрачено, что получено и что мы сделаем дальше." }
+    ],
+    fitLabel: "С кем мы работаем:",
+    fit: ["Местный бизнес", "Интернет-магазины и бренды", "Рестораны и гостиничный бизнес", "Красота и здоровье", "Клиники и медицина", "Приложения и онлайн-сервисы", "B2B-компании"],
+    platformsEyebrow: "Платформы", platformsTitle: "Ваши клиенты везде. Ваша реклама тоже.",
+    platformsSub: "Мы запускаем кампании в Meta, Google, TikTok и Reddit и выбираем платформы и размещения, которые лучше всего подходят вашему бизнесу.",
+    platforms: [
+      { id: "pf-facebook", name: "Facebook", where: "Лента · Stories · Reels · Marketplace · Поиск", text: "Самый широкий охват среди взрослой аудитории 30+. Отлично подходит для местных услуг, ресторанов и мероприятий, с точным таргетингом по месту и интересам." },
+      { id: "pf-instagram", name: "Instagram", where: "Лента · Stories · Reels · Интересное", text: "Самая визуальная платформа. Идеальна для еды, красоты, моды и всего, что красиво выглядит на фото и в коротких видео." },
+      { id: "pf-whatsapp", name: "WhatsApp", where: "Реклама с переходом в чат · Статусы", text: "Объявления, которые в одно касание открывают чат с вашим бизнесом. Идеально, когда клиенты любят задать вопрос перед заказом или записью." },
+      { id: "pf-messenger", name: "Messenger", where: "Реклама с переходом в Messenger · Входящие", text: "Диалог начинается прямо из объявления: отвечайте на вопросы, принимайте заказы и записывайте клиентов в чате." },
+      { id: "pf-threads", name: "Threads", where: "Реклама в ленте", text: "Самое новое текстовое приложение Meta. Аудитория растёт, а рекламодателей пока немного." },
+      { id: "pf-audience-network", name: "Audience Network", where: "Партнёрские приложения и сайты", text: "Расширяет кампанию за пределы приложений Meta на партнёрские приложения и добавляет охват при небольших затратах." }
+    ],
+    soonLabel: "В разработке",
+    netIntro: {"meta": "Один рекламный кабинет для Facebook, Instagram, WhatsApp, Messenger, Threads и партнёрских приложений.", "google": "Ваша реклама там, где люди ищут, смотрят видео и прокладывают маршрут, — в тот момент, когда им нужны вы.", "tiktok": "Короткие живые видео, которые доходят до молодой аудитории и быстро распространяются.", "reddit": "Реклама в активных сообществах, где обсуждают именно то, что вы продаёте."},
+    google: [
+      { id: "pf-google-search", name: "Google Search", where: "Текстовые объявления над результатами поиска", text: "Показывайтесь людям ровно в тот момент, когда они ищут то, что вы предлагаете, например «кондитерская рядом»." },
+      { id: "pf-youtube", name: "YouTube", where: "In-stream · In-feed · Shorts", text: "Видеореклама на крупнейшей видеоплатформе мира: от пропускаемых роликов перед видео до вертикальных Shorts." },
+      { id: "pf-google-maps", name: "Google Maps", where: "Продвигаемые метки · Локальный поиск", text: "Ваш бизнес наверху, когда люди поблизости ищут, куда пойти, кому позвонить или как добраться." },
+      { id: "pf-display", name: "Контекстно-медийная сеть", where: "Баннеры на партнёрских сайтах и в приложениях", text: "Визуальная реклама на миллионах сайтов и приложений — отлично подходит, чтобы вернуть тех, кто уже был на вашем сайте." },
+      { id: "pf-pmax", name: "Performance Max", where: "Все каналы Google в одной кампании", text: "Одна кампания, которая с помощью ИИ Google показывает рекламу в Поиске, на YouTube, сайтах-партнёрах, в Gmail, Картах и Discover." }
+    ],
+    tiktok: [
+      { id: "pf-tiktok-infeed", name: "Реклама в ленте", where: "Лента «Для вас»", text: "Полноэкранные видеообъявления между роликами в ленте «Для вас», которые выглядят как обычный контент TikTok." },
+      { id: "pf-tiktok-spark", name: "Spark Ads", where: "Продвижение обычных постов", text: "Продвигайте свои ролики или ролики блогеров как рекламу, сохраняя лайки, комментарии и живую подачу." },
+      { id: "pf-tiktok-topview", name: "TopView", where: "Первое объявление при открытии приложения", text: "Премиальное полноэкранное размещение для громких запусков и максимального внимания. Подходит для больших бюджетов." },
+      { id: "pf-tiktok-search", name: "Реклама в поиске", where: "Объявления в результатах поиска", text: "Охватывайте людей, которые ищут в TikTok идеи, товары и отзывы." }
+    ],
+    reddit: [
+      { id: "pf-reddit-feed", name: "Реклама в ленте", where: "Главная лента · Ленты сообществ", text: "Продвигаемые посты, которые выглядят как обычные публикации Reddit и показываются в лентах выбранных сообществ." },
+      { id: "pf-reddit-conversation", name: "Реклама в обсуждениях", where: "Внутри веток комментариев", text: "Объявления внутри обсуждений, которые видят люди, активно читающие о темах, связанных с вашим бизнесом." },
+      { id: "pf-reddit-communities", name: "Таргетинг по сообществам", where: "Таргетинг по сабреддитам", text: "Охватывайте людей по конкретным сообществам — от местных городских сабреддитов до узких хобби." }
+    ],
+    processEyebrow: "Как мы работаем", processTitle: "От первого звонка до первых результатов",
+    steps: [
+      { title: "1. Бесплатный аудит", text: "Изучаем ваши соцсети, сайт и текущую рекламу и показываем, где можно быстро улучшить результат." },
+      { title: "2. План и договор", text: "Вы получаете понятный план с целями, бюджетом и аудиторией. Когда всё устраивает, подписываем простой договор." },
+      { title: "3. Настройка и запуск", text: "Создаём кампании, готовим объявления и запускаем. Первые недели уходят на тесты, чтобы найти лучшее." },
+      { title: "4. Оптимизация и отчёты", text: "Каждую неделю улучшаем результаты и раз в месяц присылаем отчёт с понятными следующими шагами." }
+    ],
+    pricingEyebrow: "Цены", pricingTitle: "Простые цены. Без сюрпризов.",
+    pricingSub: "Рекламный бюджет вы оплачиваете напрямую рекламной платформе со своей карты. Наш гонорар — за работу.",
+    discountBadge: "Для первых клиентов · первые 3 месяца · бюджет до $5,000/мес", setupOld: "$500", mgmtOld: "15% от бюджета",
+    tiersNote: "Стандартные цены: настройка от $500. Ежемесячное ведение: $500 при бюджете до $3,000, далее 15% от бюджета, 12% — от $10,000 и 10% — от $25,000 в месяц.",
+    setupTitle: "Разовая настройка", setupPrice: "$300",
+    setupText: "Аудит, стратегия, настройка аккаунта и аналитики, аудитории, первые кампании и тексты. Оплата при подписании договора.",
+    mgmtTitle: "Ежемесячное ведение", mgmtPrice: "10% от бюджета",
+    mgmtText: "Минимум $300 в месяц вместо $500. Постоянная оптимизация, тесты креативов и ежемесячный отчёт. Оплата заранее, в начале каждого месяца.",
+    offerTitle: "Предложение для первых клиентов",
+    offerText: "Первые клиенты с рекламным бюджетом до $5,000 в месяц получают стартовые цены на 3 месяца в обмен на честный отзыв и разрешение показать свои результаты. Количество мест ограничено.",
+    offerBtn: "Занять место",
+    addonsTitle: "Дополнительные услуги",
+    addonsSub: "Разовые услуги, которые помогают рекламе работать лучше. Итоговая цена зависит от объёма и согласуется до начала работы.",
+    addons: [
+      { title: "Настройка аналитики", price: "от $250", text: "Пиксель Meta, Conversions API, Google Analytics 4 и события конверсий, чтобы учитывался каждый заказ и каждая заявка." },
+      { title: "Пакет креативов", price: "от $250", text: "5 статичных рекламных макетов в ключевых форматах — лента, Stories и Reels — в стиле вашего бренда и под ваше предложение." },
+      { title: "Видеореклама и Reels", price: "от $150 / видео", text: "Короткие рекламные ролики, смонтированные из ваших материалов. UGC-видео с реальными авторами — от $300 за видео." },
+      { title: "Посадочная страница", price: "от $700", text: "Быстрая страница, удобная с телефона и созданная под одно предложение, чтобы превращать клики по рекламе в клиентов." }
+    ],
+    faqTitle: "Частые вопросы",
+    faq: [
+      { q: "Рекламу нужно оплачивать отдельно?", a: "Да. Рекламный бюджет идёт напрямую рекламной платформе с вашей карты, поэтому вы всегда видите, сколько именно потрачено." },
+      { q: "Сколько стоит тратить на рекламу?", a: "Это зависит от ваших целей и рынка. Мы порекомендуем реалистичный бюджет на бесплатном аудите." },
+      { q: "Кому принадлежит рекламный аккаунт?", a: "Вам. Мы работаем через партнёрский доступ к вашим рекламным кабинетам, и вы можете отключить его в любой момент." },
+      { q: "Когда будут результаты?", a: "Первые 2–4 недели уходят на тесты. Затем мы направляем бюджет на то, что даёт лучший результат." },
+      { q: "Что входит в ежемесячный гонорар?", a: "Ведение и оптимизация кампаний, до 4 новых объявлений в месяц, ежемесячный отчёт и короткое обновление раз в неделю, один созвон по стратегии в месяц и до двух итераций правок. Дополнительные работы, например видеопродакшн, посадочные страницы или дополнительные отчёты, оплачиваются отдельно." }
+    ],
+    careersEyebrow: "Вакансии", careersTitle: "Растите вместе с Midas Media Marketing",
+    careersSub: "Мы собираем удалённую команду людей, которые любят рекламу и результат. Если это про вас, будем рады познакомиться.",
+    roles: [
+      { title: "Медиабайер", type: "Удалённо", text: "Запускать и оптимизировать рекламные кампании, тестировать аудитории и креативы и превращать данные в решения." },
+      { title: "Дизайнер и видеомонтажёр", type: "Удалённо", text: "Создавать цепляющие картинки, короткие видео и Reels для клиентов из разных сфер." },
+      { title: "Копирайтер", type: "Удалённо", text: "Писать рекламные тексты, заголовки и тексты для сайтов, которые заставляют кликать и покупать." },
+      { title: "Менеджер по продажам", type: "Удалённо", text: "Находить новых клиентов, проводить первые созвоны и объяснять бизнесу, как реклама поможет ему расти." }
+    ],
+    applyText: "Не нашли подходящую вакансию? Всё равно пришлите резюме и пару слов о себе.", applyBtn: "Отправить резюме",
+    contactA: "Готовы увидеть, на что способна ваша ", contactB: "реклама?",
+    contactText: "Запишитесь на бесплатный 20-минутный аудит рекламы. Без давления и обязательств — только понятные идеи для вашего бизнеса.",
+    book: "Записаться на аудит [CALENDLY LINK]",
+    footer: "Реклама бизнеса в соцсетях по всей территории США"
+  },
+  uk: {
+    mEyebrow: "Навіщо бізнесу реклама", mTitle: "Хороший продукт більше не продає себе сам.",
+    mP1: "Ваші клієнти щодня проводять години в телефоні, і саме там вони вирішують, де повечеряти, до кого записатися і що купити. Якщо вас там немає, вони обирають того, кого бачать.",
+    mP2: "Сарафанне радіо досі працює, але воно надто повільне, коли конкурент поруч уже показує рекламу вашим майбутнім клієнтам. Реклама сьогодні — це не витрата, а спосіб бути поміченим у потрібний момент потрібними людьми.",
+    mP3: "Ми тут, щоб кожен вкладений у рекламу долар працював на зростання вашого бізнесу. Ви займаєтеся своєю справою, а ми робимо так, щоб про неї дізналися.",
+    teaserTitle: "Прості ціни, що зростають разом із вами",
+    teaserText: "Для перших клієнтів — від $300 на місяць і разове налаштування від $300. Подивіться, що входить у гонорар і як ціна змінюється разом із бюджетом.",
+    teaserBtn: "Дивитися всі ціни", platTeaserBtn: "Детальніше",
+    navServices: "Послуги", navProcess: "Як ми працюємо", navPlatforms: "Платформи", navCareers: "Вакансії", navPricing: "Ціни", navCta: "Безкоштовний аудит",
+    eyebrow: "Реклама бізнесу в соцмережах у США",
+    heroA: "Перетворюємо бізнес на ", heroB: "золото.",
+    heroSub: "Ми плануємо, запускаємо та ведемо рекламу в соцмережах, яка приносить бізнесу будь-якого масштабу реальні замовлення, заявки та продажі, а не просто лайки.",
+    cta1: "Отримати безкоштовний аудит", cta2: "Переглянути ціни",
+    trust: ["Зрозумілі ціни наперед", "Щомісячні звіти про результати", "Рекламний акаунт належить вам"],
+    servicesEyebrow: "Що ми робимо", servicesTitle: "Усе, що потрібно вашій рекламі, ми беремо на себе",
+    services: [
+      { n: "01", title: "Стратегія та налаштування", text: "Вивчаємо ваш бізнес, обираємо правильну мету й аудиторію та з першого дня правильно налаштовуємо кампанії, піксель і аналітику." },
+      { n: "02", title: "Ведення реклами", text: "Уважно стежимо за кампаніями, вимикаємо те, що не працює, і масштабуємо те, що дає результат, щоб кожен долар працював ефективніше." },
+      { n: "03", title: "Креативи й тексти", text: "Рекламні тексти, заголовки та ідеї для креативів, які зупиняють прокручування, і тести, щоб знайти версії, що продають." },
+      { n: "04", title: "Зрозумілі звіти", text: "Простий щомісячний звіт без жаргону: скільки витрачено, що отримано і що ми зробимо далі." }
+    ],
+    fitLabel: "З ким ми працюємо:",
+    fit: ["Місцевий бізнес", "Інтернет-магазини та бренди", "Ресторани та готельний бізнес", "Краса та здоров’я", "Клініки та медицина", "Застосунки та онлайн-сервіси", "B2B-компанії"],
+    platformsEyebrow: "Платформи", platformsTitle: "Ваші клієнти всюди. Ваша реклама теж.",
+    platformsSub: "Ми запускаємо кампанії в Meta, Google, TikTok і Reddit та обираємо платформи й розміщення, які найкраще підходять вашому бізнесу.",
+    platforms: [
+      { id: "pf-facebook", name: "Facebook", where: "Стрічка · Stories · Reels · Marketplace · Пошук", text: "Найширше охоплення серед дорослої аудиторії 30+. Чудово підходить для місцевих послуг, ресторанів і подій, з точним таргетингом за місцем та інтересами." },
+      { id: "pf-instagram", name: "Instagram", where: "Стрічка · Stories · Reels · Цікаве", text: "Найбільш візуальна платформа. Ідеальна для їжі, краси, моди й усього, що гарно виглядає на фото та в коротких відео." },
+      { id: "pf-whatsapp", name: "WhatsApp", where: "Реклама з переходом у чат · Статуси", text: "Оголошення, які в один дотик відкривають чат із вашим бізнесом. Ідеально, коли клієнти люблять поставити запитання перед замовленням чи записом." },
+      { id: "pf-messenger", name: "Messenger", where: "Реклама з переходом у Messenger · Вхідні", text: "Діалог починається просто з оголошення: відповідайте на запитання, приймайте замовлення й записуйте клієнтів у чаті." },
+      { id: "pf-threads", name: "Threads", where: "Реклама в стрічці", text: "Найновіший текстовий застосунок Meta. Аудиторія зростає, а рекламодавців поки небагато." },
+      { id: "pf-audience-network", name: "Audience Network", where: "Партнерські застосунки й сайти", text: "Розширює кампанію за межі застосунків Meta на партнерські застосунки та додає охоплення з невеликими витратами." }
+    ],
+    soonLabel: "У розробці",
+    netIntro: {"meta": "Один рекламний кабінет для Facebook, Instagram, WhatsApp, Messenger, Threads і партнерських застосунків.", "google": "Ваша реклама там, де люди шукають, дивляться відео та прокладають маршрут, — саме тоді, коли їм потрібні ви.", "tiktok": "Короткі живі відео, які доходять до молодої аудиторії та швидко поширюються.", "reddit": "Реклама в активних спільнотах, де обговорюють саме те, що ви продаєте."},
+    google: [
+      { id: "pf-google-search", name: "Google Search", where: "Текстові оголошення над результатами пошуку", text: "З’являйтеся саме тоді, коли люди шукають те, що ви пропонуєте, наприклад «кондитерська поруч»." },
+      { id: "pf-youtube", name: "YouTube", where: "In-stream · In-feed · Shorts", text: "Відеореклама на найбільшій відеоплатформі світу: від роликів, які можна пропустити, до вертикальних Shorts." },
+      { id: "pf-google-maps", name: "Google Maps", where: "Просувані мітки · Локальний пошук", text: "Ваш бізнес угорі, коли люди поблизу шукають, куди піти, кому зателефонувати чи як дістатися." },
+      { id: "pf-display", name: "Медійна мережа", where: "Банери на партнерських сайтах і в застосунках", text: "Візуальна реклама на мільйонах сайтів і застосунків — чудово підходить, щоб повернути тих, хто вже був на вашому сайті." },
+      { id: "pf-pmax", name: "Performance Max", where: "Усі канали Google в одній кампанії", text: "Одна кампанія, яка за допомогою ШІ Google показує рекламу в Пошуку, на YouTube, сайтах-партнерах, у Gmail, Картах і Discover." }
+    ],
+    tiktok: [
+      { id: "pf-tiktok-infeed", name: "Реклама в стрічці", where: "Стрічка «Для вас»", text: "Повноекранні відеооголошення між роликами в стрічці «Для вас», які виглядають як звичайний контент TikTok." },
+      { id: "pf-tiktok-spark", name: "Spark Ads", where: "Просування звичайних дописів", text: "Просувайте свої ролики або ролики блогерів як рекламу, зберігаючи лайки, коментарі та живу подачу." },
+      { id: "pf-tiktok-topview", name: "TopView", where: "Перше оголошення під час відкриття застосунку", text: "Преміальне повноекранне розміщення для гучних запусків і максимальної уваги. Підходить для великих бюджетів." },
+      { id: "pf-tiktok-search", name: "Реклама в пошуку", where: "Оголошення в результатах пошуку", text: "Охоплюйте людей, які шукають у TikTok ідеї, товари та відгуки." }
+    ],
+    reddit: [
+      { id: "pf-reddit-feed", name: "Реклама в стрічці", where: "Головна стрічка · Стрічки спільнот", text: "Просувані дописи, які виглядають як звичайні публікації Reddit і з’являються в стрічках вибраних спільнот." },
+      { id: "pf-reddit-conversation", name: "Реклама в обговореннях", where: "Усередині гілок коментарів", text: "Оголошення всередині обговорень, які бачать люди, що активно читають про теми, пов’язані з вашим бізнесом." },
+      { id: "pf-reddit-communities", name: "Таргетинг за спільнотами", where: "Таргетинг за сабредитами", text: "Охоплюйте людей за конкретними спільнотами — від місцевих міських сабредитів до вузьких хобі." }
+    ],
+    processEyebrow: "Як ми працюємо", processTitle: "Від першого дзвінка до перших результатів",
+    steps: [
+      { title: "1. Безкоштовний аудит", text: "Аналізуємо ваші соцмережі, сайт і поточну рекламу та показуємо, де можна швидко покращити результат." },
+      { title: "2. План і договір", text: "Ви отримуєте зрозумілий план із цілями, бюджетом і аудиторією. Коли все влаштовує, підписуємо простий договір." },
+      { title: "3. Налаштування й запуск", text: "Створюємо кампанії, готуємо оголошення та запускаємо. Перші тижні йдуть на тести, щоб знайти найкраще." },
+      { title: "4. Оптимізація та звіти", text: "Щотижня покращуємо результати й раз на місяць надсилаємо звіт із зрозумілими наступними кроками." }
+    ],
+    pricingEyebrow: "Ціни", pricingTitle: "Прості ціни. Без сюрпризів.",
+    pricingSub: "Рекламний бюджет ви сплачуєте напряму рекламній платформі зі своєї картки. Наш гонорар — за роботу.",
+    discountBadge: "Для перших клієнтів · перші 3 місяці · бюджет до $5,000/міс", setupOld: "$500", mgmtOld: "15% від бюджету",
+    tiersNote: "Стандартні ціни: налаштування від $500. Щомісячне ведення: $500 за бюджету до $3,000, далі 15% від бюджету, 12% — від $10,000 і 10% — від $25,000 на місяць.",
+    setupTitle: "Разове налаштування", setupPrice: "$300",
+    setupText: "Аудит, стратегія, налаштування акаунта й аналітики, аудиторії, перші кампанії та тексти. Оплата під час підписання договору.",
+    mgmtTitle: "Щомісячне ведення", mgmtPrice: "10% від бюджету",
+    mgmtText: "Мінімум $300 на місяць замість $500. Постійна оптимізація, тести креативів і щомісячний звіт. Оплата наперед, на початку кожного місяця.",
+    offerTitle: "Пропозиція для перших клієнтів",
+    offerText: "Перші клієнти з рекламним бюджетом до $5,000 на місяць отримують стартові ціни на 3 місяці в обмін на чесний відгук і дозвіл показати свої результати. Кількість місць обмежена.",
+    offerBtn: "Зайняти місце",
+    addonsTitle: "Додаткові послуги",
+    addonsSub: "Разові послуги, які допомагають рекламі працювати краще. Остаточна ціна залежить від обсягу й погоджується до початку роботи.",
+    addons: [
+      { title: "Налаштування аналітики", price: "від $250", text: "Піксель Meta, Conversions API, Google Analytics 4 і події конверсій, щоб ураховувалося кожне замовлення й кожна заявка." },
+      { title: "Пакет креативів", price: "від $250", text: "5 статичних рекламних макетів у ключових форматах — стрічка, Stories і Reels — у стилі вашого бренду та під вашу пропозицію." },
+      { title: "Відеореклама та Reels", price: "від $150 / відео", text: "Короткі рекламні ролики, змонтовані з ваших матеріалів. UGC-відео з реальними авторами — від $300 за відео." },
+      { title: "Посадкова сторінка", price: "від $700", text: "Швидка сторінка, зручна з телефона й створена під одну пропозицію, щоб перетворювати кліки з реклами на клієнтів." }
+    ],
+    faqTitle: "Часті запитання",
+    faq: [
+      { q: "Рекламу потрібно оплачувати окремо?", a: "Так. Рекламний бюджет іде напряму рекламній платформі з вашої картки, тож ви завжди бачите, скільки саме витрачено." },
+      { q: "Скільки варто витрачати на рекламу?", a: "Це залежить від ваших цілей і ринку. Ми порекомендуємо реалістичний бюджет під час безкоштовного аудиту." },
+      { q: "Кому належить рекламний акаунт?", a: "Вам. Ми працюємо через партнерський доступ до ваших рекламних кабінетів, і ви можете вимкнути його будь-коли." },
+      { q: "Коли будуть результати?", a: "Перші 2–4 тижні йдуть на тести. Потім ми спрямовуємо бюджет на те, що дає найкращий результат." },
+      { q: "Що входить у щомісячний гонорар?", a: "Ведення й оптимізація кампаній, до 4 нових оголошень на місяць, щомісячний звіт і коротке оновлення раз на тиждень, один дзвінок щодо стратегії на місяць і до двох ітерацій правок. Додаткові роботи, як-от відеопродакшн, посадкові сторінки чи додаткові звіти, оплачуються окремо." }
+    ],
+    careersEyebrow: "Вакансії", careersTitle: "Зростайте разом із Midas Media Marketing",
+    careersSub: "Ми збираємо віддалену команду людей, які люблять рекламу й результат. Якщо це про вас, будемо раді знайомству.",
+    roles: [
+      { title: "Медіабаєр", type: "Віддалено", text: "Запускати й оптимізувати рекламні кампанії, тестувати аудиторії та креативи й перетворювати дані на рішення." },
+      { title: "Дизайнер і відеомонтажер", type: "Віддалено", text: "Створювати чіпкі зображення, короткі відео та Reels для клієнтів із різних сфер." },
+      { title: "Копірайтер", type: "Віддалено", text: "Писати рекламні тексти, заголовки та тексти для сайтів, які змушують клікати й купувати." },
+      { title: "Менеджер із продажу", type: "Віддалено", text: "Знаходити нових клієнтів, проводити перші дзвінки й пояснювати бізнесу, як реклама допоможе йому зростати." }
+    ],
+    applyText: "Не знайшли відповідну вакансію? Однаково надішліть резюме й кілька слів про себе.", applyBtn: "Надіслати резюме",
+    contactA: "Готові побачити, на що здатна ваша ", contactB: "реклама?",
+    contactText: "Запишіться на безкоштовний 20-хвилинний аудит реклами. Без тиску й зобов’язань — лише зрозумілі ідеї для вашого бізнесу.",
+    book: "Записатися на аудит [CALENDLY LINK]",
+    footer: "Реклама бізнесу в соцмережах по всіх США"
+  },
+  es: {
+    mEyebrow: "Por qué tu negocio necesita publicidad", mTitle: "Un buen producto ya no se vende solo.",
+    mP1: "Tus clientes pasan horas al día en el teléfono, y es ahí donde deciden dónde cenar, con quién reservar y qué comprar. Si no estás ahí, eligen a quien sí ven.",
+    mP2: "El boca a boca sigue funcionando, pero es demasiado lento cuando un competidor cercano ya les muestra anuncios a tus futuros clientes. Hoy, la publicidad no es un gasto: es la forma de que te noten las personas correctas en el momento correcto.",
+    mP3: "Estamos aquí para que cada dólar que inviertes en anuncios trabaje para tu crecimiento. Tú te ocupas de tu negocio; nosotros nos encargamos de que la gente lo conozca.",
+    teaserTitle: "Precios simples que crecen contigo",
+    teaserText: "Los clientes fundadores empiezan desde $300 al mes, con una configuración inicial desde $300. Mira qué incluye la tarifa y cómo cambia según tu presupuesto.",
+    teaserBtn: "Ver todos los precios", platTeaserBtn: "Ver más",
+    navServices: "Servicios", navProcess: "Cómo trabajamos", navPlatforms: "Plataformas", navCareers: "Empleos", navPricing: "Precios", navCta: "Auditoría gratis",
+    eyebrow: "Publicidad en redes sociales para empresas en EE. UU.",
+    heroA: "Convertimos tu negocio en ", heroB: "oro.",
+    heroSub: "Planificamos, lanzamos y gestionamos campañas en redes sociales que traen a empresas de cualquier tamaño pedidos, clientes potenciales y ventas reales, no solo likes.",
+    cta1: "Obtén una auditoría gratis", cta2: "Ver precios",
+    trust: ["Precios claros desde el inicio", "Informes mensuales de resultados", "La cuenta publicitaria es tuya"],
+    servicesEyebrow: "Qué hacemos", servicesTitle: "Todo lo que tus anuncios necesitan, de nuestra parte",
+    services: [
+      { n: "01", title: "Estrategia y configuración", text: "Estudiamos tu negocio, elegimos el objetivo y el público adecuados y configuramos campañas, píxel y seguimiento correctamente desde el primer día." },
+      { n: "02", title: "Gestión de anuncios", text: "Seguimos de cerca tus campañas, cortamos lo que no funciona y escalamos lo que sí, para que cada dólar rinda más." },
+      { n: "03", title: "Creatividades y textos", text: "Textos, titulares e ideas creativas que detienen el scroll, además de pruebas para encontrar las versiones que venden." },
+      { n: "04", title: "Informes claros", text: "Un informe mensual sencillo y sin jerga: cuánto invertiste, qué obtuviste y qué haremos después." }
+    ],
+    fitLabel: "Trabajamos con:",
+    fit: ["Negocios locales", "Marcas de e-commerce", "Restaurantes y hostelería", "Belleza y bienestar", "Clínicas y salud", "Apps y servicios online", "Empresas B2B"],
+    platformsEyebrow: "Plataformas", platformsTitle: "Tus clientes están en todas partes. Tus anuncios también.",
+    platformsSub: "Gestionamos campañas en Meta, Google, TikTok y Reddit y elegimos las plataformas y ubicaciones que mejor encajan con tu negocio.",
+    platforms: [
+      { id: "pf-facebook", name: "Facebook", where: "Feed · Stories · Reels · Marketplace · Búsqueda", text: "El mayor alcance entre adultos de 30+. Ideal para servicios locales, restaurantes y eventos, con segmentación detallada por ubicación e intereses." },
+      { id: "pf-instagram", name: "Instagram", where: "Feed · Stories · Reels · Explorar", text: "La plataforma más visual. Perfecta para comida, belleza, moda y todo lo que luce bien en fotos y videos cortos." },
+      { id: "pf-whatsapp", name: "WhatsApp", where: "Anuncios que abren un chat · Estados", text: "Anuncios que abren un chat con tu negocio con un solo toque. Ideales cuando los clientes prefieren preguntar antes de pedir o reservar." },
+      { id: "pf-messenger", name: "Messenger", where: "Anuncios a Messenger · Bandeja de entrada", text: "Inicia conversaciones directamente desde un anuncio y responde preguntas, toma pedidos o agenda citas por chat." },
+      { id: "pf-threads", name: "Threads", where: "Anuncios en el feed", text: "La app de texto más nueva de Meta. Una audiencia en crecimiento y, por ahora, pocos anunciantes." },
+      { id: "pf-audience-network", name: "Audience Network", where: "Apps y sitios asociados", text: "Lleva tu campaña más allá de las apps de Meta, a apps asociadas, para sumar alcance a bajo costo." }
+    ],
+    soonLabel: "Próximamente",
+    netIntro: {"meta": "Una sola cuenta publicitaria para Facebook, Instagram, WhatsApp, Messenger, Threads y apps asociadas.", "google": "Aparece cuando la gente busca, mira videos y se desplaza: justo cuando te necesita.", "tiktok": "Videos cortos y auténticos que llegan a públicos jóvenes y se difunden rápido.", "reddit": "Llega a comunidades activas que hablan justo de lo que vendes."},
+    google: [
+      { id: "pf-google-search", name: "Google Search", where: "Anuncios de texto sobre los resultados", text: "Aparece justo cuando alguien busca lo que ofreces, por ejemplo “panadería cerca de mí”." },
+      { id: "pf-youtube", name: "YouTube", where: "In-stream · In-feed · Shorts", text: "Anuncios en video en la plataforma de video más grande del mundo, desde anuncios saltables hasta Shorts verticales." },
+      { id: "pf-google-maps", name: "Google Maps", where: "Pines promocionados · Búsqueda local", text: "Pon tu negocio arriba cuando la gente cercana busca adónde ir, a quién llamar o cómo llegar." },
+      { id: "pf-display", name: "Red de Display", where: "Banners en sitios y apps asociados", text: "Anuncios visuales en millones de sitios y apps, ideales para volver a impactar a quienes ya visitaron tu web." },
+      { id: "pf-pmax", name: "Performance Max", where: "Todos los canales de Google en una campaña", text: "Una campaña que usa la IA de Google para mostrar tus anuncios en Búsqueda, YouTube, Display, Gmail, Maps y Discover." }
+    ],
+    tiktok: [
+      { id: "pf-tiktok-infeed", name: "Anuncios In-Feed", where: "Feed Para ti", text: "Anuncios en video a pantalla completa entre los videos del feed Para ti, con el estilo natural de TikTok." },
+      { id: "pf-tiktok-spark", name: "Spark Ads", where: "Publicaciones orgánicas promocionadas", text: "Promociona tus videos o los de creadores como anuncios, manteniendo los likes, los comentarios y la autenticidad." },
+      { id: "pf-tiktok-topview", name: "TopView", where: "Primer anuncio al abrir la app", text: "Ubicación premium a pantalla completa para grandes lanzamientos y máxima atención. Para presupuestos más grandes." },
+      { id: "pf-tiktok-search", name: "Anuncios de búsqueda", where: "Anuncios en resultados de búsqueda", text: "Llega a quienes buscan ideas, productos y reseñas en TikTok." }
+    ],
+    reddit: [
+      { id: "pf-reddit-feed", name: "Anuncios en el feed", where: "Feed principal · Feeds de comunidades", text: "Publicaciones promocionadas que se ven como posts normales de Reddit y aparecen en las comunidades que elijas." },
+      { id: "pf-reddit-conversation", name: "Anuncios en conversaciones", where: "Dentro de los hilos de comentarios", text: "Anuncios dentro de las discusiones, frente a personas que leen activamente sobre temas relacionados con tu negocio." },
+      { id: "pf-reddit-communities", name: "Segmentación por comunidades", where: "Segmentación por subreddit", text: "Llega a la gente según las comunidades a las que pertenece, desde subreddits locales hasta aficiones de nicho." }
+    ],
+    processEyebrow: "Cómo trabajamos", processTitle: "De la primera llamada a los primeros resultados",
+    steps: [
+      { title: "1. Auditoría gratis", text: "Revisamos tus redes sociales, tu sitio web y tus anuncios actuales, y te mostramos dónde están las mejoras rápidas." },
+      { title: "2. Plan y acuerdo", text: "Recibes un plan claro con objetivos, presupuesto y público. Cuando estés conforme, firmamos un acuerdo sencillo." },
+      { title: "3. Configuración y lanzamiento", text: "Creamos las campañas, preparamos los anuncios y lanzamos. Las primeras semanas son para probar qué funciona mejor." },
+      { title: "4. Optimización e informes", text: "Mejoramos los resultados cada semana y te enviamos un informe mensual con próximos pasos claros." }
+    ],
+    pricingEyebrow: "Precios", pricingTitle: "Precios simples. Sin sorpresas.",
+    pricingSub: "El presupuesto de anuncios lo pagas directamente a la plataforma publicitaria con tu propia tarjeta. Nuestra tarifa cubre el trabajo.",
+    discountBadge: "Clientes fundadores · primeros 3 meses · presupuestos hasta $5,000/mes", setupOld: "$500", mgmtOld: "15% de la inversión",
+    tiersNote: "Precios estándar: configuración desde $500. Gestión mensual: $500 para presupuestos de hasta $3,000; luego, 15% de la inversión, 12% desde $10,000 y 10% desde $25,000 al mes.",
+    setupTitle: "Configuración inicial", setupPrice: "$300",
+    setupText: "Auditoría, estrategia, configuración de la cuenta y del seguimiento, públicos, primeras campañas y textos. Se paga al firmar.",
+    mgmtTitle: "Gestión mensual", mgmtPrice: "10% de la inversión",
+    mgmtText: "Mínimo de $300 al mes en lugar de $500. Optimización continua, pruebas de creatividades e informe mensual. Se factura por adelantado al inicio de cada mes.",
+    offerTitle: "Oferta para clientes fundadores",
+    offerText: "Los clientes fundadores con presupuestos de hasta $5,000 al mes obtienen estas tarifas de lanzamiento durante los primeros 3 meses, a cambio de una reseña honesta y permiso para compartir sus resultados. Plazas limitadas.",
+    offerBtn: "Reserva tu lugar",
+    addonsTitle: "Servicios adicionales",
+    addonsSub: "Extras puntuales que hacen que tus anuncios rindan más. El precio final depende del alcance y se confirma antes de empezar.",
+    addons: [
+      { title: "Configuración de analítica", price: "desde $250", text: "Píxel de Meta, API de conversiones, Google Analytics 4 y eventos de conversión, para que cada pedido y cada cliente potencial cuente." },
+      { title: "Paquete de creatividades", price: "desde $250", text: "5 diseños de anuncios estáticos en los formatos clave —feed, Stories y Reels— con tu marca y tu oferta." },
+      { title: "Videos publicitarios y Reels", price: "desde $150 / video", text: "Videos cortos editados con tu propio material. Videos estilo UGC con creadores reales desde $300 por video." },
+      { title: "Landing page", price: "desde $700", text: "Una página rápida, pensada para móvil y creada para una sola oferta, que convierte los clics en clientes." }
+    ],
+    faqTitle: "Preguntas frecuentes",
+    faq: [
+      { q: "¿Pago los anuncios por separado?", a: "Sí. El presupuesto va directamente a la plataforma publicitaria desde tu tarjeta, así siempre ves exactamente cuánto se gastó." },
+      { q: "¿Cuánto debería invertir en anuncios?", a: "Depende de tus objetivos y tu mercado. Te recomendaremos un presupuesto realista en tu auditoría gratis." },
+      { q: "¿De quién es la cuenta publicitaria?", a: "Tuya. Trabajamos con acceso de socio a tus cuentas publicitarias y puedes retirarlo cuando quieras." },
+      { q: "¿Cuándo veré resultados?", a: "Las primeras 2–4 semanas son de prueba. Después, concentramos el presupuesto en lo que da mejores resultados." },
+      { q: "¿Qué incluye la tarifa mensual?", a: "Gestión y optimización de campañas, hasta 4 anuncios nuevos al mes, un informe mensual con una breve actualización semanal, una llamada de estrategia al mes y hasta dos rondas de cambios. Los trabajos adicionales, como producción de video, landing pages o informes extra, se cotizan por separado." }
+    ],
+    careersEyebrow: "Empleos", careersTitle: "Crece con Midas Media Marketing",
+    careersSub: "Estamos formando un equipo remoto de personas a las que les encanta la publicidad y los resultados. Si eres una de ellas, queremos conocerte.",
+    roles: [
+      { title: "Media Buyer", type: "Remoto", text: "Lanzar y optimizar campañas, probar públicos y creatividades, y convertir los datos en decisiones." },
+      { title: "Diseñador y editor de video", type: "Remoto", text: "Crear imágenes, videos cortos y Reels que detienen el scroll para clientes de distintos sectores." },
+      { title: "Copywriter", type: "Remoto", text: "Escribir textos publicitarios, titulares y textos web que hacen que la gente haga clic y compre." },
+      { title: "Gerente de ventas", type: "Remoto", text: "Encontrar nuevos clientes, hacer las primeras llamadas y mostrar a las empresas cómo la publicidad puede hacerlas crecer." }
+    ],
+    applyText: "¿No ves tu puesto? Envíanos tu CV y unas palabras sobre ti de todos modos.", applyBtn: "Enviar CV",
+    contactA: "¿Listo para ver lo que tus anuncios ", contactB: "pueden lograr?",
+    contactText: "Reserva una auditoría gratis de 20 minutos. Sin presión ni compromiso, solo ideas claras para tu negocio.",
+    book: "Reservar auditoría [CALENDLY LINK]",
+    footer: "Publicidad en redes sociales para empresas en todo EE. UU."
+  }
+};
+
+(function () {
+  var STORE = 'mmm-lang';
+  var CODES = [
+    { code: 'en', label: 'EN', name: 'English' },
+    { code: 'ru', label: 'RU', name: 'Русский' },
+    { code: 'uk', label: 'UA', name: 'Українська' },
+    { code: 'es', label: 'ES', name: 'Español' }
+  ];
+  var NETS = ['meta', 'google', 'tiktok', 'reddit'];
+  var NET_NAMES = { meta: 'Meta', google: 'Google', tiktok: 'TikTok', reddit: 'Reddit' };
+  var lang = 'en';
+  try { var saved = localStorage.getItem(STORE); if (saved && MMM_I18N[saved]) lang = saved; } catch (e) {}
+  var pendingAnchor = null;
+  var lastRoute = '';
+  var app = document.getElementById('app');
+
+  var CHEV = '<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>';
+  var CHEVR = '<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>';
+  var GLOBE = '<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9s1.3-6.4 3.8-9z"/></svg>';
+
+  function esc(v) { return String(v).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function T() { return MMM_I18N[lang]; }
+  function items(t, key) { return key === 'meta' ? t.platforms : t[key]; }
+  function soon(t, key) { return key === 'meta' ? '' : ' <span class="badge">' + esc(t.soonLabel) + '</span>'; }
+
+  function route() {
+    var h = location.hash.replace(/^#\/?/, '');
+    var parts = h.split('/');
+    if (parts[0] === 'platforms') return { page: 'platforms', net: NETS.indexOf(parts[1]) >= 0 ? parts[1] : 'meta' };
+    if (parts[0] === 'pricing' || parts[0] === 'careers') return { page: parts[0] };
+    return { page: 'home' };
+  }
+
+  function header(t) {
+    var nets = NETS.map(function (k) {
+      var links = items(t, k).map(function (x) {
+        return '<a class="menu-item" role="menuitem" href="#/platforms/' + k + '" data-go="platforms" data-net="' + k + '" data-anchor="' + esc(x.id) + '">' + esc(x.name) + '</a>';
+      }).join('');
+      return '<div class="dd-sub"><button type="button" class="menu-item sub-btn" aria-haspopup="true"><span class="sub-name">' + NET_NAMES[k] + soon(t, k) + '</span>' + CHEVR + '</button>' +
+        '<div class="sub-wrap"><div class="menu" role="menu">' + links + '</div></div></div>';
+    }).join('');
+    var cur = CODES.filter(function (c) { return c.code === lang; })[0];
+    var langs = CODES.map(function (c) {
+      var on = c.code === lang;
+      return '<button type="button" class="menu-item' + (on ? ' is-on' : '') + '" role="menuitemradio" aria-checked="' + on + '" data-lang="' + c.code + '"><span>' + c.name + '</span><small>' + c.label + '</small></button>';
+    }).join('');
+    return '<header class="site-header"><div class="wrap hdr">' +
+      '<a href="#/" class="logo" data-go="home"><span class="logo-mark">MMM</span><span class="logo-text">Midas Media Marketing</span></a>' +
+      '<nav class="nav" aria-label="Main">' +
+      '<a class="nav-link" href="#/" data-go="home" data-anchor="services">' + esc(t.navServices) + '</a>' +
+      '<a class="nav-link" href="#/pricing" data-go="pricing" data-anchor="process">' + esc(t.navProcess) + '</a>' +
+      '<div class="dd"><button type="button" class="dd-btn" aria-haspopup="true" aria-expanded="false">' + esc(t.navPlatforms) + CHEV + '</button><div class="menu-wrap"><div class="menu" role="menu">' + nets + '</div></div></div>' +
+      '<a class="nav-link" href="#/pricing" data-go="pricing">' + esc(t.navPricing) + '</a>' +
+      '<a class="nav-link" href="#/careers" data-go="careers">' + esc(t.navCareers) + '</a>' +
+      '<div class="dd dd-right"><button type="button" class="dd-btn" aria-haspopup="true" aria-expanded="false" aria-label="Choose language">' + GLOBE + '<span>' + cur.label + '</span>' + CHEV + '</button><div class="menu-wrap"><div class="menu" role="menu" style="min-width:190px">' + langs + '</div></div></div>' +
+      '</nav></div></header>';
+  }
+
+  function home(t) {
+    var svc = t.services.map(function (x) {
+      return '<div class="svc card"><span class="n">' + esc(x.n) + '</span><h3>' + esc(x.title) + '</h3><p>' + esc(x.text) + '</p></div>';
+    }).join('');
+    return '<section id="top" class="hero dark"><div class="wrap hero-in">' +
+      '<p class="eyebrow">' + esc(t.eyebrow) + '</p>' +
+      '<h1>' + esc(t.heroA) + '<span class="gold">' + esc(t.heroB) + '</span></h1>' +
+      '<p class="hero-sub">' + esc(t.heroSub) + '</p>' +
+      '<div class="row"><a class="btn btn-gold" href="#contact" data-scroll="contact">' + esc(t.cta1) + '</a><a class="btn btn-ghost" href="#/pricing" data-go="pricing">' + esc(t.cta2) + '</a></div>' +
+      '<div class="trust">' + t.trust.map(function (x) { return '<span>' + esc(x) + '</span>'; }).join('') + '</div>' +
+      '</div></section>' +
+      '<section id="services" class="sec"><div class="wrap"><div class="head"><p class="eyebrow">' + esc(t.servicesEyebrow) + '</p><h2 class="h2">' + esc(t.servicesTitle) + '</h2></div><div class="grid">' + svc + '</div></div></section>' +
+      '<section id="why" class="sec sand"><div class="wrap"><div class="why">' +
+      '<p class="eyebrow">' + esc(t.mEyebrow) + '</p><h2>' + esc(t.mTitle) + '</h2>' +
+      '<p>' + esc(t.mP1) + '</p><p>' + esc(t.mP2) + '</p><p class="strong">' + esc(t.mP3) + '</p>' +
+      '<div><a class="btn btn-dark" href="#contact" data-scroll="contact">' + esc(t.cta1) + '</a></div>' +
+      '</div></div></section>';
+  }
+
+  function platforms(t, net) {
+    var tabs = NETS.map(function (k) {
+      var on = k === net;
+      return '<button type="button" class="tab" role="tab" aria-selected="' + on + '" data-tab="' + k + '">' + NET_NAMES[k] + (on ? '' : soon(t, k)) + '</button>';
+    }).join('');
+    var cards = items(t, net).map(function (x) {
+      return '<div id="' + esc(x.id) + '" class="pf card"><h3>' + esc(x.name) + '</h3><p class="where">' + esc(x.where) + '</p><p>' + esc(x.text) + '</p></div>';
+    }).join('');
+    return '<section id="platforms" class="sec dark"><div class="wrap">' +
+      '<div class="head"><p class="eyebrow">' + esc(t.platformsEyebrow) + '</p><h1 class="h2" style="font-size:clamp(36px,5vw,60px);line-height:1.05;letter-spacing:-1.5px">' + esc(t.platformsTitle) + '</h1><p class="lead">' + esc(t.platformsSub) + '</p></div>' +
+      '<div class="tabs" role="tablist">' + tabs + '</div>' +
+      '<div class="net-head"><h2>' + NET_NAMES[net] + soon(t, net) + '</h2><p>' + esc(t.netIntro[net]) + '</p></div>' +
+      '<div class="grid grid-300">' + cards + '</div>' +
+      '</div></section>';
+  }
+
+  function pricing(t) {
+    var steps = t.steps.map(function (x) { return '<div class="step"><h3>' + esc(x.title) + '</h3><p>' + esc(x.text) + '</p></div>'; }).join('');
+    var addons = t.addons.map(function (x) { return '<div class="addon card"><h4>' + esc(x.title) + '</h4><p class="p">' + esc(x.price) + '</p><p>' + esc(x.text) + '</p></div>'; }).join('');
+    var faq = t.faq.map(function (x) { return '<div><h3>' + esc(x.q) + '</h3><p>' + esc(x.a) + '</p></div>'; }).join('');
+    return '<section id="process" class="sec sand"><div class="wrap"><div class="head"><p class="eyebrow">' + esc(t.processEyebrow) + '</p><h2 class="h2">' + esc(t.processTitle) + '</h2></div><div class="grid" style="gap:32px">' + steps + '</div></div></section>' +
+      '<section id="pricing" class="sec"><div class="wrap">' +
+      '<div class="head"><p class="eyebrow">' + esc(t.pricingEyebrow) + '</p><h1 class="h2">' + esc(t.pricingTitle) + '</h1><p class="lead">' + esc(t.pricingSub) + '</p></div>' +
+      '<div class="grid grid-300">' +
+      '<div class="price-card card"><h3>' + esc(t.setupTitle) + '</h3><span class="pill">' + esc(t.discountBadge) + '</span><div class="price-row"><span class="old">' + esc(t.setupOld) + '</span><p class="price">' + esc(t.setupPrice) + '</p></div><p class="desc">' + esc(t.setupText) + '</p></div>' +
+      '<div class="price-card dark card"><h3>' + esc(t.mgmtTitle) + '</h3><span class="pill">' + esc(t.discountBadge) + '</span><div class="price-row"><span class="old">' + esc(t.mgmtOld) + '</span><p class="price gold">' + esc(t.mgmtPrice) + '</p></div><p class="desc">' + esc(t.mgmtText) + '</p></div>' +
+      '</div>' +
+      '<p class="note">' + esc(t.tiersNote) + '</p>' +
+      '<div class="offer"><div><h3>' + esc(t.offerTitle) + '</h3><p>' + esc(t.offerText) + '</p></div><a class="btn btn-dark" style="min-height:48px" href="#contact" data-scroll="contact">' + esc(t.offerBtn) + '</a></div>' +
+      '<div class="addons"><div style="max-width:720px"><h3 class="t">' + esc(t.addonsTitle) + '</h3><p class="lead" style="font-size:17px;margin-top:8px">' + esc(t.addonsSub) + '</p></div><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">' + addons + '</div></div>' +
+      '</div></section>' +
+      '<section class="sec" style="padding-top:0"><div class="wrap"><h2 class="h2" style="font-size:clamp(28px,3.5vw,40px);margin-bottom:32px">' + esc(t.faqTitle) + '</h2><div class="faq">' + faq + '</div></div></section>';
+  }
+
+  function careers(t) {
+    var roles = t.roles.map(function (x) { return '<div class="role card"><span class="tag">' + esc(x.type) + '</span><h3>' + esc(x.title) + '</h3><p>' + esc(x.text) + '</p></div>'; }).join('');
+    return '<section id="careers" class="sec sand"><div class="wrap">' +
+      '<div class="head"><p class="eyebrow">' + esc(t.careersEyebrow) + '</p><h1 class="h2">' + esc(t.careersTitle) + '</h1><p class="lead">' + esc(t.careersSub) + '</p></div>' +
+      '<div class="grid">' + roles + '</div>' +
+      '<div class="apply"><p>' + esc(t.applyText) + '</p><a class="btn btn-gold" style="min-height:48px" href="mailto:[YOUR EMAIL]">' + esc(t.applyBtn) + ' · [YOUR EMAIL]</a></div>' +
+      '</div></section>';
+  }
+
+  function contact(t) {
+    return '<section id="contact" class="sec dark contact"><div class="wrap contact-in">' +
+      '<h2>' + esc(t.contactA) + '<span class="gold">' + esc(t.contactB) + '</span></h2>' +
+      '<p>' + esc(t.contactText) + '</p>' +
+      '<div class="row"><a class="btn btn-gold" href="[CALENDLY LINK]">' + esc(t.book) + '</a><a class="btn btn-ghost" href="mailto:[YOUR EMAIL]">[YOUR EMAIL]</a></div>' +
+      '<p class="small">WhatsApp / Telegram: [YOUR NUMBER]</p>' +
+      '</div></section>' +
+      '<footer class="site-footer"><div class="wrap"><span>© 2026 Midas Media Marketing</span><span>' + esc(t.footer) + '</span></div></footer>';
+  }
+
+  function render() {
+    var t = T();
+    var r = route();
+    var body = r.page === 'platforms' ? platforms(t, r.net) : r.page === 'pricing' ? pricing(t) : r.page === 'careers' ? careers(t) : home(t);
+    app.innerHTML = header(t) + '<main>' + body + '</main>' + contact(t);
+    document.documentElement.lang = lang;
+    var titles = { home: t.eyebrow, platforms: t.navPlatforms, pricing: t.navPricing, careers: t.navCareers };
+    document.title = 'Midas Media Marketing — ' + titles[r.page];
+    var key = r.page + '/' + (r.net || '');
+    if (pendingAnchor) {
+      var id = pendingAnchor; pendingAnchor = null;
+      requestAnimationFrame(function () { var el = document.getElementById(id); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+    } else if (key.split('/')[0] !== lastRoute.split('/')[0]) {
+      window.scrollTo(0, 0);
+    }
+    lastRoute = key;
+  }
+
+  function closeMenus() {
+    document.querySelectorAll('.dd.open, .dd-sub.open').forEach(function (el) { el.classList.remove('open'); });
+    document.querySelectorAll('.dd-btn').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
+  }
+
+  document.addEventListener('click', function (e) {
+    var el;
+    if ((el = e.target.closest('[data-lang]'))) {
+      lang = el.getAttribute('data-lang');
+      try { localStorage.setItem(STORE, lang); } catch (err) {}
+      render(); return;
+    }
+    if ((el = e.target.closest('[data-go]'))) {
+      e.preventDefault();
+      var page = el.getAttribute('data-go');
+      var net = el.getAttribute('data-net');
+      pendingAnchor = el.getAttribute('data-anchor');
+      var h = page === 'home' ? '#/' : page === 'platforms' ? '#/platforms/' + (net || 'meta') : '#/' + page;
+      if (location.hash === h || (h === '#/' && (location.hash === '' || location.hash === '#'))) render();
+      else location.hash = h;
+      return;
+    }
+    if ((el = e.target.closest('[data-scroll]'))) {
+      e.preventDefault();
+      var target = document.getElementById(el.getAttribute('data-scroll'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+    if ((el = e.target.closest('[data-tab]'))) {
+      location.hash = '#/platforms/' + el.getAttribute('data-tab'); return;
+    }
+    if ((el = e.target.closest('.sub-btn'))) {
+      var sub = el.parentNode, wasOpen = sub.classList.contains('open');
+      sub.parentNode.querySelectorAll('.dd-sub.open').forEach(function (s) { s.classList.remove('open'); });
+      if (!wasOpen) sub.classList.add('open');
+      return;
+    }
+    if ((el = e.target.closest('.dd-btn'))) {
+      var dd = el.parentNode, open = dd.classList.contains('open');
+      closeMenus();
+      if (!open) { dd.classList.add('open'); el.setAttribute('aria-expanded', 'true'); }
+      return;
+    }
+    if (!e.target.closest('.dd')) closeMenus();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenus(); });
+  window.addEventListener('hashchange', render);
+  render();
+})();
+
+</script>
+</body>
+</html>
