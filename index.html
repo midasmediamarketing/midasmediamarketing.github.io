@@ -181,6 +181,7 @@ a{color:inherit}
 .qz-form input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:var(--gold)}
 .qz-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .qz-msg{margin:0;font-size:15px;color:#9A2E1F}
+.qz-msg a{color:inherit;font-weight:600;text-decoration:underline;text-underline-offset:3px}
 .qz-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:20px}
 .qz-back{min-height:44px;padding:0 6px;border:0;background:transparent;cursor:pointer;font:inherit;font-weight:600;color:var(--text2)}
 .qz-back:hover{color:var(--ink)}
@@ -837,7 +838,7 @@ var MMM_I18N = {
       ],
       formTitle: 'Where should we send your audit?', name: 'Your name', site: 'Website or Instagram', contact: 'Email or phone',
       submit: 'Get my free audit', sending: 'Sending…', required: 'Please add your name and a way to reach you.',
-      error: 'Something went wrong. Please try again or email us at prokhorenko1098@gmail.com.',
+      error: 'Something went wrong. Please try again or {link}.', errorLink: 'email us',
       doneTitle: 'Thank you! Your request is in.', doneText: 'We’ll review your business and get back to you within 1–2 business days.' },
     ru: { title: 'Бесплатный аудит рекламы', step: 'Шаг {n} из {t}', back: 'Назад', close: 'Закрыть',
       q: [
@@ -848,7 +849,7 @@ var MMM_I18N = {
       ],
       formTitle: 'Куда отправить результаты аудита?', name: 'Ваше имя', site: 'Сайт или Instagram', contact: 'Email или телефон',
       submit: 'Получить бесплатный аудит', sending: 'Отправляем…', required: 'Укажите имя и контакт для связи.',
-      error: 'Не удалось отправить. Попробуйте ещё раз или напишите нам на prokhorenko1098@gmail.com.',
+      error: 'Не удалось отправить. Попробуйте ещё раз или {link}.', errorLink: 'напишите на нашу почту',
       doneTitle: 'Спасибо! Заявка получена.', doneText: 'Мы изучим ваш бизнес и свяжемся с вами в течение 1–2 рабочих дней.' },
     uk: { title: 'Безкоштовний аудит реклами', step: 'Крок {n} з {t}', back: 'Назад', close: 'Закрити',
       q: [
@@ -859,7 +860,7 @@ var MMM_I18N = {
       ],
       formTitle: 'Куди надіслати результати аудиту?', name: 'Ваше ім’я', site: 'Сайт або Instagram', contact: 'Email або телефон',
       submit: 'Отримати безкоштовний аудит', sending: 'Надсилаємо…', required: 'Вкажіть ім’я та контакт для зв’язку.',
-      error: 'Не вдалося надіслати. Спробуйте ще раз або напишіть нам на prokhorenko1098@gmail.com.',
+      error: 'Не вдалося надіслати. Спробуйте ще раз або {link}.', errorLink: 'напишіть на нашу пошту',
       doneTitle: 'Дякуємо! Заявку отримано.', doneText: 'Ми вивчимо ваш бізнес і зв’яжемося з вами протягом 1–2 робочих днів.' },
     es: { title: 'Auditoría gratis de anuncios', step: 'Paso {n} de {t}', back: 'Atrás', close: 'Cerrar',
       q: [
@@ -870,7 +871,7 @@ var MMM_I18N = {
       ],
       formTitle: '¿Dónde te enviamos la auditoría?', name: 'Tu nombre', site: 'Sitio web o Instagram', contact: 'Email o teléfono',
       submit: 'Obtener mi auditoría gratis', sending: 'Enviando…', required: 'Indica tu nombre y un contacto.',
-      error: 'No se pudo enviar. Inténtalo de nuevo o escríbenos a prokhorenko1098@gmail.com.',
+      error: 'No se pudo enviar. Inténtalo de nuevo o {link}.', errorLink: 'escríbenos por correo',
       doneTitle: '¡Gracias! Recibimos tu solicitud.', doneText: 'Revisaremos tu negocio y te contactaremos en 1–2 días hábiles.' }
   };
   var LANG_NAMES = { en: 'English', ru: 'Русский', uk: 'Українська', es: 'Español' };
@@ -878,6 +879,11 @@ var MMM_I18N = {
   var qroot = document.getElementById('quiz');
   var XICON = '<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
 
+  function quizMsg(msg, Q) {
+    if (msg.indexOf('{link}') < 0) return esc(msg);
+    var parts = msg.split('{link}');
+    return esc(parts[0]) + '<a href="mailto:' + esc(CONTACT.email) + '?subject=' + encodeURIComponent('Free ad audit request') + '">' + esc(Q.errorLink) + '</a>' + esc(parts[1]);
+  }
   function renderQuiz() {
     if (!qz.open) { qroot.hidden = true; qroot.innerHTML = ''; return; }
     var Q = QUIZ[lang] || QUIZ.en;
@@ -903,7 +909,7 @@ var MMM_I18N = {
           '<label>' + esc(Q.site) + '<input name="site" autocomplete="url" maxlength="200" value="' + esc(qz.form.site) + '"></label>' +
           '<label>' + esc(Q.contact) + '<input name="contact" autocomplete="email" maxlength="160" value="' + esc(qz.form.contact) + '" required></label>' +
           '<div class="qz-hp" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off" value=""></div>' +
-          (msg ? '<p class="qz-msg" role="alert">' + esc(msg) + '</p>' : '') +
+          (msg ? '<p class="qz-msg" role="alert">' + quizMsg(msg, Q) + '</p>' : '') +
           '<button type="submit" class="btn btn-gold"' + (sending ? ' disabled' : '') + '>' + esc(sending ? Q.sending : Q.submit) + '</button>' +
           '</form>';
       }
