@@ -228,6 +228,23 @@ a{color:inherit}
 .mm-contacts .btn{flex:1 1 140px}
 @media (max-width:860px){.nav{display:none}.hdr>.mm-btn{display:inline-flex}}
 @media (prefers-reduced-motion:reduce){.mm{transition:none;transform:none}}
+
+.legal{background:var(--paper)}
+.legal-in{max-width:760px;margin:0 auto}
+.legal-in h1{margin:0 0 8px;font-size:clamp(34px,5vw,48px);font-weight:700;letter-spacing:-1px}
+.legal-date{margin:0 0 28px;color:var(--text2);font-size:15px}
+.legal-intro{margin:0 0 12px;font-size:18px}
+.legal-in h2{margin:36px 0 12px;font-size:22px;font-weight:700}
+.legal-in p,.legal-in li{color:#2E2D2A;font-size:16px}
+.legal-in p{margin:0 0 12px}
+.legal-in ul{margin:0;padding-left:20px}
+.legal-in a{color:var(--gold-ink)}
+.legal-note{margin:0 0 20px;padding:12px 16px;border-radius:12px;background:var(--sand);font-size:15px;color:var(--text2)}
+.footer-links{display:flex;flex-wrap:wrap;gap:16px}
+.footer-links a{color:var(--mute-d);text-decoration:underline;text-underline-offset:3px}
+.footer-links a:hover{color:var(--gold)}
+.qz-consent{margin:0;font-size:13px;color:var(--text2);text-align:center}
+.qz-consent a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.card,.tab,.menu-item,.nav-link{transition:none}.btn:hover,.card:hover{transform:none}}
 </style>
 </head>
@@ -237,6 +254,7 @@ a{color:inherit}
 <script>
 var MMM_I18N = {
   en: {
+    privacyLabel: "Privacy Policy", termsLabel: "Terms of Service", legalNote: "This document is available in English only.",
     menuOpen: "Open menu", menuClose: "Close menu",
     aiEyebrow: "AI assistant for business", aiTitle: "Never miss a customer again",
     aiLead: "Customers message at night, on weekends and during your busiest hour. An AI assistant replies instantly, so leads from your ads don’t go cold.",
@@ -346,6 +364,7 @@ var MMM_I18N = {
     footer: "Social media advertising for businesses across the US"
   },
   ru: {
+    privacyLabel: "Политика конфиденциальности", termsLabel: "Условия использования", legalNote: "Этот документ доступен только на английском языке.",
     menuOpen: "Открыть меню", menuClose: "Закрыть меню",
     aiEyebrow: "ИИ-ассистент для бизнеса", aiTitle: "Больше ни одного потерянного клиента",
     aiLead: "Клиенты пишут ночью, в выходные и в самый загруженный час. ИИ-ассистент отвечает мгновенно, и заявки с рекламы не остывают.",
@@ -455,6 +474,7 @@ var MMM_I18N = {
     footer: "Реклама бизнеса в соцсетях по всей территории США"
   },
   uk: {
+    privacyLabel: "Політика конфіденційності", termsLabel: "Умови використання", legalNote: "Цей документ доступний лише англійською мовою.",
     menuOpen: "Відкрити меню", menuClose: "Закрити меню",
     aiEyebrow: "ШІ-асистент для бізнесу", aiTitle: "Більше жодного втраченого клієнта",
     aiLead: "Клієнти пишуть уночі, у вихідні та в найзавантаженішу годину. ШІ-асистент відповідає миттєво, і заявки з реклами не холонуть.",
@@ -564,6 +584,7 @@ var MMM_I18N = {
     footer: "Реклама бізнесу в соцмережах по всіх США"
   },
   es: {
+    privacyLabel: "Política de privacidad", termsLabel: "Términos del servicio", legalNote: "Este documento solo está disponible en inglés.",
     menuOpen: "Abrir menú", menuClose: "Cerrar menú",
     aiEyebrow: "Asistente de IA para empresas", aiTitle: "Nunca más pierdas un cliente",
     aiLead: "Tus clientes escriben de noche, los fines de semana y en tu hora más ocupada. Un asistente de IA responde al instante, para que los clientes potenciales de tus anuncios no se enfríen.",
@@ -705,11 +726,107 @@ var MMM_I18N = {
   function items(t, key) { return key === 'meta' ? t.platforms : t[key]; }
   function soon(t, key) { return key === 'meta' ? '' : ' <span class="badge">' + esc(t.soonLabel) + '</span>'; }
 
+  // ---------- Legal pages (English) ----------
+  var LEGAL_UPDATED = 'November 9, 2026';
+  var LEGAL = {
+    privacy: {
+      title: 'Privacy Policy',
+      intro: 'This Privacy Policy explains how Midas Media Marketing (“we”, “us”) collects, uses and protects information when you visit midasmediamarketing.github.io (the “Site”) or contact us.',
+      sections: [
+        ['Information we collect', [
+          'Information you give us: when you complete our free audit form, we collect your name, your website or Instagram, your email or phone number, and your answers about your business type, goals, monthly ad budget and current advertising. When you email or message us on WhatsApp or Telegram, we receive the information you choose to send.',
+          'Information collected automatically: like most websites, our hosting and service providers may log technical data such as your IP address, browser type, device and pages visited. Your language choice is saved in your browser’s local storage so the Site remembers it.',
+          'Advertising and analytics tools: we use or may use the Meta Pixel and similar analytics tools to understand how visitors use the Site and to measure and improve our advertising. These tools may use cookies or similar technologies and collect information about your activity on the Site.'
+        ]],
+        ['How we use information', [
+          'To respond to your request and prepare your free ad audit or proposal.',
+          'To communicate with you about our services.',
+          'To operate, secure and improve the Site.',
+          'To measure and improve our own advertising, including showing ads to people who visited the Site.'
+        ]],
+        ['How we share information', [
+          'We do not sell your personal information. We share information only with service providers that help us run our business, such as GitHub (website hosting), Cloudflare (form processing), Telegram (receiving form requests), Google (email and fonts) and Meta (advertising measurement). These providers process information under their own privacy policies.',
+          'We may also disclose information if required by law or to protect our rights.'
+        ]],
+        ['Your choices', [
+          'You can ask us to access, correct or delete the personal information you have sent us by emailing us.',
+          'You can control cookies in your browser settings, and manage how Meta uses data for ads in your Facebook or Instagram ad preferences. You can also learn about opting out of interest-based advertising at optout.aboutads.info.'
+        ]],
+        ['Data retention and security', [
+          'We keep form requests and messages only as long as needed to respond to you and to provide our services, or as required by law. We use reasonable measures to protect information, but no method of transmission or storage is completely secure.'
+        ]],
+        ['International users', [
+          'Our service providers may process information in the United States and other countries. By using the Site, you understand that your information may be transferred to and processed in these countries.'
+        ]],
+        ['Children', [
+          'The Site is intended for businesses and is not directed to children under 13. We do not knowingly collect personal information from children.'
+        ]],
+        ['Changes to this policy', [
+          'We may update this Privacy Policy from time to time. The date at the top of this page shows when it was last updated.'
+        ]],
+        ['Contact', ['Questions about this policy? Email us at {email}.']]
+      ]
+    },
+    terms: {
+      title: 'Terms of Service',
+      intro: 'These Terms of Service govern your use of midasmediamarketing.github.io (the “Site”), operated by Midas Media Marketing (“we”, “us”). By using the Site, you agree to these Terms.',
+      sections: [
+        ['Use of the Site', [
+          'The Site provides information about our advertising services. You agree to use it lawfully and not to interfere with its operation or security.'
+        ]],
+        ['Our services', [
+          'Any advertising or marketing services we provide are governed by a separate written agreement between you and us. If that agreement conflicts with these Terms, the agreement controls.',
+          'Prices shown on the Site are for general information and may change. Final pricing and scope are confirmed in writing before work begins. Ad spend is paid by the client directly to the advertising platform and is not included in our fees.'
+        ]],
+        ['No guarantee of results', [
+          'Advertising results depend on many factors outside our control, including your product, pricing, website, market conditions and platform algorithms. We do not guarantee any specific number of leads, sales or other results.'
+        ]],
+        ['Third-party platforms', [
+          'Our work relies on third-party platforms such as Meta, Google, TikTok and Reddit. We are not responsible for their decisions, including ad rejections, account restrictions or policy changes. Platform names are trademarks of their respective owners and are used only to describe our services.'
+        ]],
+        ['Intellectual property', [
+          'The Site’s content, design and branding belong to Midas Media Marketing. You may not copy or reuse them without our permission.'
+        ]],
+        ['Free audit', [
+          'Our free ad audit is a no-obligation review and recommendations. It does not create a client relationship until we both sign a services agreement.'
+        ]],
+        ['Disclaimer and limitation of liability', [
+          'The Site is provided “as is” without warranties of any kind. To the fullest extent permitted by law, we are not liable for any indirect, incidental or consequential damages arising from your use of the Site.'
+        ]],
+        ['Changes', [
+          'We may update these Terms from time to time. The date at the top of this page shows when they were last updated.'
+        ]],
+        ['Contact', ['Questions about these Terms? Email us at {email}.']]
+      ]
+    }
+  };
+  function legalPage(t, kind) {
+    var L = LEGAL[kind];
+    var mail = '<a href="mailto:' + esc(CONTACT.email) + '">' + esc(CONTACT.email) + '</a>';
+    var secs = L.sections.map(function (sec) {
+      var multi = sec[1].length > 1 && sec[0] === 'How we use information';
+      var body = multi
+        ? '<ul>' + sec[1].map(function (p) { return '<li>' + esc(p) + '</li>'; }).join('') + '</ul>'
+        : sec[1].map(function (p) { return '<p>' + esc(p).replace('{email}', mail) + '</p>'; }).join('');
+      return '<h2>' + esc(sec[0]) + '</h2>' + body;
+    }).join('');
+    return '<section id="' + kind + '" class="sec legal"><div class="wrap"><article class="legal-in">' +
+      (lang !== 'en' ? '<p class="legal-note">' + esc(t.legalNote) + '</p>' : '') +
+      '<h1>' + esc(L.title) + '</h1><p class="legal-date">Last updated: ' + LEGAL_UPDATED + '</p>' +
+      '<p class="legal-intro">' + esc(L.intro) + '</p>' + secs +
+      '</article></div></section>';
+  }
+  function footerHTML(t) {
+    return '<footer class="site-footer"><div class="wrap"><span>© 2026 Midas Media Marketing</span>' +
+      '<span class="footer-links"><a href="#/privacy" data-go="privacy">' + esc(t.privacyLabel) + '</a><a href="#/terms" data-go="terms">' + esc(t.termsLabel) + '</a></span>' +
+      '<span>' + esc(t.footer) + '</span></div></footer>';
+  }
+
   function route() {
     var h = location.hash.replace(/^#\/?/, '');
     var parts = h.split('/');
     if (parts[0] === 'platforms') return { page: 'platforms', net: NETS.indexOf(parts[1]) >= 0 ? parts[1] : 'meta' };
-    if (parts[0] === 'pricing' || parts[0] === 'careers') return { page: parts[0] };
+    if (parts[0] === 'pricing' || parts[0] === 'careers' || parts[0] === 'privacy' || parts[0] === 'terms') return { page: parts[0] };
     return { page: 'home' };
   }
 
@@ -872,7 +989,7 @@ var MMM_I18N = {
       return '<section id="contact" class="dark contact contact-compact"><div class="wrap">' +
         (links ? '<div class="contact-direct"><p class="small">' + esc(t.contactDirect) + '</p><div class="contact-links">' + links + '</div></div>' : '') +
         '</div></section>' +
-        '<footer class="site-footer"><div class="wrap"><span>© 2026 Midas Media Marketing</span><span>' + esc(t.footer) + '</span></div></footer>';
+        footerHTML(t);
     }
     return '<section id="contact" class="sec dark contact"><div class="wrap contact-in">' +
       '<h2>' + esc(t.contactA) + '<span class="gold">' + esc(t.contactB) + '</span></h2>' +
@@ -880,16 +997,16 @@ var MMM_I18N = {
       '<div class="row"><a class="btn btn-gold" href="#contact" data-quiz="1">' + esc(t.cta1) + '</a></div>' +
       (links ? '<div class="contact-direct"><p class="small">' + esc(t.contactDirect) + '</p><div class="contact-links">' + links + '</div></div>' : '') +
       '</div></section>' +
-      '<footer class="site-footer"><div class="wrap"><span>© 2026 Midas Media Marketing</span><span>' + esc(t.footer) + '</span></div></footer>';
+      footerHTML(t);
   }
 
   function render() {
     var t = T();
     var r = route();
-    var body = r.page === 'platforms' ? platforms(t, r.net) : r.page === 'pricing' ? pricing(t) : r.page === 'careers' ? careers(t) : home(t);
+    var body = r.page === 'platforms' ? platforms(t, r.net) : r.page === 'pricing' ? pricing(t) : r.page === 'careers' ? careers(t) : (r.page === 'privacy' || r.page === 'terms') ? legalPage(t, r.page) : home(t);
     app.innerHTML = header(t) + '<main>' + body + '</main>' + contact(t, r.page === 'home');
     document.documentElement.lang = lang;
-    var titles = { home: t.eyebrow, platforms: t.navPlatforms, pricing: t.navPricing, careers: t.navCareers };
+    var titles = { home: t.eyebrow, platforms: t.navPlatforms, pricing: t.navPricing, careers: t.navCareers, privacy: 'Privacy Policy', terms: 'Terms of Service' };
     document.title = 'Midas Media Marketing — ' + titles[r.page];
     var key = r.page + '/' + (r.net || '');
     if (pendingAnchor) {
@@ -912,7 +1029,7 @@ var MMM_I18N = {
   // Paste your Cloudflare Worker address here after setup:
   var QUIZ_ENDPOINT = 'https://midas-quiz.prokhorenko1098.workers.dev';
   var QUIZ = {
-    en: { title: 'Free ad audit', step: 'Step {n} of {t}', back: 'Back', close: 'Close',
+    en: { consent: "By submitting, you agree to our {link}.", consentLink: "Privacy Policy", title: 'Free ad audit', step: 'Step {n} of {t}', back: 'Back', close: 'Close',
       q: [
         ['What kind of business do you have?', ['Local services', 'Online store', 'Restaurant or café', 'Beauty or clinic', 'Other']],
         ['What’s your main goal?', ['More orders and sales', 'More leads and bookings', 'Brand awareness']],
@@ -923,7 +1040,7 @@ var MMM_I18N = {
       submit: 'Get my free audit', sending: 'Sending…', required: 'Please add your name and a way to reach you.',
       error: 'Something went wrong. Please try again or {link}.', errorLink: 'email us',
       doneTitle: 'Thank you! Your request is in.', doneText: 'We’ll review your business and get back to you within 1–2 business days.' },
-    ru: { title: 'Бесплатный аудит рекламы', step: 'Шаг {n} из {t}', back: 'Назад', close: 'Закрыть',
+    ru: { consent: "Отправляя форму, вы соглашаетесь с нашей {link}.", consentLink: "политикой конфиденциальности", title: 'Бесплатный аудит рекламы', step: 'Шаг {n} из {t}', back: 'Назад', close: 'Закрыть',
       q: [
         ['Какой у вас бизнес?', ['Местные услуги', 'Интернет-магазин', 'Ресторан или кафе', 'Красота или клиника', 'Другое']],
         ['Какая главная цель?', ['Больше заказов и продаж', 'Больше заявок и записей', 'Узнаваемость бренда']],
@@ -934,7 +1051,7 @@ var MMM_I18N = {
       submit: 'Получить бесплатный аудит', sending: 'Отправляем…', required: 'Укажите имя и контакт для связи.',
       error: 'Не удалось отправить. Попробуйте ещё раз или {link}.', errorLink: 'напишите на нашу почту',
       doneTitle: 'Спасибо! Заявка получена.', doneText: 'Мы изучим ваш бизнес и свяжемся с вами в течение 1–2 рабочих дней.' },
-    uk: { title: 'Безкоштовний аудит реклами', step: 'Крок {n} з {t}', back: 'Назад', close: 'Закрити',
+    uk: { consent: "Надсилаючи форму, ви погоджуєтеся з нашою {link}.", consentLink: "політикою конфіденційності", title: 'Безкоштовний аудит реклами', step: 'Крок {n} з {t}', back: 'Назад', close: 'Закрити',
       q: [
         ['Який у вас бізнес?', ['Місцеві послуги', 'Інтернет-магазин', 'Ресторан або кафе', 'Краса або клініка', 'Інше']],
         ['Яка головна мета?', ['Більше замовлень і продажів', 'Більше заявок і записів', 'Впізнаваність бренду']],
@@ -945,7 +1062,7 @@ var MMM_I18N = {
       submit: 'Отримати безкоштовний аудит', sending: 'Надсилаємо…', required: 'Вкажіть ім’я та контакт для зв’язку.',
       error: 'Не вдалося надіслати. Спробуйте ще раз або {link}.', errorLink: 'напишіть на нашу пошту',
       doneTitle: 'Дякуємо! Заявку отримано.', doneText: 'Ми вивчимо ваш бізнес і зв’яжемося з вами протягом 1–2 робочих днів.' },
-    es: { title: 'Auditoría gratis de anuncios', step: 'Paso {n} de {t}', back: 'Atrás', close: 'Cerrar',
+    es: { consent: "Al enviar, aceptas nuestra {link}.", consentLink: "Política de privacidad", title: 'Auditoría gratis de anuncios', step: 'Paso {n} de {t}', back: 'Atrás', close: 'Cerrar',
       q: [
         ['¿Qué tipo de negocio tienes?', ['Servicios locales', 'Tienda en línea', 'Restaurante o cafetería', 'Belleza o clínica', 'Otro']],
         ['¿Cuál es tu objetivo principal?', ['Más pedidos y ventas', 'Más clientes potenciales y reservas', 'Reconocimiento de marca']],
@@ -994,6 +1111,7 @@ var MMM_I18N = {
           '<div class="qz-hp" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off" value=""></div>' +
           (msg ? '<p class="qz-msg" role="alert">' + quizMsg(msg, Q) + '</p>' : '') +
           '<button type="submit" class="btn btn-gold"' + (sending ? ' disabled' : '') + '>' + esc(sending ? Q.sending : Q.submit) + '</button>' +
+          '<p class="qz-consent">' + esc(Q.consent.split('{link}')[0]) + '<a href="#/privacy" data-qz-link>' + esc(Q.consentLink) + '</a>' + esc(Q.consent.split('{link}')[1] || '') + '</p>' +
           '</form>';
       }
       var foot = qz.step > 0 ? '<div class="qz-foot"><button type="button" class="qz-back" data-qz-back>← ' + esc(Q.back) + '</button></div>' : '';
@@ -1035,6 +1153,7 @@ var MMM_I18N = {
   }
   qroot.addEventListener('click', function (e) {
     var el;
+    if ((el = e.target.closest('[data-qz-link]'))) { closeQuiz(); return; }
     if ((el = e.target.closest('[data-qz-close]'))) { closeQuiz(); return; }
     if ((el = e.target.closest('[data-qz-back]'))) { qz.step = Math.max(0, qz.step - 1); qz.status = ''; renderQuiz(); return; }
     if ((el = e.target.closest('[data-qz-opt]'))) { qz.answers[qz.step] = +el.getAttribute('data-qz-opt'); qz.step += 1; renderQuiz(); return; }
