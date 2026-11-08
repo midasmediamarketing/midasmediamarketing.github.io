@@ -187,6 +187,30 @@ a{color:inherit}
 .qz-back:hover{color:var(--ink)}
 .qz-done p{margin:0 0 24px;font-size:17px;color:var(--text2)}
 @media (max-width:560px){.qz-root{align-items:flex-end;padding:0}.qz{border-radius:20px 20px 0 0;max-height:92vh;padding:22px}}
+
+.mm-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #3A3936;border-radius:12px;background:transparent;color:#fff;cursor:pointer}
+.mm-btn:hover{border-color:var(--gold);color:var(--gold)}
+.mm{position:fixed;inset:0;z-index:90;background:var(--ink);color:#fff;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s ease,transform .2s ease,visibility 0s linear .2s}
+.mm.open{opacity:1;visibility:visible;transform:none;transition:opacity .2s ease,transform .2s ease}
+.mm-top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;padding-bottom:18px;border-bottom:1px solid #2a2a28}
+.mm-top .mm-btn{display:inline-flex}
+.mm-body{display:flex;flex-direction:column;gap:28px;padding-top:24px;padding-bottom:40px}
+.mm-links{display:flex;flex-direction:column}
+.mm-links a{display:flex;align-items:center;min-height:56px;border-bottom:1px solid #2a2a28;color:#fff;text-decoration:none;font-family:"Space Grotesk",system-ui,sans-serif;font-size:26px;font-weight:600;letter-spacing:-.3px}
+.mm-links a:hover{color:var(--gold)}
+.mm-group{display:flex;flex-direction:column;gap:12px}
+.mm-label{margin:0;font-size:13px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--mute-d2)}
+.mm-nets{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mm-net{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px;min-height:52px;padding:10px 14px;border:1px solid #3A3936;border-radius:12px;color:#fff;text-decoration:none;font-weight:600}
+.mm-net:hover{border-color:var(--gold);color:var(--gold)}
+.mm-langs{display:flex;flex-wrap:wrap;gap:8px}
+.mm-lang{min-width:56px;min-height:44px;padding:0 14px;border:1px solid #3A3936;border-radius:999px;background:transparent;color:#fff;cursor:pointer;font:inherit;font-weight:600}
+.mm-lang.is-on{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.mm-cta{width:100%}
+.mm-contacts{display:flex;flex-wrap:wrap;gap:10px}
+.mm-contacts .btn{flex:1 1 140px}
+@media (max-width:860px){.nav{display:none}.hdr>.mm-btn{display:inline-flex}}
+@media (prefers-reduced-motion:reduce){.mm{transition:none;transform:none}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.card,.tab,.menu-item,.nav-link{transition:none}.btn:hover,.card:hover{transform:none}}
 </style>
 </head>
@@ -196,6 +220,7 @@ a{color:inherit}
 <script>
 var MMM_I18N = {
   en: {
+    menuOpen: "Open menu", menuClose: "Close menu",
     aiEyebrow: "AI assistant for business", aiTitle: "Never miss a customer again",
     aiLead: "Customers message at night, on weekends and during your busiest hour. An AI assistant replies instantly, so leads from your ads don’t go cold.",
     aiWhyTitle: "Why it matters", aiWhy: [["Instant replies, 24/7", "People who wait for an answer often go to a competitor."], ["Less routine for your team", "Questions about prices, hours and delivery get answered automatically."], ["More value from your ads", "Every lead from a campaign gets a reply in seconds."]],
@@ -304,6 +329,7 @@ var MMM_I18N = {
     footer: "Social media advertising for businesses across the US"
   },
   ru: {
+    menuOpen: "Открыть меню", menuClose: "Закрыть меню",
     aiEyebrow: "ИИ-ассистент для бизнеса", aiTitle: "Больше ни одного потерянного клиента",
     aiLead: "Клиенты пишут ночью, в выходные и в самый загруженный час. ИИ-ассистент отвечает мгновенно, и заявки с рекламы не остывают.",
     aiWhyTitle: "Зачем он нужен", aiWhy: [["Мгновенные ответы 24/7", "Кто долго ждёт ответа, часто уходит к конкуренту."], ["Меньше рутины для команды", "Вопросы о ценах, графике и доставке закрываются автоматически."], ["Больше отдачи от рекламы", "Каждая заявка с кампании получает ответ за секунды."]],
@@ -412,6 +438,7 @@ var MMM_I18N = {
     footer: "Реклама бизнеса в соцсетях по всей территории США"
   },
   uk: {
+    menuOpen: "Відкрити меню", menuClose: "Закрити меню",
     aiEyebrow: "ШІ-асистент для бізнесу", aiTitle: "Більше жодного втраченого клієнта",
     aiLead: "Клієнти пишуть уночі, у вихідні та в найзавантаженішу годину. ШІ-асистент відповідає миттєво, і заявки з реклами не холонуть.",
     aiWhyTitle: "Навіщо він потрібен", aiWhy: [["Миттєві відповіді 24/7", "Хто довго чекає на відповідь, часто йде до конкурента."], ["Менше рутини для команди", "Питання про ціни, графік і доставку закриваються автоматично."], ["Більше віддачі від реклами", "Кожна заявка з кампанії отримує відповідь за секунди."]],
@@ -520,6 +547,7 @@ var MMM_I18N = {
     footer: "Реклама бізнесу в соцмережах по всіх США"
   },
   es: {
+    menuOpen: "Abrir menú", menuClose: "Cerrar menú",
     aiEyebrow: "Asistente de IA para empresas", aiTitle: "Nunca más pierdas un cliente",
     aiLead: "Tus clientes escriben de noche, los fines de semana y en tu hora más ocupada. Un asistente de IA responde al instante, para que los clientes potenciales de tus anuncios no se enfríen.",
     aiWhyTitle: "Por qué lo necesitas", aiWhy: [["Respuestas al instante, 24/7", "Quien espera una respuesta suele irse con la competencia."], ["Menos rutina para tu equipo", "Las preguntas sobre precios, horarios y envíos se responden solas."], ["Más resultados de tus anuncios", "Cada cliente potencial recibe respuesta en segundos."]],
@@ -668,6 +696,41 @@ var MMM_I18N = {
     return { page: 'home' };
   }
 
+  var BURGER = '<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
+  var CLOSE = '<svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+  var mmOpen = false;
+  function mobileMenu(t) {
+    var nets = NETS.map(function (k) {
+      return '<a class="mm-net" href="#/platforms/' + k + '" data-go="platforms" data-net="' + k + '"><span>' + NET_NAMES[k] + '</span>' + (k === 'meta' ? '' : '<span class="badge">' + esc(t.soonLabel) + '</span>') + '</a>';
+    }).join('');
+    var langs = CODES.map(function (c) {
+      return '<button type="button" class="mm-lang' + (c.code === lang ? ' is-on' : '') + '" data-lang="' + c.code + '" aria-pressed="' + (c.code === lang) + '">' + c.label + '</button>';
+    }).join('');
+    return '<div class="mm" id="mobile-menu" role="dialog" aria-modal="true" aria-label="' + esc(t.menuOpen) + '">' +
+      '<div class="mm-top wrap"><a href="#/" class="logo" data-go="home"><span class="logo-mark">MMM</span><span class="logo-text">Midas Media Marketing</span></a>' +
+      '<button type="button" class="mm-btn mm-close" data-mm-toggle aria-label="' + esc(t.menuClose) + '">' + CLOSE + '</button></div>' +
+      '<div class="mm-body wrap">' +
+      '<nav class="mm-links" aria-label="Mobile">' +
+      '<a href="#/" data-go="home" data-anchor="services">' + esc(t.navServices) + '</a>' +
+      '<a href="#/pricing" data-go="pricing" data-anchor="process">' + esc(t.navProcess) + '</a>' +
+      '<a href="#/pricing" data-go="pricing">' + esc(t.navPricing) + '</a>' +
+      '<a href="#/careers" data-go="careers">' + esc(t.navCareers) + '</a>' +
+      '</nav>' +
+      '<div class="mm-group"><p class="mm-label">' + esc(t.navPlatforms) + '</p><div class="mm-nets">' + nets + '</div></div>' +
+      '<div class="mm-group"><p class="mm-label">Language</p><div class="mm-langs">' + langs + '</div></div>' +
+      '<a class="btn btn-gold mm-cta" href="#contact" data-quiz="1">' + esc(t.cta1) + '</a>' +
+      '<div class="mm-contacts">' + contactLinks() + '</div>' +
+      '</div></div>';
+  }
+  function applyMM() {
+    var panel = document.getElementById('mobile-menu');
+    if (panel) panel.classList.toggle('open', mmOpen);
+    document.querySelectorAll('.mm-btn[aria-controls]').forEach(function (b) { b.setAttribute('aria-expanded', String(mmOpen)); });
+    if (!qz || !qz.open) document.body.style.overflow = mmOpen ? 'hidden' : '';
+    if (mmOpen && panel) { var c = panel.querySelector('.mm-close'); if (c) c.focus(); }
+  }
+  function setMM(v) { var was = mmOpen; mmOpen = v; applyMM(); if (was && !v) { var b = document.querySelector('.mm-btn[aria-controls]'); if (b) b.focus(); } }
+
   function header(t) {
     var nets = NETS.map(function (k) {
       var links = items(t, k).map(function (x) {
@@ -690,7 +753,9 @@ var MMM_I18N = {
       '<a class="nav-link" href="#/pricing" data-go="pricing">' + esc(t.navPricing) + '</a>' +
       '<a class="nav-link" href="#/careers" data-go="careers">' + esc(t.navCareers) + '</a>' +
       '<div class="dd dd-right"><button type="button" class="dd-btn" aria-haspopup="true" aria-expanded="false" aria-label="Choose language">' + GLOBE + '<span>' + cur.label + '</span>' + CHEV + '</button><div class="menu-wrap"><div class="menu" role="menu" style="min-width:190px">' + langs + '</div></div></div>' +
-      '</nav></div></header>';
+      '</nav>' +
+      '<button type="button" class="mm-btn" data-mm-toggle aria-controls="mobile-menu" aria-expanded="false" aria-label="' + esc(t.menuOpen) + '">' + BURGER + '</button>' +
+      '</div></header>' + mobileMenu(t);
   }
 
   var HERO_ART = '<svg role="img" aria-label="Laptop with an ads dashboard and a phone showing an example Instagram ad" viewBox="0 0 640 520" class="hero-svg"><defs><radialGradient id="heroGlow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#E2B33C" stop-opacity="0.28"></stop><stop offset="100%" stop-color="#E2B33C" stop-opacity="0"></stop></radialGradient></defs><ellipse cx="330" cy="260" rx="320" ry="240" fill="url(#heroGlow)"></ellipse><rect x="30" y="60" width="470" height="300" rx="16" fill="#1C1C1A" stroke="#3A3936" stroke-width="2"></rect><rect x="46" y="76" width="438" height="268" rx="6" fill="#F4F5F7"></rect><rect x="46" y="76" width="438" height="26" fill="#FFFFFF"></rect><circle cx="62" cy="89" r="6" fill="#E2B33C"></circle><rect x="76" y="85" width="70" height="8" rx="4" fill="#D5D9E0"></rect><rect x="46" y="102" width="64" height="242" fill="#ECEEF2"></rect><rect x="58" y="118" width="40" height="7" rx="3.5" fill="#C9CED8"></rect><rect x="58" y="136" width="34" height="7" rx="3.5" fill="#C9CED8"></rect><rect x="58" y="154" width="40" height="7" rx="3.5" fill="#E2B33C"></rect><rect x="58" y="172" width="30" height="7" rx="3.5" fill="#C9CED8"></rect><rect x="124" y="116" width="110" height="52" rx="8" fill="#FFFFFF"></rect><rect x="134" y="128" width="46" height="6" rx="3" fill="#C9CED8"></rect><rect x="134" y="144" width="72" height="12" rx="4" fill="#111111"></rect><rect x="244" y="116" width="110" height="52" rx="8" fill="#FFFFFF"></rect><rect x="254" y="128" width="52" height="6" rx="3" fill="#C9CED8"></rect><rect x="254" y="144" width="60" height="12" rx="4" fill="#111111"></rect><rect x="364" y="116" width="108" height="52" rx="8" fill="#FFFFFF"></rect><rect x="374" y="128" width="40" height="6" rx="3" fill="#C9CED8"></rect><rect x="374" y="144" width="66" height="12" rx="4" fill="#E2B33C"></rect><rect x="124" y="178" width="348" height="154" rx="8" fill="#FFFFFF"></rect><line x1="140" y1="300" x2="456" y2="300" stroke="#ECEEF2" stroke-width="2"></line><line x1="140" y1="260" x2="456" y2="260" stroke="#ECEEF2" stroke-width="2"></line><line x1="140" y1="220" x2="456" y2="220" stroke="#ECEEF2" stroke-width="2"></line><path d="M140 300 L180 292 L220 296 L260 274 L300 268 L340 246 L380 236 L420 214 L456 200 L456 316 L140 316 Z" fill="#E2B33C" fill-opacity="0.14"></path><polyline points="140,300 180,292 220,296 260,274 300,268 340,246 380,236 420,214 456,200" fill="none" stroke="#E2B33C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></polyline><circle cx="456" cy="200" r="6" fill="#E2B33C" stroke="#FFFFFF" stroke-width="3"></circle><path d="M0 360 H530 L512 384 Q508 390 500 390 H30 Q22 390 18 384 Z" fill="#2A2A28"></path><rect x="220" y="360" width="90" height="8" rx="4" fill="#3A3936"></rect><g transform="translate(440 150)"><rect width="180" height="350" rx="30" fill="#0B0B0A" stroke="#3A3936" stroke-width="2"></rect><rect x="9" y="9" width="162" height="332" rx="23" fill="#FFFFFF"></rect><rect x="66" y="16" width="48" height="10" rx="5" fill="#0B0B0A"></rect><circle cx="28" cy="48" r="10" fill="#F4C9B0"></circle><text x="44" y="46" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="600" fill="#111111">sweetcorner.bakery</text><text x="44" y="57" font-family="Inter, Arial, sans-serif" font-size="8" fill="#6B7280">Sponsored</text><rect x="9" y="68" width="162" height="150" fill="#F7DCC8"></rect><circle cx="140" cy="96" r="36" fill="#F2C7A8"></circle><rect x="44" y="160" width="92" height="32" rx="6" fill="#8A4B2E"></rect><rect x="52" y="132" width="76" height="30" rx="6" fill="#B9683F"></rect><rect x="62" y="108" width="56" height="26" rx="6" fill="#FBEFE6"></rect><path d="M62 120 q6 7 11 0 q6 7 11 0 q6 7 11 0 q6 7 11 0 q6 7 11 0" fill="none" stroke="#E2B33C" stroke-width="3"></path><circle cx="90" cy="102" r="6" fill="#C2263B"></circle><rect x="9" y="218" width="162" height="28" fill="#EEF2FF"></rect><text x="20" y="236" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="600" fill="#1D3FD8">Order now</text><text x="156" y="236" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="600" fill="#1D3FD8">›</text><rect x="20" y="258" width="120" height="7" rx="3.5" fill="#D5D9E0"></rect><rect x="20" y="272" width="138" height="7" rx="3.5" fill="#E4E6EB"></rect><rect x="20" y="286" width="96" height="7" rx="3.5" fill="#E4E6EB"></rect></g></svg>';
@@ -817,6 +882,7 @@ var MMM_I18N = {
       window.scrollTo(0, 0);
     }
     lastRoute = key;
+    applyMM();
     if (qz.open) renderQuiz();
   }
 
@@ -973,13 +1039,15 @@ var MMM_I18N = {
   document.addEventListener('click', function (e) {
     var el;
     if (e.target.closest('#quiz')) return;
-    if ((el = e.target.closest('[data-quiz]'))) { e.preventDefault(); closeMenus(); openQuiz(); return; }
+    if ((el = e.target.closest('[data-mm-toggle]'))) { setMM(!mmOpen); return; }
+    if ((el = e.target.closest('[data-quiz]'))) { e.preventDefault(); closeMenus(); if (mmOpen) setMM(false); openQuiz(); return; }
     if ((el = e.target.closest('[data-lang]'))) {
       lang = el.getAttribute('data-lang');
       try { localStorage.setItem(STORE, lang); } catch (err) {}
       render(); return;
     }
     if ((el = e.target.closest('[data-go]'))) {
+      if (mmOpen) { mmOpen = false; document.body.style.overflow = ''; }
       e.preventDefault();
       var page = el.getAttribute('data-go');
       var net = el.getAttribute('data-net');
@@ -1012,7 +1080,8 @@ var MMM_I18N = {
     }
     if (!e.target.closest('.dd')) closeMenus();
   });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenus(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeMenus(); if (mmOpen) setMM(false); } });
+  window.addEventListener('resize', function () { if (mmOpen && window.innerWidth > 860) setMM(false); });
   window.addEventListener('hashchange', render);
   render();
 })();
