@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#111111">
+<meta name="color-scheme" content="light">
 <title>Midas Media Marketing — Social media advertising for business</title>
 <meta name="description" content="Midas Media Marketing plans, launches and manages social media ad campaigns that bring businesses real orders, leads and sales.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,12 +14,12 @@
 <style>
 :root{--ink:#111111;--ink2:#1C1C1A;--line-d:#2F2E2B;--line-d2:#3A3936;--paper:#FFFFFF;--sand:#F4F2EE;--line:#D9D6CF;--text2:#45433F;--mute-d:#D9D6CF;--mute-d2:#BDB9B0;--gold:#E2B33C;--gold-ink:#6B5A1E}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:16px}
+html{scroll-behavior:smooth;scroll-padding-top:16px;background:#111111}
 body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
 h1,h2,h3,h4,.display{font-family:"Space Grotesk",system-ui,sans-serif}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 max(24px,env(safe-area-inset-right,0px)) 0 max(24px,env(safe-area-inset-left,0px))}
 .sec{padding:104px 0}
 .dark{background:var(--ink);color:#fff}
 .sand{background:var(--sand)}
@@ -42,7 +44,7 @@ a{color:inherit}
 .card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(17,17,17,.14)}
 .badge{display:inline-flex;align-items:center;padding:3px 9px;border-radius:999px;border:1px solid #5a5853;color:var(--mute-d2);font-size:11px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;white-space:nowrap}
 /* header */
-.site-header{background:var(--ink);border-bottom:1px solid #2a2a28;position:relative;z-index:40}
+.site-header{background:var(--ink);border-bottom:1px solid #2a2a28;position:relative;z-index:40;padding-top:env(safe-area-inset-top,0px)}
 .hdr{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;padding-bottom:18px}
 .logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
 .logo-mark{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:var(--gold);color:var(--ink);font-family:"Space Grotesk",system-ui,sans-serif;font-weight:700;font-size:15px;letter-spacing:-.5px}
@@ -157,7 +159,7 @@ a{color:inherit}
 .contact-links{display:flex;flex-wrap:wrap;gap:12px}
 .btn-contact{gap:10px;min-height:52px;padding:0 22px;background:#1C1C1A;color:#fff;border:1px solid #3A3936}
 .btn-contact:hover{border-color:var(--gold);color:var(--gold);box-shadow:0 0 0 3px rgba(226,179,60,.15)}
-.site-footer{background:var(--ink);border-top:1px solid #2a2a28;padding:28px 0;font-size:14px;color:var(--mute-d2)}
+.site-footer{background:var(--ink);border-top:1px solid #2a2a28;padding:28px 0 calc(28px + env(safe-area-inset-bottom,0px));font-size:14px;color:var(--mute-d2)}
 .site-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 @media (max-width:720px){.sec{padding:72px 0}.hero{padding:72px 0 80px}.price{font-size:36px}}
 .qz-root[hidden]{display:none}
@@ -186,15 +188,15 @@ a{color:inherit}
 .qz-back{min-height:44px;padding:0 6px;border:0;background:transparent;cursor:pointer;font:inherit;font-weight:600;color:var(--text2)}
 .qz-back:hover{color:var(--ink)}
 .qz-done p{margin:0 0 24px;font-size:17px;color:var(--text2)}
-@media (max-width:560px){.qz-root{align-items:flex-end;padding:0}.qz{border-radius:20px 20px 0 0;max-height:92vh;padding:22px}}
+@media (max-width:560px){.qz-root{align-items:flex-end;padding:0}.qz{border-radius:20px 20px 0 0;max-height:92vh;padding:22px 22px calc(22px + env(safe-area-inset-bottom,0px))}}
 
 .mm-btn{display:none;align-items:center;justify-content:center;width:44px;height:44px;border:1px solid #3A3936;border-radius:12px;background:transparent;color:#fff;cursor:pointer}
 .mm-btn:hover{border-color:var(--gold);color:var(--gold)}
 .mm{position:fixed;inset:0;z-index:90;background:var(--ink);color:#fff;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .2s ease,transform .2s ease,visibility 0s linear .2s}
 .mm.open{opacity:1;visibility:visible;transform:none;transition:opacity .2s ease,transform .2s ease}
-.mm-top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;padding-bottom:18px;border-bottom:1px solid #2a2a28}
+.mm-top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:calc(18px + env(safe-area-inset-top,0px));padding-bottom:18px;border-bottom:1px solid #2a2a28}
 .mm-top .mm-btn{display:inline-flex}
-.mm-body{display:flex;flex-direction:column;gap:28px;padding-top:24px;padding-bottom:40px}
+.mm-body{display:flex;flex-direction:column;gap:28px;padding-top:24px;padding-bottom:calc(40px + env(safe-area-inset-bottom,0px))}
 .mm-links{display:flex;flex-direction:column}
 .mm-links a{display:flex;align-items:center;min-height:56px;border-bottom:1px solid #2a2a28;color:#fff;text-decoration:none;font-family:"Space Grotesk",system-ui,sans-serif;font-size:26px;font-weight:600;letter-spacing:-.3px}
 .mm-links a:hover{color:var(--gold)}
