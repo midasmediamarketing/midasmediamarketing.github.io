@@ -69,12 +69,14 @@ a{color:inherit}
 .sub-name{display:inline-flex;align-items:center;gap:10px;font-weight:600}
 @media (max-width:720px){.sub-wrap{position:static;padding-left:0;margin-top:4px}}
 /* hero */
-.hero{padding:112px 0 120px}
-.hero-in{display:flex;flex-direction:column;gap:28px}
-.hero h1{margin:0;max-width:960px;font-weight:700;font-size:clamp(44px,7vw,88px);line-height:1.02;letter-spacing:-2px}
+.hero{padding:96px 0 104px}
+.hero{overflow:hidden}.hero-in{display:flex;flex-wrap:wrap;align-items:center;gap:48px}.hero-text{flex:1 1 480px;min-width:0;display:flex;flex-direction:column;gap:28px}.hero-art{flex:1 1 420px;min-width:0;display:flex;justify-content:center}.hero-svg{width:100%;max-width:620px;height:auto}
+.hero h1{margin:0;font-weight:700;font-size:clamp(44px,6vw,76px);line-height:1.02;letter-spacing:-2px}
 .hero .eyebrow{color:var(--gold)}
 .hero-sub{margin:0;max-width:660px;font-size:20px;color:var(--mute-d)}
 .row{display:flex;flex-wrap:wrap;gap:14px}
+.soon-note{align-self:flex-start;display:inline-flex;align-items:center;flex-wrap:wrap;gap:10px 12px;max-width:100%;padding:10px 16px 10px 10px;border:1px solid #3A3936;border-radius:16px;background:#1C1C1A;color:var(--mute-d);font-size:15px;line-height:1.4}
+.soon-tag{flex:none;padding:4px 10px;border-radius:999px;background:var(--gold);color:var(--ink);font-size:12px;font-weight:700;letter-spacing:.6px;text-transform:uppercase}
 .trust{display:flex;flex-wrap:wrap;gap:12px 32px;margin-top:16px;font-size:15px;color:var(--mute-d2)}
 /* cards */
 .svc{padding:28px;border-radius:16px;background:var(--sand);display:flex;flex-direction:column;gap:12px}
@@ -85,6 +87,21 @@ a{color:inherit}
 .why h2{margin:0;font-weight:700;font-size:clamp(34px,5vw,56px);line-height:1.08;letter-spacing:-1.5px}
 .why p{margin:0;font-size:20px;line-height:1.6;color:#2E2D2A}
 .why p.strong{font-weight:600;color:var(--ink)}
+.why p.why-cta{margin-top:16px;font-family:"Space Grotesk",system-ui,sans-serif;font-size:clamp(26px,3.2vw,34px);font-weight:700;line-height:1.15;letter-spacing:-.5px;color:var(--ink)}
+.contact-compact{padding:48px 0}
+.ai-eyebrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.ai-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:48px;align-items:start}
+.ai-sub{margin:0 0 20px;font-size:22px;font-weight:700;letter-spacing:-.3px}
+.ai-why{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:22px}
+.ai-why-item{display:flex;gap:16px;align-items:flex-start}
+.ai-num{flex:none;font-family:"Space Grotesk",system-ui,sans-serif;font-weight:700;font-size:15px;color:var(--gold-ink);padding-top:3px}
+.ai-why-item h4{margin:0 0 4px;font-size:19px;font-weight:600}
+.ai-why-item p,.ai-card p{margin:0;color:var(--text2)}
+.ai-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.ai-card{padding:20px;border-radius:14px;background:var(--sand);display:flex;flex-direction:column;gap:6px}
+.ai-card h4{margin:0;font-size:17px;font-weight:600}
+.ai-cta{margin-top:48px}
+.contact-compact .contact-direct{margin-top:0;padding-top:0;border-top:0}
 .step{display:flex;flex-direction:column;gap:12px;padding-top:20px;border-top:2px solid var(--ink)}
 .step h3{margin:0;font-size:21px;font-weight:600}
 /* platforms */
@@ -136,17 +153,55 @@ a{color:inherit}
 .contact h2{margin:0;max-width:860px;font-weight:700;font-size:clamp(36px,5vw,64px);line-height:1.05;letter-spacing:-1.5px}
 .contact p{margin:0;max-width:640px;font-size:19px;color:var(--mute-d)}
 .contact .small{font-size:15px;color:var(--mute-d2)}
+.contact-direct{display:flex;flex-direction:column;gap:14px;margin-top:8px;padding-top:28px;border-top:1px solid #2a2a28;width:100%}
+.contact-links{display:flex;flex-wrap:wrap;gap:12px}
+.btn-contact{gap:10px;min-height:52px;padding:0 22px;background:#1C1C1A;color:#fff;border:1px solid #3A3936}
+.btn-contact:hover{border-color:var(--gold);color:var(--gold);box-shadow:0 0 0 3px rgba(226,179,60,.15)}
 .site-footer{background:var(--ink);border-top:1px solid #2a2a28;padding:28px 0;font-size:14px;color:var(--mute-d2)}
 .site-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 @media (max-width:720px){.sec{padding:72px 0}.hero{padding:72px 0 80px}.price{font-size:36px}}
+.qz-root[hidden]{display:none}
+.qz-root{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:16px}
+.qz-backdrop{position:absolute;inset:0;background:rgba(17,17,17,.62)}
+.qz{position:relative;width:100%;max-width:560px;max-height:calc(100vh - 32px);overflow:auto;background:#fff;color:var(--ink);border-radius:20px;padding:28px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.qz-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.qz-step{font-size:14px;font-weight:600;color:var(--gold-ink)}
+.qz-x{width:44px;height:44px;border:0;border-radius:999px;background:transparent;cursor:pointer;color:var(--ink);display:inline-flex;align-items:center;justify-content:center}
+.qz-x:hover{background:var(--sand)}
+.qz-bar{height:6px;border-radius:999px;background:var(--sand);overflow:hidden;margin-bottom:24px}
+.qz-bar span{display:block;height:100%;background:var(--gold);transition:width .25s ease}
+.qz h2{margin:0 0 20px;font-size:26px;line-height:1.2;letter-spacing:-.5px}
+.qz-opts{display:flex;flex-direction:column;gap:10px}
+.qz-opt{display:flex;align-items:center;width:100%;min-height:52px;padding:0 18px;border:1px solid var(--line);border-radius:14px;background:#fff;cursor:pointer;text-align:left;font-family:inherit;font-size:16px;font-weight:500;color:var(--ink);transition:border-color .15s ease,background-color .15s ease}
+.qz-opt:hover{border-color:var(--gold)}
+.qz-opt[aria-pressed="true"]{border-color:var(--gold);background:#FBF3DC;font-weight:600}
+.qz-form{display:flex;flex-direction:column;gap:14px}
+.qz-form label{display:flex;flex-direction:column;gap:6px;font-size:14px;font-weight:600}
+.qz-form input{min-height:48px;padding:0 14px;border:1px solid var(--line);border-radius:12px;font:inherit;font-size:16px;color:var(--ink)}
+.qz-form input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:var(--gold)}
+.qz-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.qz-msg{margin:0;font-size:15px;color:#9A2E1F}
+.qz-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:20px}
+.qz-back{min-height:44px;padding:0 6px;border:0;background:transparent;cursor:pointer;font:inherit;font-weight:600;color:var(--text2)}
+.qz-back:hover{color:var(--ink)}
+.qz-done p{margin:0 0 24px;font-size:17px;color:var(--text2)}
+@media (max-width:560px){.qz-root{align-items:flex-end;padding:0}.qz{border-radius:20px 20px 0 0;max-height:92vh;padding:22px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.card,.tab,.menu-item,.nav-link{transition:none}.btn:hover,.card:hover{transform:none}}
 </style>
 </head>
 <body>
+<div id="quiz" class="qz-root" hidden></div>
 <div id="app"><noscript><p style="padding:24px">Midas Media Marketing — please enable JavaScript to view this site.</p></noscript></div>
 <script>
 var MMM_I18N = {
   en: {
+    aiEyebrow: "AI assistant for business", aiTitle: "Never miss a customer again",
+    aiLead: "Customers message at night, on weekends and during your busiest hour. An AI assistant replies instantly, so leads from your ads don’t go cold.",
+    aiWhyTitle: "Why it matters", aiWhy: [["Instant replies, 24/7", "People who wait for an answer often go to a competitor."], ["Less routine for your team", "Questions about prices, hours and delivery get answered automatically."], ["More value from your ads", "Every lead from a campaign gets a reply in seconds."]],
+    aiCanTitle: "What it will do", aiCan: [["Answers customers", "On your website, Instagram, WhatsApp and Messenger."], ["Takes orders and bookings", "Collects the details and sends them straight to you."], ["Qualifies leads", "Asks the right questions and flags the hottest ones."], ["Follows up", "Reminds customers about appointments and unfinished orders."], ["Speaks their language", "English, Spanish and other languages your customers use."], ["Knows your business", "Trained on your menu, prices and policies."]],
+    aiBtn: "Be the first to know",
+    aiTag: "Coming soon", aiSoon: "AI assistants for business: development and setup tailored to your tasks.",
+    contactDirect: "Or message us directly",
     mEyebrow: "Why advertising matters", mTitle: "A great product no longer sells itself.",
     mP1: "Your customers spend hours on their phones every day — and that’s where they decide where to eat, who to book and what to buy. If you’re not there, they choose whoever they see.",
     mP2: "Word of mouth still works, but it’s too slow when a competitor down the street is already showing ads to your future customers. Today, advertising isn’t an expense — it’s how the right people notice you at the right moment.",
@@ -248,6 +303,13 @@ var MMM_I18N = {
     footer: "Social media advertising for businesses across the US"
   },
   ru: {
+    aiEyebrow: "ИИ-ассистент для бизнеса", aiTitle: "Больше ни одного потерянного клиента",
+    aiLead: "Клиенты пишут ночью, в выходные и в самый загруженный час. ИИ-ассистент отвечает мгновенно, и заявки с рекламы не остывают.",
+    aiWhyTitle: "Зачем он нужен", aiWhy: [["Мгновенные ответы 24/7", "Кто долго ждёт ответа, часто уходит к конкуренту."], ["Меньше рутины для команды", "Вопросы о ценах, графике и доставке закрываются автоматически."], ["Больше отдачи от рекламы", "Каждая заявка с кампании получает ответ за секунды."]],
+    aiCanTitle: "Что он будет уметь", aiCan: [["Отвечать клиентам", "На сайте, в Instagram, WhatsApp и Messenger."], ["Принимать заказы и записи", "Собирает детали и сразу передаёт их вам."], ["Отбирать заявки", "Задаёт нужные вопросы и отмечает самых горячих клиентов."], ["Напоминать", "О записях и незавершённых заказах."], ["Говорить на языке клиента", "Английский, испанский и другие языки ваших клиентов."], ["Знать ваш бизнес", "Обучен на вашем меню, ценах и правилах."]],
+    aiBtn: "Узнать первым",
+    aiTag: "Скоро", aiSoon: "ИИ-ассистенты для бизнеса: разработка и установка под ваши задачи.",
+    contactDirect: "Или напишите нам напрямую",
     mEyebrow: "Зачем бизнесу реклама", mTitle: "Хороший продукт больше не продаёт себя сам.",
     mP1: "Ваши клиенты каждый день проводят часы в телефоне, и именно там они решают, где поужинать, к кому записаться и что купить. Если вас там нет, они выбирают того, кого видят.",
     mP2: "Сарафанное радио по-прежнему работает, но оно слишком медленное, когда конкурент рядом уже показывает рекламу вашим будущим клиентам. Реклама сегодня — это не расход, а способ быть замеченным в нужный момент нужными людьми.",
@@ -349,6 +411,13 @@ var MMM_I18N = {
     footer: "Реклама бизнеса в соцсетях по всей территории США"
   },
   uk: {
+    aiEyebrow: "ШІ-асистент для бізнесу", aiTitle: "Більше жодного втраченого клієнта",
+    aiLead: "Клієнти пишуть уночі, у вихідні та в найзавантаженішу годину. ШІ-асистент відповідає миттєво, і заявки з реклами не холонуть.",
+    aiWhyTitle: "Навіщо він потрібен", aiWhy: [["Миттєві відповіді 24/7", "Хто довго чекає на відповідь, часто йде до конкурента."], ["Менше рутини для команди", "Питання про ціни, графік і доставку закриваються автоматично."], ["Більше віддачі від реклами", "Кожна заявка з кампанії отримує відповідь за секунди."]],
+    aiCanTitle: "Що він умітиме", aiCan: [["Відповідати клієнтам", "На сайті, в Instagram, WhatsApp і Messenger."], ["Приймати замовлення й записи", "Збирає деталі й одразу передає їх вам."], ["Відбирати заявки", "Ставить потрібні запитання й позначає найгарячіших клієнтів."], ["Нагадувати", "Про записи та незавершені замовлення."], ["Говорити мовою клієнта", "Англійська, іспанська та інші мови ваших клієнтів."], ["Знати ваш бізнес", "Навчений на вашому меню, цінах і правилах."]],
+    aiBtn: "Дізнатися першим",
+    aiTag: "Незабаром", aiSoon: "ШІ-асистенти для бізнесу: розробка та встановлення під ваші завдання.",
+    contactDirect: "Або напишіть нам напряму",
     mEyebrow: "Навіщо бізнесу реклама", mTitle: "Хороший продукт більше не продає себе сам.",
     mP1: "Ваші клієнти щодня проводять години в телефоні, і саме там вони вирішують, де повечеряти, до кого записатися і що купити. Якщо вас там немає, вони обирають того, кого бачать.",
     mP2: "Сарафанне радіо досі працює, але воно надто повільне, коли конкурент поруч уже показує рекламу вашим майбутнім клієнтам. Реклама сьогодні — це не витрата, а спосіб бути поміченим у потрібний момент потрібними людьми.",
@@ -450,6 +519,13 @@ var MMM_I18N = {
     footer: "Реклама бізнесу в соцмережах по всіх США"
   },
   es: {
+    aiEyebrow: "Asistente de IA para empresas", aiTitle: "Nunca más pierdas un cliente",
+    aiLead: "Tus clientes escriben de noche, los fines de semana y en tu hora más ocupada. Un asistente de IA responde al instante, para que los clientes potenciales de tus anuncios no se enfríen.",
+    aiWhyTitle: "Por qué lo necesitas", aiWhy: [["Respuestas al instante, 24/7", "Quien espera una respuesta suele irse con la competencia."], ["Menos rutina para tu equipo", "Las preguntas sobre precios, horarios y envíos se responden solas."], ["Más resultados de tus anuncios", "Cada cliente potencial recibe respuesta en segundos."]],
+    aiCanTitle: "Qué podrá hacer", aiCan: [["Responder a clientes", "En tu sitio web, Instagram, WhatsApp y Messenger."], ["Tomar pedidos y reservas", "Reúne los datos y te los envía al momento."], ["Calificar clientes potenciales", "Hace las preguntas correctas y marca a los más interesados."], ["Hacer seguimiento", "Recuerda citas y pedidos sin terminar."], ["Hablar su idioma", "Inglés, español y otros idiomas de tus clientes."], ["Conocer tu negocio", "Entrenado con tu menú, precios y políticas."]],
+    aiBtn: "Quiero saberlo primero",
+    aiTag: "Próximamente", aiSoon: "Asistentes de IA para empresas: desarrollo e instalación a la medida de tus necesidades.",
+    contactDirect: "O escríbenos directamente",
     mEyebrow: "Por qué tu negocio necesita publicidad", mTitle: "Un buen producto ya no se vende solo.",
     mP1: "Tus clientes pasan horas al día en el teléfono, y es ahí donde deciden dónde cenar, con quién reservar y qué comprar. Si no estás ahí, eligen a quien sí ven.",
     mP2: "El boca a boca sigue funcionando, pero es demasiado lento cuando un competidor cercano ya les muestra anuncios a tus futuros clientes. Hoy, la publicidad no es un gasto: es la forma de que te noten las personas correctas en el momento correcto.",
@@ -560,6 +636,12 @@ var MMM_I18N = {
     { code: 'uk', label: 'UA', name: 'Українська' },
     { code: 'es', label: 'ES', name: 'Español' }
   ];
+  // Contact buttons: leave '' to hide a button
+  var CONTACT = {
+    email: 'prokhorenko1098@gmail.com',
+    whatsapp: '380939473539',   // digits only with country code
+    telegram: 'VladProxor'    // username without @
+  };
   var NETS = ['meta', 'google', 'tiktok', 'reddit'];
   var NET_NAMES = { meta: 'Meta', google: 'Google', tiktok: 'TikTok', reddit: 'Reddit' };
   var lang = 'en';
@@ -610,23 +692,42 @@ var MMM_I18N = {
       '</nav></div></header>';
   }
 
+  var HERO_ART = '<svg role="img" aria-label="Laptop with an ads dashboard and a phone showing an example Instagram ad" viewBox="0 0 640 520" class="hero-svg"><defs><radialGradient id="heroGlow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#E2B33C" stop-opacity="0.28"></stop><stop offset="100%" stop-color="#E2B33C" stop-opacity="0"></stop></radialGradient></defs><ellipse cx="330" cy="260" rx="320" ry="240" fill="url(#heroGlow)"></ellipse><rect x="30" y="60" width="470" height="300" rx="16" fill="#1C1C1A" stroke="#3A3936" stroke-width="2"></rect><rect x="46" y="76" width="438" height="268" rx="6" fill="#F4F5F7"></rect><rect x="46" y="76" width="438" height="26" fill="#FFFFFF"></rect><circle cx="62" cy="89" r="6" fill="#E2B33C"></circle><rect x="76" y="85" width="70" height="8" rx="4" fill="#D5D9E0"></rect><rect x="46" y="102" width="64" height="242" fill="#ECEEF2"></rect><rect x="58" y="118" width="40" height="7" rx="3.5" fill="#C9CED8"></rect><rect x="58" y="136" width="34" height="7" rx="3.5" fill="#C9CED8"></rect><rect x="58" y="154" width="40" height="7" rx="3.5" fill="#E2B33C"></rect><rect x="58" y="172" width="30" height="7" rx="3.5" fill="#C9CED8"></rect><rect x="124" y="116" width="110" height="52" rx="8" fill="#FFFFFF"></rect><rect x="134" y="128" width="46" height="6" rx="3" fill="#C9CED8"></rect><rect x="134" y="144" width="72" height="12" rx="4" fill="#111111"></rect><rect x="244" y="116" width="110" height="52" rx="8" fill="#FFFFFF"></rect><rect x="254" y="128" width="52" height="6" rx="3" fill="#C9CED8"></rect><rect x="254" y="144" width="60" height="12" rx="4" fill="#111111"></rect><rect x="364" y="116" width="108" height="52" rx="8" fill="#FFFFFF"></rect><rect x="374" y="128" width="40" height="6" rx="3" fill="#C9CED8"></rect><rect x="374" y="144" width="66" height="12" rx="4" fill="#E2B33C"></rect><rect x="124" y="178" width="348" height="154" rx="8" fill="#FFFFFF"></rect><line x1="140" y1="300" x2="456" y2="300" stroke="#ECEEF2" stroke-width="2"></line><line x1="140" y1="260" x2="456" y2="260" stroke="#ECEEF2" stroke-width="2"></line><line x1="140" y1="220" x2="456" y2="220" stroke="#ECEEF2" stroke-width="2"></line><path d="M140 300 L180 292 L220 296 L260 274 L300 268 L340 246 L380 236 L420 214 L456 200 L456 316 L140 316 Z" fill="#E2B33C" fill-opacity="0.14"></path><polyline points="140,300 180,292 220,296 260,274 300,268 340,246 380,236 420,214 456,200" fill="none" stroke="#E2B33C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></polyline><circle cx="456" cy="200" r="6" fill="#E2B33C" stroke="#FFFFFF" stroke-width="3"></circle><path d="M0 360 H530 L512 384 Q508 390 500 390 H30 Q22 390 18 384 Z" fill="#2A2A28"></path><rect x="220" y="360" width="90" height="8" rx="4" fill="#3A3936"></rect><g transform="translate(440 150)"><rect width="180" height="350" rx="30" fill="#0B0B0A" stroke="#3A3936" stroke-width="2"></rect><rect x="9" y="9" width="162" height="332" rx="23" fill="#FFFFFF"></rect><rect x="66" y="16" width="48" height="10" rx="5" fill="#0B0B0A"></rect><circle cx="28" cy="48" r="10" fill="#F4C9B0"></circle><text x="44" y="46" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="600" fill="#111111">sweetcorner.bakery</text><text x="44" y="57" font-family="Inter, Arial, sans-serif" font-size="8" fill="#6B7280">Sponsored</text><rect x="9" y="68" width="162" height="150" fill="#F7DCC8"></rect><circle cx="140" cy="96" r="36" fill="#F2C7A8"></circle><rect x="44" y="160" width="92" height="32" rx="6" fill="#8A4B2E"></rect><rect x="52" y="132" width="76" height="30" rx="6" fill="#B9683F"></rect><rect x="62" y="108" width="56" height="26" rx="6" fill="#FBEFE6"></rect><path d="M62 120 q6 7 11 0 q6 7 11 0 q6 7 11 0 q6 7 11 0 q6 7 11 0" fill="none" stroke="#E2B33C" stroke-width="3"></path><circle cx="90" cy="102" r="6" fill="#C2263B"></circle><rect x="9" y="218" width="162" height="28" fill="#EEF2FF"></rect><text x="20" y="236" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="600" fill="#1D3FD8">Order now</text><text x="156" y="236" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="600" fill="#1D3FD8">›</text><rect x="20" y="258" width="120" height="7" rx="3.5" fill="#D5D9E0"></rect><rect x="20" y="272" width="138" height="7" rx="3.5" fill="#E4E6EB"></rect><rect x="20" y="286" width="96" height="7" rx="3.5" fill="#E4E6EB"></rect></g></svg>';
+  function aiSection(t) {
+    var why = t.aiWhy.map(function (x, i) {
+      return '<li class="ai-why-item"><span class="ai-num">0' + (i + 1) + '</span><div><h4>' + esc(x[0]) + '</h4><p>' + esc(x[1]) + '</p></div></li>';
+    }).join('');
+    var can = t.aiCan.map(function (x) {
+      return '<div class="ai-card card"><h4>' + esc(x[0]) + '</h4><p>' + esc(x[1]) + '</p></div>';
+    }).join('');
+    return '<section id="ai-assistant" class="sec"><div class="wrap">' +
+      '<div class="head"><div class="ai-eyebrow"><span class="soon-tag">' + esc(t.aiTag) + '</span><p class="eyebrow">' + esc(t.aiEyebrow) + '</p></div>' +
+      '<h2 class="h2">' + esc(t.aiTitle) + '</h2><p class="lead">' + esc(t.aiLead) + '</p></div>' +
+      '<div class="ai-grid">' +
+      '<div class="ai-col"><h3 class="ai-sub">' + esc(t.aiWhyTitle) + '</h3><ol class="ai-why">' + why + '</ol></div>' +
+      '<div class="ai-col"><h3 class="ai-sub">' + esc(t.aiCanTitle) + '</h3><div class="ai-cards">' + can + '</div></div>' +
+      '</div>' +
+      '<div class="ai-cta"><a class="btn btn-dark" href="#contact" data-scroll="contact">' + esc(t.aiBtn) + '</a></div>' +
+      '</div></section>';
+  }
   function home(t) {
     var svc = t.services.map(function (x) {
       return '<div class="svc card"><span class="n">' + esc(x.n) + '</span><h3>' + esc(x.title) + '</h3><p>' + esc(x.text) + '</p></div>';
     }).join('');
-    return '<section id="top" class="hero dark"><div class="wrap hero-in">' +
+    return '<section id="top" class="hero dark"><div class="wrap hero-in"><div class="hero-text">' +
       '<p class="eyebrow">' + esc(t.eyebrow) + '</p>' +
       '<h1>' + esc(t.heroA) + '<span class="gold">' + esc(t.heroB) + '</span></h1>' +
       '<p class="hero-sub">' + esc(t.heroSub) + '</p>' +
-      '<div class="row"><a class="btn btn-gold" href="#contact" data-scroll="contact">' + esc(t.cta1) + '</a><a class="btn btn-ghost" href="#/pricing" data-go="pricing">' + esc(t.cta2) + '</a></div>' +
+      '<div class="row"><a class="btn btn-gold" href="#contact" data-quiz="1">' + esc(t.cta1) + '</a><a class="btn btn-ghost" href="#/pricing" data-go="pricing">' + esc(t.cta2) + '</a></div>' +
       '<div class="trust">' + t.trust.map(function (x) { return '<span>' + esc(x) + '</span>'; }).join('') + '</div>' +
-      '</div></section>' +
+      '</div><div class="hero-art">' + HERO_ART + '</div></div></section>' +
       '<section id="services" class="sec"><div class="wrap"><div class="head"><p class="eyebrow">' + esc(t.servicesEyebrow) + '</p><h2 class="h2">' + esc(t.servicesTitle) + '</h2></div><div class="grid">' + svc + '</div></div></section>' +
       '<section id="why" class="sec sand"><div class="wrap"><div class="why">' +
       '<p class="eyebrow">' + esc(t.mEyebrow) + '</p><h2>' + esc(t.mTitle) + '</h2>' +
       '<p>' + esc(t.mP1) + '</p><p>' + esc(t.mP2) + '</p><p class="strong">' + esc(t.mP3) + '</p>' +
-      '<div><a class="btn btn-dark" href="#contact" data-scroll="contact">' + esc(t.cta1) + '</a></div>' +
-      '</div></div></section>';
+      '<p class="why-cta">' + esc(t.contactA) + esc(t.contactB) + '</p>' +
+      '<div><a class="btn btn-dark" href="#contact" data-quiz="1">' + esc(t.cta1) + '</a></div>' +
+      '</div></div></section>' + aiSection(t);
   }
 
   function platforms(t, net) {
@@ -657,7 +758,7 @@ var MMM_I18N = {
       '<div class="price-card dark card"><h3>' + esc(t.mgmtTitle) + '</h3><span class="pill">' + esc(t.discountBadge) + '</span><div class="price-row"><span class="old">' + esc(t.mgmtOld) + '</span><p class="price gold">' + esc(t.mgmtPrice) + '</p></div><p class="desc">' + esc(t.mgmtText) + '</p></div>' +
       '</div>' +
       '<p class="note">' + esc(t.tiersNote) + '</p>' +
-      '<div class="offer"><div><h3>' + esc(t.offerTitle) + '</h3><p>' + esc(t.offerText) + '</p></div><a class="btn btn-dark" style="min-height:48px" href="#contact" data-scroll="contact">' + esc(t.offerBtn) + '</a></div>' +
+      '<div class="offer"><div><h3>' + esc(t.offerTitle) + '</h3><p>' + esc(t.offerText) + '</p></div><a class="btn btn-dark" style="min-height:48px" href="#contact" data-quiz="1">' + esc(t.offerBtn) + '</a></div>' +
       '<div class="addons"><div style="max-width:720px"><h3 class="t">' + esc(t.addonsTitle) + '</h3><p class="lead" style="font-size:17px;margin-top:8px">' + esc(t.addonsSub) + '</p></div><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">' + addons + '</div></div>' +
       '</div></section>' +
       '<section class="sec" style="padding-top:0"><div class="wrap"><h2 class="h2" style="font-size:clamp(28px,3.5vw,40px);margin-bottom:32px">' + esc(t.faqTitle) + '</h2><div class="faq">' + faq + '</div></div></section>';
@@ -668,16 +769,33 @@ var MMM_I18N = {
     return '<section id="careers" class="sec sand"><div class="wrap">' +
       '<div class="head"><p class="eyebrow">' + esc(t.careersEyebrow) + '</p><h1 class="h2">' + esc(t.careersTitle) + '</h1><p class="lead">' + esc(t.careersSub) + '</p></div>' +
       '<div class="grid">' + roles + '</div>' +
-      '<div class="apply"><p>' + esc(t.applyText) + '</p><a class="btn btn-gold" style="min-height:48px" href="mailto:[YOUR EMAIL]">' + esc(t.applyBtn) + ' · [YOUR EMAIL]</a></div>' +
+      '<div class="apply"><p>' + esc(t.applyText) + '</p><a class="btn btn-gold" style="min-height:48px" href="mailto:' + esc(CONTACT.email) + '?subject=' + encodeURIComponent('Job application — Midas Media Marketing') + '">' + esc(t.applyBtn) + '</a></div>' +
       '</div></section>';
   }
 
-  function contact(t) {
+  var ICON_MAIL = '<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>';
+  var ICON_CHAT = '<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"/></svg>';
+  var ICON_SEND = '<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L10 14"/><path d="M21 3l-7 18-4-7-7-4 18-7z"/></svg>';
+  function contactLinks() {
+    var out = [];
+    if (CONTACT.email) out.push('<a class="btn btn-contact" href="mailto:' + esc(CONTACT.email) + '?subject=' + encodeURIComponent('Midas Media Marketing') + '">' + ICON_MAIL + '<span>Gmail</span></a>');
+    if (CONTACT.whatsapp) out.push('<a class="btn btn-contact" href="https://wa.me/' + esc(CONTACT.whatsapp) + '" target="_blank" rel="noopener">' + ICON_CHAT + '<span>WhatsApp</span></a>');
+    if (CONTACT.telegram) out.push('<a class="btn btn-contact" href="https://t.me/' + esc(CONTACT.telegram) + '" target="_blank" rel="noopener">' + ICON_SEND + '<span>Telegram</span></a>');
+    return out.join('');
+  }
+  function contact(t, compact) {
+    var links = contactLinks();
+    if (compact) {
+      return '<section id="contact" class="dark contact contact-compact"><div class="wrap">' +
+        (links ? '<div class="contact-direct"><p class="small">' + esc(t.contactDirect) + '</p><div class="contact-links">' + links + '</div></div>' : '') +
+        '</div></section>' +
+        '<footer class="site-footer"><div class="wrap"><span>© 2026 Midas Media Marketing</span><span>' + esc(t.footer) + '</span></div></footer>';
+    }
     return '<section id="contact" class="sec dark contact"><div class="wrap contact-in">' +
       '<h2>' + esc(t.contactA) + '<span class="gold">' + esc(t.contactB) + '</span></h2>' +
       '<p>' + esc(t.contactText) + '</p>' +
-      '<div class="row"><a class="btn btn-gold" href="[CALENDLY LINK]">' + esc(t.book) + '</a><a class="btn btn-ghost" href="mailto:[YOUR EMAIL]">[YOUR EMAIL]</a></div>' +
-      '<p class="small">WhatsApp / Telegram: [YOUR NUMBER]</p>' +
+      '<div class="row"><a class="btn btn-gold" href="#contact" data-quiz="1">' + esc(t.cta1) + '</a></div>' +
+      (links ? '<div class="contact-direct"><p class="small">' + esc(t.contactDirect) + '</p><div class="contact-links">' + links + '</div></div>' : '') +
       '</div></section>' +
       '<footer class="site-footer"><div class="wrap"><span>© 2026 Midas Media Marketing</span><span>' + esc(t.footer) + '</span></div></footer>';
   }
@@ -686,7 +804,7 @@ var MMM_I18N = {
     var t = T();
     var r = route();
     var body = r.page === 'platforms' ? platforms(t, r.net) : r.page === 'pricing' ? pricing(t) : r.page === 'careers' ? careers(t) : home(t);
-    app.innerHTML = header(t) + '<main>' + body + '</main>' + contact(t);
+    app.innerHTML = header(t) + '<main>' + body + '</main>' + contact(t, r.page === 'home');
     document.documentElement.lang = lang;
     var titles = { home: t.eyebrow, platforms: t.navPlatforms, pricing: t.navPricing, careers: t.navCareers };
     document.title = 'Midas Media Marketing — ' + titles[r.page];
@@ -698,6 +816,7 @@ var MMM_I18N = {
       window.scrollTo(0, 0);
     }
     lastRoute = key;
+    if (qz.open) renderQuiz();
   }
 
   function closeMenus() {
@@ -705,8 +824,150 @@ var MMM_I18N = {
     document.querySelectorAll('.dd-btn').forEach(function (b) { b.setAttribute('aria-expanded', 'false'); });
   }
 
+  // ---------- Audit quiz ----------
+  // Paste your Cloudflare Worker address here after setup:
+  var QUIZ_ENDPOINT = 'https://midas-quiz.prokhorenko1098.workers.dev';
+  var QUIZ = {
+    en: { title: 'Free ad audit', step: 'Step {n} of {t}', back: 'Back', close: 'Close',
+      q: [
+        ['What kind of business do you have?', ['Local services', 'Online store', 'Restaurant or café', 'Beauty or clinic', 'Other']],
+        ['What’s your main goal?', ['More orders and sales', 'More leads and bookings', 'Brand awareness']],
+        ['What’s your monthly ad budget?', ['Under $1,000', '$1,000–3,000', '$3,000–10,000', 'Over $10,000', 'Not sure yet']],
+        ['Are you running ads right now?', ['Yes, I run them myself', 'Yes, with an agency or freelancer', 'Not yet']]
+      ],
+      formTitle: 'Where should we send your audit?', name: 'Your name', site: 'Website or Instagram', contact: 'Email or phone',
+      submit: 'Get my free audit', sending: 'Sending…', required: 'Please add your name and a way to reach you.',
+      error: 'Something went wrong. Please try again or email us at prokhorenko1098@gmail.com.',
+      doneTitle: 'Thank you! Your request is in.', doneText: 'We’ll review your business and get back to you within 1–2 business days.' },
+    ru: { title: 'Бесплатный аудит рекламы', step: 'Шаг {n} из {t}', back: 'Назад', close: 'Закрыть',
+      q: [
+        ['Какой у вас бизнес?', ['Местные услуги', 'Интернет-магазин', 'Ресторан или кафе', 'Красота или клиника', 'Другое']],
+        ['Какая главная цель?', ['Больше заказов и продаж', 'Больше заявок и записей', 'Узнаваемость бренда']],
+        ['Какой рекламный бюджет в месяц?', ['До $1,000', '$1,000–3,000', '$3,000–10,000', 'Больше $10,000', 'Пока не знаю']],
+        ['Вы сейчас запускаете рекламу?', ['Да, веду сам', 'Да, с агентством или фрилансером', 'Пока нет']]
+      ],
+      formTitle: 'Куда отправить результаты аудита?', name: 'Ваше имя', site: 'Сайт или Instagram', contact: 'Email или телефон',
+      submit: 'Получить бесплатный аудит', sending: 'Отправляем…', required: 'Укажите имя и контакт для связи.',
+      error: 'Не удалось отправить. Попробуйте ещё раз или напишите нам на prokhorenko1098@gmail.com.',
+      doneTitle: 'Спасибо! Заявка получена.', doneText: 'Мы изучим ваш бизнес и свяжемся с вами в течение 1–2 рабочих дней.' },
+    uk: { title: 'Безкоштовний аудит реклами', step: 'Крок {n} з {t}', back: 'Назад', close: 'Закрити',
+      q: [
+        ['Який у вас бізнес?', ['Місцеві послуги', 'Інтернет-магазин', 'Ресторан або кафе', 'Краса або клініка', 'Інше']],
+        ['Яка головна мета?', ['Більше замовлень і продажів', 'Більше заявок і записів', 'Впізнаваність бренду']],
+        ['Який рекламний бюджет на місяць?', ['До $1,000', '$1,000–3,000', '$3,000–10,000', 'Понад $10,000', 'Поки не знаю']],
+        ['Ви зараз запускаєте рекламу?', ['Так, веду сам', 'Так, з агенцією або фрилансером', 'Поки ні']]
+      ],
+      formTitle: 'Куди надіслати результати аудиту?', name: 'Ваше ім’я', site: 'Сайт або Instagram', contact: 'Email або телефон',
+      submit: 'Отримати безкоштовний аудит', sending: 'Надсилаємо…', required: 'Вкажіть ім’я та контакт для зв’язку.',
+      error: 'Не вдалося надіслати. Спробуйте ще раз або напишіть нам на prokhorenko1098@gmail.com.',
+      doneTitle: 'Дякуємо! Заявку отримано.', doneText: 'Ми вивчимо ваш бізнес і зв’яжемося з вами протягом 1–2 робочих днів.' },
+    es: { title: 'Auditoría gratis de anuncios', step: 'Paso {n} de {t}', back: 'Atrás', close: 'Cerrar',
+      q: [
+        ['¿Qué tipo de negocio tienes?', ['Servicios locales', 'Tienda en línea', 'Restaurante o cafetería', 'Belleza o clínica', 'Otro']],
+        ['¿Cuál es tu objetivo principal?', ['Más pedidos y ventas', 'Más clientes potenciales y reservas', 'Reconocimiento de marca']],
+        ['¿Cuál es tu presupuesto mensual de anuncios?', ['Menos de $1,000', '$1,000–3,000', '$3,000–10,000', 'Más de $10,000', 'Aún no lo sé']],
+        ['¿Estás publicando anuncios ahora?', ['Sí, los gestiono yo', 'Sí, con una agencia o freelancer', 'Todavía no']]
+      ],
+      formTitle: '¿Dónde te enviamos la auditoría?', name: 'Tu nombre', site: 'Sitio web o Instagram', contact: 'Email o teléfono',
+      submit: 'Obtener mi auditoría gratis', sending: 'Enviando…', required: 'Indica tu nombre y un contacto.',
+      error: 'No se pudo enviar. Inténtalo de nuevo o escríbenos a prokhorenko1098@gmail.com.',
+      doneTitle: '¡Gracias! Recibimos tu solicitud.', doneText: 'Revisaremos tu negocio y te contactaremos en 1–2 días hábiles.' }
+  };
+  var LANG_NAMES = { en: 'English', ru: 'Русский', uk: 'Українська', es: 'Español' };
+  var qz = { open: false, step: 0, answers: [], form: { name: '', site: '', contact: '', website: '' }, status: '', lastFocus: null };
+  var qroot = document.getElementById('quiz');
+  var XICON = '<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+
+  function renderQuiz() {
+    if (!qz.open) { qroot.hidden = true; qroot.innerHTML = ''; return; }
+    var Q = QUIZ[lang] || QUIZ.en;
+    var total = Q.q.length + 1;
+    var body;
+    if (qz.status === 'done') {
+      body = '<div class="qz-done"><h2 id="qz-title">' + esc(Q.doneTitle) + '</h2><p>' + esc(Q.doneText) + '</p><button type="button" class="btn btn-dark" data-qz-close>' + esc(Q.close) + '</button></div>';
+    } else {
+      var n = qz.step + 1;
+      var head = '<div class="qz-top"><span class="qz-step">' + esc(Q.step.replace('{n}', n).replace('{t}', total)) + '</span><button type="button" class="qz-x" data-qz-close aria-label="' + esc(Q.close) + '">' + XICON + '</button></div>' +
+        '<div class="qz-bar" aria-hidden="true"><span style="width:' + Math.round(n / total * 100) + '%"></span></div>';
+      var main;
+      if (qz.step < Q.q.length) {
+        var item = Q.q[qz.step];
+        main = '<h2 id="qz-title">' + esc(item[0]) + '</h2><div class="qz-opts">' + item[1].map(function (o, i) {
+          return '<button type="button" class="qz-opt" data-qz-opt="' + i + '" aria-pressed="' + (qz.answers[qz.step] === i) + '">' + esc(o) + '</button>';
+        }).join('') + '</div>';
+      } else {
+        var sending = qz.status === 'sending';
+        var msg = qz.status === 'required' ? Q.required : qz.status === 'error' ? Q.error : '';
+        main = '<h2 id="qz-title">' + esc(Q.formTitle) + '</h2><form class="qz-form" novalidate>' +
+          '<label>' + esc(Q.name) + '<input name="name" autocomplete="name" maxlength="120" value="' + esc(qz.form.name) + '" required></label>' +
+          '<label>' + esc(Q.site) + '<input name="site" autocomplete="url" maxlength="200" value="' + esc(qz.form.site) + '"></label>' +
+          '<label>' + esc(Q.contact) + '<input name="contact" autocomplete="email" maxlength="160" value="' + esc(qz.form.contact) + '" required></label>' +
+          '<div class="qz-hp" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off" value=""></div>' +
+          (msg ? '<p class="qz-msg" role="alert">' + esc(msg) + '</p>' : '') +
+          '<button type="submit" class="btn btn-gold"' + (sending ? ' disabled' : '') + '>' + esc(sending ? Q.sending : Q.submit) + '</button>' +
+          '</form>';
+      }
+      var foot = qz.step > 0 ? '<div class="qz-foot"><button type="button" class="qz-back" data-qz-back>← ' + esc(Q.back) + '</button></div>' : '';
+      body = head + main + foot;
+    }
+    qroot.innerHTML = '<div class="qz-backdrop" data-qz-close></div><div class="qz" role="dialog" aria-modal="true" aria-labelledby="qz-title">' + body + '</div>';
+    qroot.hidden = false;
+    var first = qroot.querySelector('.qz-opt[aria-pressed="true"]') || qroot.querySelector('.qz-opt, .qz-form input, .qz-done .btn');
+    if (first && qz.status !== 'sending') first.focus();
+  }
+  function openQuiz() {
+    qz.open = true; qz.step = 0; qz.answers = []; qz.status = ''; qz.form = { name: '', site: '', contact: '', website: '' };
+    qz.lastFocus = document.activeElement;
+    document.body.style.overflow = 'hidden';
+    renderQuiz();
+  }
+  function closeQuiz() {
+    qz.open = false; document.body.style.overflow = '';
+    renderQuiz();
+    if (qz.lastFocus && qz.lastFocus.focus) qz.lastFocus.focus();
+  }
+  function submitQuiz() {
+    var f = qz.form;
+    if (!f.name.trim() || !f.contact.trim()) { qz.status = 'required'; renderQuiz(); return; }
+    if (f.website) { qz.status = 'done'; renderQuiz(); return; }
+    var R = QUIZ.ru.q;
+    var payload = {
+      lang: LANG_NAMES[lang] || lang,
+      business: R[0][1][qz.answers[0]] || '',
+      goal: R[1][1][qz.answers[1]] || '',
+      budget: R[2][1][qz.answers[2]] || '',
+      current: R[3][1][qz.answers[3]] || '',
+      name: f.name.trim(), site: f.site.trim(), contact: f.contact.trim(), website: f.website
+    };
+    qz.status = 'sending'; renderQuiz();
+    fetch(QUIZ_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); qz.status = 'done'; renderQuiz(); })
+      .catch(function () { qz.status = 'error'; renderQuiz(); });
+  }
+  qroot.addEventListener('click', function (e) {
+    var el;
+    if ((el = e.target.closest('[data-qz-close]'))) { closeQuiz(); return; }
+    if ((el = e.target.closest('[data-qz-back]'))) { qz.step = Math.max(0, qz.step - 1); qz.status = ''; renderQuiz(); return; }
+    if ((el = e.target.closest('[data-qz-opt]'))) { qz.answers[qz.step] = +el.getAttribute('data-qz-opt'); qz.step += 1; renderQuiz(); return; }
+  });
+  qroot.addEventListener('input', function (e) { if (e.target.name && e.target.name in qz.form) qz.form[e.target.name] = e.target.value; });
+  qroot.addEventListener('submit', function (e) { e.preventDefault(); submitQuiz(); });
+  document.addEventListener('keydown', function (e) {
+    if (!qz.open) return;
+    if (e.key === 'Escape') { closeQuiz(); return; }
+    if (e.key === 'Tab') {
+      var f = qroot.querySelectorAll('button:not([disabled]), input:not([tabindex="-1"])');
+      if (!f.length) return;
+      var a = f[0], z = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); }
+      else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); }
+    }
+  });
+
   document.addEventListener('click', function (e) {
     var el;
+    if (e.target.closest('#quiz')) return;
+    if ((el = e.target.closest('[data-quiz]'))) { e.preventDefault(); closeMenus(); openQuiz(); return; }
     if ((el = e.target.closest('[data-lang]'))) {
       lang = el.getAttribute('data-lang');
       try { localStorage.setItem(STORE, lang); } catch (err) {}
