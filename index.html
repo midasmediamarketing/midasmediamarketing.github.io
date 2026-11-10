@@ -247,6 +247,18 @@ a{color:inherit}
 .qz-consent a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.card,.tab,.menu-item,.nav-link{transition:none}.btn:hover,.card:hover{transform:none}}
 </style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2588021588308720');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=2588021588308720&ev=PageView&noscript=1"></noscript>
+<!-- End Meta Pixel -->
 </head>
 <body>
 <div id="quiz" class="qz-root" hidden></div>
@@ -703,6 +715,10 @@ var MMM_I18N = {
     { code: 'uk', label: 'UA', name: 'Українська' },
     { code: 'es', label: 'ES', name: 'Español' }
   ];
+  // Meta Pixel helper
+  function track(ev, params, custom) {
+    try { if (window.fbq) window.fbq(custom ? 'trackCustom' : 'track', ev, params || {}); } catch (e) {}
+  }
   // Contact buttons: leave '' to hide a button
   var CONTACT = {
     email: 'prokhorenko1098@gmail.com',
@@ -1015,6 +1031,8 @@ var MMM_I18N = {
     } else if (key.split('/')[0] !== lastRoute.split('/')[0]) {
       window.scrollTo(0, 0);
     }
+    if (lastRoute && key !== lastRoute) track('PageView');
+    if (key !== lastRoute && (r.page === 'pricing' || r.page === 'platforms')) track('ViewContent', { content_name: r.page === 'pricing' ? 'Pricing' : 'Platforms: ' + r.net });
     lastRoute = key;
     applyMM();
     if (qz.open) renderQuiz();
@@ -1123,6 +1141,7 @@ var MMM_I18N = {
     if (first && qz.status !== 'sending') first.focus();
   }
   function openQuiz() {
+    track('QuizStart', {}, true);
     qz.open = true; qz.step = 0; qz.answers = []; qz.status = ''; qz.form = { name: '', site: '', contact: '', website: '' };
     qz.lastFocus = document.activeElement;
     document.body.style.overflow = 'hidden';
@@ -1148,7 +1167,7 @@ var MMM_I18N = {
     };
     qz.status = 'sending'; renderQuiz();
     fetch(QUIZ_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
-      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); qz.status = 'done'; renderQuiz(); })
+      .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); qz.status = 'done'; track('Lead', { content_name: 'Free ad audit', content_category: payload.budget }); renderQuiz(); })
       .catch(function () { qz.status = 'error'; renderQuiz(); });
   }
   qroot.addEventListener('click', function (e) {
@@ -1175,6 +1194,7 @@ var MMM_I18N = {
   document.addEventListener('click', function (e) {
     var el;
     if (e.target.closest('#quiz')) return;
+    if ((el = e.target.closest('.btn-contact'))) { track('Contact', { content_name: (el.textContent || '').trim() }); }
     if ((el = e.target.closest('[data-mm-toggle]'))) { setMM(!mmOpen); return; }
     if ((el = e.target.closest('[data-quiz]'))) { e.preventDefault(); closeMenus(); if (mmOpen) setMM(false); openQuiz(); return; }
     if ((el = e.target.closest('[data-lang]'))) {
