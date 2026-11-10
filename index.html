@@ -247,6 +247,14 @@ a{color:inherit}
 .qz-consent a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.card,.tab,.menu-item,.nav-link{transition:none}.btn:hover,.card:hover{transform:none}}
 </style>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HR2FWKZM0K"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-HR2FWKZM0K');
+</script>
 <!-- Meta Pixel -->
 <script>
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -716,8 +724,10 @@ var MMM_I18N = {
     { code: 'es', label: 'ES', name: 'Español' }
   ];
   // Meta Pixel helper
+  var GA_EVENTS = { Lead: 'generate_lead', QuizStart: 'quiz_start', Contact: 'contact_click', ViewContent: 'view_content' };
   function track(ev, params, custom) {
     try { if (window.fbq) window.fbq(custom ? 'trackCustom' : 'track', ev, params || {}); } catch (e) {}
+    try { if (window.gtag && GA_EVENTS[ev]) window.gtag('event', GA_EVENTS[ev], params || {}); } catch (e) {}
   }
   // Contact buttons: leave '' to hide a button
   var CONTACT = {
@@ -752,7 +762,7 @@ var MMM_I18N = {
         ['Information we collect', [
           'Information you give us: when you complete our free audit form, we collect your name, your website or Instagram, your email or phone number, and your answers about your business type, goals, monthly ad budget and current advertising. When you email or message us on WhatsApp or Telegram, we receive the information you choose to send.',
           'Information collected automatically: like most websites, our hosting and service providers may log technical data such as your IP address, browser type, device and pages visited. Your language choice is saved in your browser’s local storage so the Site remembers it.',
-          'Advertising and analytics tools: we use or may use the Meta Pixel and similar analytics tools to understand how visitors use the Site and to measure and improve our advertising. These tools may use cookies or similar technologies and collect information about your activity on the Site.'
+          'Advertising and analytics tools: we use Google Analytics, the Meta Pixel and similar tools to understand how visitors use the Site and to measure and improve our advertising. These tools may use cookies or similar technologies and collect information about your activity on the Site, such as pages viewed, clicks, device and approximate location.'
         ]],
         ['How we use information', [
           'To respond to your request and prepare your free ad audit or proposal.',
@@ -761,12 +771,12 @@ var MMM_I18N = {
           'To measure and improve our own advertising, including showing ads to people who visited the Site.'
         ]],
         ['How we share information', [
-          'We do not sell your personal information. We share information only with service providers that help us run our business, such as GitHub (website hosting), Cloudflare (form processing), Telegram (receiving form requests), Google (email and fonts) and Meta (advertising measurement). These providers process information under their own privacy policies.',
+          'We do not sell your personal information. We share information only with service providers that help us run our business, such as GitHub (website hosting), Cloudflare (form processing), Telegram (receiving form requests), Google (analytics, email and fonts) and Meta (advertising measurement). These providers process information under their own privacy policies.',
           'We may also disclose information if required by law or to protect our rights.'
         ]],
         ['Your choices', [
           'You can ask us to access, correct or delete the personal information you have sent us by emailing us.',
-          'You can control cookies in your browser settings, and manage how Meta uses data for ads in your Facebook or Instagram ad preferences. You can also learn about opting out of interest-based advertising at optout.aboutads.info.'
+          'You can control cookies in your browser settings, and manage how Meta uses data for ads in your Facebook or Instagram ad preferences. You can opt out of Google Analytics with the Google Analytics Opt-out Browser Add-on, and learn about opting out of interest-based advertising at optout.aboutads.info.'
         ]],
         ['Data retention and security', [
           'We keep form requests and messages only as long as needed to respond to you and to provide our services, or as required by law. We use reasonable measures to protect information, but no method of transmission or storage is completely secure.'
