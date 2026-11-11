@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#111111">
 <meta name="color-scheme" content="light">
-<title>Midas Media Marketing — Social media advertising for business</title>
-<meta name="description" content="Midas Media Marketing plans, launches and manages social media ad campaigns that bring businesses real orders, leads and sales.">
+<title>Midas Media Marketing — Facebook &amp; Instagram Ads for US Businesses</title>
+<meta name="description" content="More customers and sales from Facebook &amp; Instagram ads. We plan, launch and manage ad campaigns for US businesses and mobile apps. Get a free growth plan.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Midas Media Marketing">
-<meta property="og:title" content="Midas Media Marketing — Turning business into gold">
-<meta property="og:description" content="More sales, orders and calls from social media ads. Get a free growth plan.">
+<meta property="og:title" content="Midas Media Marketing — Facebook &amp; Instagram Ads for US Businesses">
+<meta property="og:description" content="More customers and sales from Facebook &amp; Instagram ads. We plan, launch and manage ad campaigns for US businesses and mobile apps. Get a free growth plan.">
 <meta property="og:url" content="https://midasmediamarketing.github.io/">
 <meta property="og:image" content="https://midasmediamarketing.github.io/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -246,13 +246,50 @@ a{color:inherit}
 .footer-links a:hover{color:var(--gold)}
 .qz-consent{margin:0;font-size:13px;color:var(--text2);text-align:center}
 .qz-consent a{color:var(--ink);text-decoration:underline;text-underline-offset:2px}
+
+.pkgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-bottom:24px}
+.pkg{padding:32px;border-radius:20px;border:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.pkg.dark{border-color:var(--ink)}
+.pkg h3{margin:0;font-size:26px;font-weight:700;letter-spacing:-.4px}
+.pkg-for{margin:0;color:var(--text2);font-size:15px;min-height:44px}
+.pkg.dark .pkg-for{color:var(--mute-d)}
+.pkg-price{margin:8px 0 0;font-family:"Space Grotesk",system-ui,sans-serif;font-size:36px;font-weight:700;letter-spacing:-1px}
+.pkg.dark .pkg-price{color:var(--gold)}
+.pkg-note{margin:0;font-size:14px;color:var(--text2)}
+.pkg.dark .pkg-note{color:var(--mute-d2)}
+.pkg-list{list-style:none;margin:12px 0 20px;padding:0;display:flex;flex-direction:column;gap:10px;flex:1}
+.pkg-list li{display:flex;gap:10px;font-size:15px;color:#2E2D2A}
+.pkg.dark .pkg-list li{color:var(--mute-d)}
+.pkg-list li::before{content:'✓';color:var(--gold-ink);font-weight:700}
+.pkg.dark .pkg-list li::before{color:var(--gold)}
+.pkg .btn{width:100%;min-height:48px;font-size:16px}
+.consent{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:80;max-width:720px;margin:0 auto;padding:18px 20px;border-radius:16px;background:var(--ink2);color:#fff;border:1px solid #3A3936;box-shadow:0 16px 40px rgba(0,0,0,.35);display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
+.consent p{margin:0;flex:1 1 300px;font-size:14px;color:var(--mute-d)}
+.consent a{color:var(--gold)}
+.consent-btns{display:flex;gap:10px}
+.consent .btn{min-height:44px;padding:0 18px;font-size:15px}
+.btn-ghost-light{background:transparent;color:#fff;border:1px solid #5a5853}
+.link-btn{background:none;border:0;padding:0;font:inherit;color:var(--mute-d);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.link-btn:hover{color:var(--gold)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.card,.tab,.menu-item,.nav-link{transition:none}.btn:hover,.card:hover{transform:none}}
 </style>
+<!-- Consent (EU visitors decide before analytics/ads cookies) -->
+<script>
+(function () {
+  var tz = ''; try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch (e) {}
+  var eu = /^Europe\//.test(tz) || /^Atlantic\/(Canary|Madeira|Azores|Reykjavik|Faroe)/.test(tz);
+  var c = null; try { c = localStorage.getItem('mmm-consent'); } catch (e) {}
+  window.MMM_CONSENT = { eu: eu, choice: c };
+  window.MMM_GRANTED = !eu || c === 'granted';
+})();
+</script>
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HR2FWKZM0K"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
+var G = window.MMM_GRANTED ? 'granted' : 'denied';
+gtag('consent', 'default', { analytics_storage: G, ad_storage: G, ad_user_data: G, ad_personalization: G });
 gtag('js', new Date());
 gtag('config', 'G-HR2FWKZM0K');
 </script>
@@ -263,6 +300,7 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
+if (!window.MMM_GRANTED) fbq('consent', 'revoke');
 fbq('init', '2588021588308720');
 fbq('track', 'PageView');
 </script>
@@ -271,10 +309,14 @@ fbq('track', 'PageView');
 </head>
 <body>
 <div id="quiz" class="qz-root" hidden></div>
-<div id="app"><noscript><p style="padding:24px">Midas Media Marketing — please enable JavaScript to view this site.</p></noscript></div>
+<div id="consent"></div>
+<div id="app"><header class="site-header"><div class="wrap hdr"><a href="/" class="logo" data-go="home"><span class="logo-mark">MMM</span><span class="logo-text">Midas Media Marketing</span></a><nav class="nav" aria-label="Main"><a class="nav-link" href="/" data-go="home" data-anchor="services">Services</a><a class="nav-link" href="/pricing/" data-go="pricing" data-anchor="process">How it works</a><div class="dd"><button type="button" class="dd-btn" aria-haspopup="true" aria-expanded="false">Platforms<svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></button><div class="menu-wrap"><div class="menu" role="menu"><div class="dd-sub"><button type="button" class="menu-item sub-btn" aria-haspopup="true"><span class="sub-name">Meta</span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button><div class="sub-wrap"><div class="menu" role="menu"><a class="menu-item" role="menuitem" href="/platforms/meta/" data-go="platforms" data-net="meta" data-anchor="pf-facebook">Facebook</a><a class="menu-item" role="menuitem" href="/platforms/meta/" data-go="platforms" data-net="meta" data-anchor="pf-instagram">Instagram</a><a class="menu-item" role="menuitem" href="/platforms/meta/" data-go="platforms" data-net="meta" data-anchor="pf-whatsapp">WhatsApp</a><a class="menu-item" role="menuitem" href="/platforms/meta/" data-go="platforms" data-net="meta" data-anchor="pf-messenger">Messenger</a><a class="menu-item" role="menuitem" href="/platforms/meta/" data-go="platforms" data-net="meta" data-anchor="pf-threads">Threads</a><a class="menu-item" role="menuitem" href="/platforms/meta/" data-go="platforms" data-net="meta" data-anchor="pf-audience-network">Audience Network</a></div></div></div><div class="dd-sub"><button type="button" class="menu-item sub-btn" aria-haspopup="true"><span class="sub-name">Google <span class="badge">Coming soon</span></span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button><div class="sub-wrap"><div class="menu" role="menu"><a class="menu-item" role="menuitem" href="/platforms/google/" data-go="platforms" data-net="google" data-anchor="pf-google-search">Google Search</a><a class="menu-item" role="menuitem" href="/platforms/google/" data-go="platforms" data-net="google" data-anchor="pf-youtube">YouTube</a><a class="menu-item" role="menuitem" href="/platforms/google/" data-go="platforms" data-net="google" data-anchor="pf-google-maps">Google Maps</a><a class="menu-item" role="menuitem" href="/platforms/google/" data-go="platforms" data-net="google" data-anchor="pf-display">Display Network</a><a class="menu-item" role="menuitem" href="/platforms/google/" data-go="platforms" data-net="google" data-anchor="pf-pmax">Performance Max</a></div></div></div><div class="dd-sub"><button type="button" class="menu-item sub-btn" aria-haspopup="true"><span class="sub-name">TikTok <span class="badge">Coming soon</span></span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button><div class="sub-wrap"><div class="menu" role="menu"><a class="menu-item" role="menuitem" href="/platforms/tiktok/" data-go="platforms" data-net="tiktok" data-anchor="pf-tiktok-infeed">In-Feed Ads</a><a class="menu-item" role="menuitem" href="/platforms/tiktok/" data-go="platforms" data-net="tiktok" data-anchor="pf-tiktok-spark">Spark Ads</a><a class="menu-item" role="menuitem" href="/platforms/tiktok/" data-go="platforms" data-net="tiktok" data-anchor="pf-tiktok-topview">TopView</a><a class="menu-item" role="menuitem" href="/platforms/tiktok/" data-go="platforms" data-net="tiktok" data-anchor="pf-tiktok-search">Search Ads</a></div></div></div><div class="dd-sub"><button type="button" class="menu-item sub-btn" aria-haspopup="true"><span class="sub-name">Reddit <span class="badge">Coming soon</span></span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></button><div class="sub-wrap"><div class="menu" role="menu"><a class="menu-item" role="menuitem" href="/platforms/reddit/" data-go="platforms" data-net="reddit" data-anchor="pf-reddit-feed">Feed Ads</a><a class="menu-item" role="menuitem" href="/platforms/reddit/" data-go="platforms" data-net="reddit" data-anchor="pf-reddit-conversation">Conversation Ads</a><a class="menu-item" role="menuitem" href="/platforms/reddit/" data-go="platforms" data-net="reddit" data-anchor="pf-reddit-communities">Community Targeting</a></div></div></div></div></div></div><a class="nav-link" href="/pricing/" data-go="pricing">Pricing</a><a class="nav-link" href="/careers/" data-go="careers">Careers</a><div class="dd dd-right"><button type="button" class="dd-btn" aria-haspopup="true" aria-expanded="false" aria-label="Choose language"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9s1.3-6.4 3.8-9z"></path></svg><span>EN</span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg></button><div class="menu-wrap"><div class="menu" role="menu" style="min-width:190px"><button type="button" class="menu-item is-on" role="menuitemradio" aria-checked="true" data-lang="en"><span>English</span><small>EN</small></button><button type="button" class="menu-item" role="menuitemradio" aria-checked="false" data-lang="ru"><span>Русский</span><small>RU</small></button><button type="button" class="menu-item" role="menuitemradio" aria-checked="false" data-lang="uk"><span>Українська</span><small>UA</small></button><button type="button" class="menu-item" role="menuitemradio" aria-checked="false" data-lang="es"><span>Español</span><small>ES</small></button></div></div></div></nav><button type="button" class="mm-btn" data-mm-toggle="" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open menu"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button></div></header><div class="mm" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Open menu"><div class="mm-top wrap"><a href="/" class="logo" data-go="home"><span class="logo-mark">MMM</span><span class="logo-text">Midas Media Marketing</span></a><button type="button" class="mm-btn mm-close" data-mm-toggle="" aria-label="Close menu"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button></div><div class="mm-body wrap"><nav class="mm-links" aria-label="Mobile"><a href="/" data-go="home" data-anchor="services">Services</a><a href="/pricing/" data-go="pricing" data-anchor="process">How it works</a><a href="/pricing/" data-go="pricing">Pricing</a><a href="/careers/" data-go="careers">Careers</a></nav><div class="mm-group"><p class="mm-label">Platforms</p><div class="mm-nets"><a class="mm-net" href="/platforms/meta/" data-go="platforms" data-net="meta"><span>Meta</span></a><a class="mm-net" href="/platforms/google/" data-go="platforms" data-net="google"><span>Google</span><span class="badge">Coming soon</span></a><a class="mm-net" href="/platforms/tiktok/" data-go="platforms" data-net="tiktok"><span>TikTok</span><span class="badge">Coming soon</span></a><a class="mm-net" href="/platforms/reddit/" data-go="platforms" data-net="reddit"><span>Reddit</span><span class="badge">Coming soon</span></a></div></div><div class="mm-group"><p class="mm-label">Language</p><div class="mm-langs"><button type="button" class="mm-lang is-on" data-lang="en" aria-pressed="true">EN</button><button type="button" class="mm-lang" data-lang="ru" aria-pressed="false">RU</button><button type="button" class="mm-lang" data-lang="uk" aria-pressed="false">UA</button><button type="button" class="mm-lang" data-lang="es" aria-pressed="false">ES</button></div></div><a class="btn btn-gold mm-cta" href="#contact" data-quiz="1">Get a free growth plan</a><div class="mm-contacts"><a class="btn btn-contact" href="mailto:prokhorenko1098@gmail.com?subject=Midas%20Media%20Marketing"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg><span>Gmail</span></a><a class="btn btn-contact" href="https://wa.me/380939473539" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"></path></svg><span>WhatsApp</span></a><a class="btn btn-contact" href="https://t.me/VladProxor" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L10 14"></path><path d="M21 3l-7 18-4-7-7-4 18-7z"></path></svg><span>Telegram</span></a></div></div></div><main><section id="top" class="hero dark"><div class="wrap hero-in"><div class="hero-text"><p class="eyebrow">Social media advertising for US businesses and apps</p><h1>More customers and sales <span class="gold">from Facebook &amp; Instagram ads.</span></h1><p class="hero-sub">Struggling to attract customers or getting poor results from your ads? We plan, launch and manage Facebook &amp; Instagram campaigns designed to bring you more leads, sales and real customers — while keeping every dollar accountable.</p><div class="row"><a class="btn btn-gold" href="#contact" data-quiz="1">Get a free growth plan</a><a class="btn btn-ghost" href="/pricing/" data-go="pricing">See pricing</a></div><div class="trust"><span>More orders and sales</span><span>More calls and bookings</span><span>More people who know your brand</span><span>More app installs and paying users</span></div></div><div class="hero-art"><svg role="img" aria-label="Laptop with an ads dashboard and a phone showing an example Instagram ad" viewBox="0 0 640 520" class="hero-svg"><defs><radialGradient id="heroGlow" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#E2B33C" stop-opacity="0.28"></stop><stop offset="100%" stop-color="#E2B33C" stop-opacity="0"></stop></radialGradient></defs><ellipse cx="330" cy="260" rx="320" ry="240" fill="url(#heroGlow)"></ellipse><rect x="30" y="60" width="470" height="300" rx="16" fill="#1C1C1A" stroke="#3A3936" stroke-width="2"></rect><rect x="46" y="76" width="438" height="268" rx="6" fill="#F4F5F7"></rect><rect x="46" y="76" width="438" height="26" fill="#FFFFFF"></rect><circle cx="62" cy="89" r="6" fill="#E2B33C"></circle><rect x="76" y="85" width="70" height="8" rx="4" fill="#D5D9E0"></rect><rect x="46" y="102" width="64" height="242" fill="#ECEEF2"></rect><rect x="58" y="118" width="40" height="7" rx="3.5" fill="#C9CED8"></rect><rect x="58" y="136" width="34" height="7" rx="3.5" fill="#C9CED8"></rect><rect x="58" y="154" width="40" height="7" rx="3.5" fill="#E2B33C"></rect><rect x="58" y="172" width="30" height="7" rx="3.5" fill="#C9CED8"></rect><rect x="124" y="116" width="110" height="52" rx="8" fill="#FFFFFF"></rect><rect x="134" y="128" width="46" height="6" rx="3" fill="#C9CED8"></rect><rect x="134" y="144" width="72" height="12" rx="4" fill="#111111"></rect><rect x="244" y="116" width="110" height="52" rx="8" fill="#FFFFFF"></rect><rect x="254" y="128" width="52" height="6" rx="3" fill="#C9CED8"></rect><rect x="254" y="144" width="60" height="12" rx="4" fill="#111111"></rect><rect x="364" y="116" width="108" height="52" rx="8" fill="#FFFFFF"></rect><rect x="374" y="128" width="40" height="6" rx="3" fill="#C9CED8"></rect><rect x="374" y="144" width="66" height="12" rx="4" fill="#E2B33C"></rect><rect x="124" y="178" width="348" height="154" rx="8" fill="#FFFFFF"></rect><line x1="140" y1="300" x2="456" y2="300" stroke="#ECEEF2" stroke-width="2"></line><line x1="140" y1="260" x2="456" y2="260" stroke="#ECEEF2" stroke-width="2"></line><line x1="140" y1="220" x2="456" y2="220" stroke="#ECEEF2" stroke-width="2"></line><path d="M140 300 L180 292 L220 296 L260 274 L300 268 L340 246 L380 236 L420 214 L456 200 L456 316 L140 316 Z" fill="#E2B33C" fill-opacity="0.14"></path><polyline points="140,300 180,292 220,296 260,274 300,268 340,246 380,236 420,214 456,200" fill="none" stroke="#E2B33C" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"></polyline><circle cx="456" cy="200" r="6" fill="#E2B33C" stroke="#FFFFFF" stroke-width="3"></circle><path d="M0 360 H530 L512 384 Q508 390 500 390 H30 Q22 390 18 384 Z" fill="#2A2A28"></path><rect x="220" y="360" width="90" height="8" rx="4" fill="#3A3936"></rect><g transform="translate(440 150)"><rect width="180" height="350" rx="30" fill="#0B0B0A" stroke="#3A3936" stroke-width="2"></rect><rect x="9" y="9" width="162" height="332" rx="23" fill="#FFFFFF"></rect><rect x="66" y="16" width="48" height="10" rx="5" fill="#0B0B0A"></rect><circle cx="28" cy="48" r="10" fill="#F4C9B0"></circle><text x="44" y="46" font-family="Inter, Arial, sans-serif" font-size="9" font-weight="600" fill="#111111">sweetcorner.bakery</text><text x="44" y="57" font-family="Inter, Arial, sans-serif" font-size="8" fill="#6B7280">Sponsored</text><rect x="9" y="68" width="162" height="150" fill="#F7DCC8"></rect><circle cx="140" cy="96" r="36" fill="#F2C7A8"></circle><rect x="44" y="160" width="92" height="32" rx="6" fill="#8A4B2E"></rect><rect x="52" y="132" width="76" height="30" rx="6" fill="#B9683F"></rect><rect x="62" y="108" width="56" height="26" rx="6" fill="#FBEFE6"></rect><path d="M62 120 q6 7 11 0 q6 7 11 0 q6 7 11 0 q6 7 11 0 q6 7 11 0" fill="none" stroke="#E2B33C" stroke-width="3"></path><circle cx="90" cy="102" r="6" fill="#C2263B"></circle><rect x="9" y="218" width="162" height="28" fill="#EEF2FF"></rect><text x="20" y="236" font-family="Inter, Arial, sans-serif" font-size="10" font-weight="600" fill="#1D3FD8">Order now</text><text x="156" y="236" font-family="Inter, Arial, sans-serif" font-size="11" font-weight="600" fill="#1D3FD8">›</text><rect x="20" y="258" width="120" height="7" rx="3.5" fill="#D5D9E0"></rect><rect x="20" y="272" width="138" height="7" rx="3.5" fill="#E4E6EB"></rect><rect x="20" y="286" width="96" height="7" rx="3.5" fill="#E4E6EB"></rect></g></svg></div></div></section><section id="services" class="sec"><div class="wrap"><div class="head"><p class="eyebrow">What we do</p><h2 class="h2">Everything your ads need, handled for you</h2></div><div class="grid"><div class="svc card"><span class="n">01</span><h3>Strategy &amp; setup</h3><p>We study your business, pick the right goal and audience, and set up campaigns, pixel and tracking properly from day one.</p></div><div class="svc card"><span class="n">02</span><h3>Ad management</h3><p>We watch your campaigns closely, cut what doesn’t work and scale what does, so every dollar works harder.</p></div><div class="svc card"><span class="n">03</span><h3>Creative &amp; copy</h3><p>Ad copy, headlines and creative ideas built to stop the scroll, plus testing to find the versions that sell.</p></div><div class="svc card"><span class="n">04</span><h3>Clear reporting</h3><p>A simple monthly report in plain English: what you spent, what you got, and what we’ll do next.</p></div><div class="svc card"><span class="n">05</span><h3>App promotion</h3><p>Installs, sign-ups and in-app purchases for mobile apps, tracked through AppsFlyer, Adjust or Firebase.</p></div></div></div></section><section id="why" class="sec sand"><div class="wrap"><div class="why"><p class="eyebrow">Why advertising matters</p><h2>A great product no longer sells itself.</h2><p>Your customers spend hours on their phones every day — and that’s where they decide where to eat, who to book and what to buy. If you’re not there, they choose whoever they see.</p><p>Word of mouth still works, but it’s too slow when a competitor down the street is already showing ads to your future customers. Today, advertising isn’t an expense — it’s how the right people notice you at the right moment.</p><p class="strong">We’re here to make every dollar you invest in ads work for your growth. You focus on your business. We make sure people know about it.</p><p class="why-cta">Ready to see what your ads could do?</p><div><a class="btn btn-dark" href="#contact" data-quiz="1">Get a free growth plan</a></div></div></div></section><section id="ai-assistant" class="sec"><div class="wrap"><div class="head"><div class="ai-eyebrow"><span class="soon-tag">Coming soon</span><p class="eyebrow">AI assistant for business</p></div><h2 class="h2">Never miss a customer again</h2><p class="lead">Customers message at night, on weekends and during your busiest hour. An AI assistant replies instantly, so leads from your ads don’t go cold.</p></div><div class="ai-grid"><div class="ai-col"><h3 class="ai-sub">Why it matters</h3><ol class="ai-why"><li class="ai-why-item"><span class="ai-num">01</span><div><h4>Instant replies, 24/7</h4><p>People who wait for an answer often go to a competitor.</p></div></li><li class="ai-why-item"><span class="ai-num">02</span><div><h4>Less routine for your team</h4><p>Questions about prices, hours and delivery get answered automatically.</p></div></li><li class="ai-why-item"><span class="ai-num">03</span><div><h4>More value from your ads</h4><p>Every lead from a campaign gets a reply in seconds.</p></div></li></ol></div><div class="ai-col"><h3 class="ai-sub">What it will do</h3><div class="ai-cards"><div class="ai-card card"><h4>Answers customers</h4><p>On your website, Instagram, WhatsApp and Messenger.</p></div><div class="ai-card card"><h4>Takes orders and bookings</h4><p>Collects the details and sends them straight to you.</p></div><div class="ai-card card"><h4>Qualifies leads</h4><p>Asks the right questions and flags the hottest ones.</p></div><div class="ai-card card"><h4>Follows up</h4><p>Reminds customers about appointments and unfinished orders.</p></div><div class="ai-card card"><h4>Speaks their language</h4><p>English, Spanish and other languages your customers use.</p></div><div class="ai-card card"><h4>Knows your business</h4><p>Trained on your menu, prices and policies.</p></div></div></div></div><div class="ai-cta"><a class="btn btn-dark" href="#contact" data-scroll="contact">Be the first to know</a></div></div></section></main><section id="contact" class="dark contact contact-compact"><div class="wrap"><div class="contact-direct"><p class="small">Or message us directly</p><div class="contact-links"><a class="btn btn-contact" href="mailto:prokhorenko1098@gmail.com?subject=Midas%20Media%20Marketing"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg><span>Gmail</span></a><a class="btn btn-contact" href="https://wa.me/380939473539" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-11.6 7.1L4 20l1-4.2A8 8 0 1 1 20 12z"></path></svg><span>WhatsApp</span></a><a class="btn btn-contact" href="https://t.me/VladProxor" target="_blank" rel="noopener"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3L10 14"></path><path d="M21 3l-7 18-4-7-7-4 18-7z"></path></svg><span>Telegram</span></a></div></div></div></section><footer class="site-footer"><div class="wrap"><span>© 2026 Midas Media Marketing</span><span class="footer-links"><a href="/privacy/" data-go="privacy">Privacy Policy</a><a href="/terms/" data-go="terms">Terms of Service</a></span><span>Social media advertising for businesses across the US</span></div></footer></div>
 <script>
 var MMM_I18N = {
   en: {
+    packages: [{"name": "Start", "for": "For local businesses with ad budgets up to $3,000/mo", "price": "$500/mo", "note": "+ one-time setup from $500", "features": ["Facebook & Instagram ads", "Pixel and lead tracking setup", "Up to 4 new ad variations per month", "Monthly report + weekly update", "1 strategy call per month"]}, {"name": "Growth", "for": "For businesses spending $3,000–10,000/mo on ads", "price": "15% of ad spend", "note": "+ one-time setup from $500", "features": ["Everything in Start", "Retargeting campaigns", "Ongoing creative and audience testing", "Conversions API setup for better tracking", "2 strategy calls per month"]}, {"name": "Scale & Apps", "for": "For ad budgets over $10,000/mo and mobile apps", "price": "12% of ad spend", "note": "10% from $25,000/mo · setup from $500", "features": ["Everything in Growth", "App install and in-app purchase campaigns", "AppsFlyer, Adjust or Firebase integration", "Weekly report and call", "Priority support"]}],
+    foundTitle: "Founding client offer", foundText: "For ad budgets up to $5,000/mo: $300 setup and 10% of ad spend ($300 minimum) for the first 3 months, in exchange for an honest review. Spots are limited.",
+    consentText: "We use cookies for analytics and to measure our ads. You can accept or decline.", consentLink: "Privacy Policy", consentAccept: "Accept", consentDecline: "Decline", consentSettings: "Cookie settings",
     privacyLabel: "Privacy Policy", termsLabel: "Terms of Service", legalNote: "This document is available in English only.",
     menuOpen: "Open menu", menuClose: "Close menu",
     aiEyebrow: "AI assistant for business", aiTitle: "Never miss a customer again",
@@ -386,6 +428,9 @@ var MMM_I18N = {
     footer: "Social media advertising for businesses across the US"
   },
   ru: {
+    packages: [{"name": "Start", "for": "Для местного бизнеса с бюджетом до $3,000 в месяц", "price": "$500/мес", "note": "+ разовая настройка от $500", "features": ["Реклама в Facebook и Instagram", "Настройка пикселя и учёта заявок", "До 4 новых вариаций объявлений в месяц", "Ежемесячный отчёт и обновление раз в неделю", "1 созвон по стратегии в месяц"]}, {"name": "Growth", "for": "Для бизнеса с рекламным бюджетом $3,000–10,000 в месяц", "price": "15% от бюджета", "note": "+ разовая настройка от $500", "features": ["Всё из Start", "Ретаргетинг — реклама тем, кто уже был на сайте", "Постоянные тесты креативов и аудиторий", "Настройка Conversions API для точного учёта", "2 созвона по стратегии в месяц"]}, {"name": "Scale & Apps", "for": "Для бюджетов от $10,000 в месяц и мобильных приложений", "price": "12% от бюджета", "note": "10% от $25,000 в месяц · настройка от $500", "features": ["Всё из Growth", "Кампании на установки и покупки в приложении", "Интеграция с AppsFlyer, Adjust или Firebase", "Еженедельный отчёт и созвон", "Приоритетная поддержка"]}],
+    foundTitle: "Предложение для первых клиентов", foundText: "Для бюджетов до $5,000 в месяц: настройка $300 и 10% от бюджета (минимум $300) на первые 3 месяца в обмен на честный отзыв. Количество мест ограничено.",
+    consentText: "Мы используем cookies для аналитики и измерения рекламы. Вы можете принять их или отказаться.", consentLink: "Политика конфиденциальности", consentAccept: "Принять", consentDecline: "Отклонить", consentSettings: "Настройки cookies",
     privacyLabel: "Политика конфиденциальности", termsLabel: "Условия использования", legalNote: "Этот документ доступен только на английском языке.",
     menuOpen: "Открыть меню", menuClose: "Закрыть меню",
     aiEyebrow: "ИИ-ассистент для бизнеса", aiTitle: "Больше ни одного потерянного клиента",
@@ -497,6 +542,9 @@ var MMM_I18N = {
     footer: "Реклама бизнеса в соцсетях по всей территории США"
   },
   uk: {
+    packages: [{"name": "Start", "for": "Для місцевого бізнесу з бюджетом до $3,000 на місяць", "price": "$500/міс", "note": "+ разове налаштування від $500", "features": ["Реклама у Facebook та Instagram", "Налаштування пікселя й обліку заявок", "До 4 нових варіацій оголошень на місяць", "Щомісячний звіт і оновлення раз на тиждень", "1 дзвінок щодо стратегії на місяць"]}, {"name": "Growth", "for": "Для бізнесу з рекламним бюджетом $3,000–10,000 на місяць", "price": "15% від бюджету", "note": "+ разове налаштування від $500", "features": ["Усе зі Start", "Ретаргетинг — реклама тим, хто вже був на сайті", "Постійні тести креативів і аудиторій", "Налаштування Conversions API для точного обліку", "2 дзвінки щодо стратегії на місяць"]}, {"name": "Scale & Apps", "for": "Для бюджетів від $10,000 на місяць і мобільних застосунків", "price": "12% від бюджету", "note": "10% від $25,000 на місяць · налаштування від $500", "features": ["Усе з Growth", "Кампанії на встановлення й покупки в застосунку", "Інтеграція з AppsFlyer, Adjust або Firebase", "Щотижневий звіт і дзвінок", "Пріоритетна підтримка"]}],
+    foundTitle: "Пропозиція для перших клієнтів", foundText: "Для бюджетів до $5,000 на місяць: налаштування $300 і 10% від бюджету (мінімум $300) на перші 3 місяці в обмін на чесний відгук. Кількість місць обмежена.",
+    consentText: "Ми використовуємо cookies для аналітики та вимірювання реклами. Ви можете прийняти їх або відмовитися.", consentLink: "Політика конфіденційності", consentAccept: "Прийняти", consentDecline: "Відхилити", consentSettings: "Налаштування cookies",
     privacyLabel: "Політика конфіденційності", termsLabel: "Умови використання", legalNote: "Цей документ доступний лише англійською мовою.",
     menuOpen: "Відкрити меню", menuClose: "Закрити меню",
     aiEyebrow: "ШІ-асистент для бізнесу", aiTitle: "Більше жодного втраченого клієнта",
@@ -608,6 +656,9 @@ var MMM_I18N = {
     footer: "Реклама бізнесу в соцмережах по всіх США"
   },
   es: {
+    packages: [{"name": "Start", "for": "Para negocios locales con presupuestos de hasta $3,000 al mes", "price": "$500/mes", "note": "+ configuración inicial desde $500", "features": ["Anuncios en Facebook e Instagram", "Configuración del píxel y del seguimiento de clientes potenciales", "Hasta 4 variaciones de anuncios nuevas al mes", "Informe mensual y actualización semanal", "1 llamada de estrategia al mes"]}, {"name": "Growth", "for": "Para empresas que invierten $3,000–10,000 al mes en anuncios", "price": "15% de la inversión", "note": "+ configuración inicial desde $500", "features": ["Todo lo de Start", "Retargeting para quienes ya visitaron tu sitio", "Pruebas continuas de creatividades y públicos", "Configuración de la API de conversiones", "2 llamadas de estrategia al mes"]}, {"name": "Scale & Apps", "for": "Para presupuestos desde $10,000 al mes y apps móviles", "price": "12% de la inversión", "note": "10% desde $25,000 al mes · configuración desde $500", "features": ["Todo lo de Growth", "Campañas de instalaciones y compras en la app", "Integración con AppsFlyer, Adjust o Firebase", "Informe y llamada semanales", "Soporte prioritario"]}],
+    foundTitle: "Oferta para clientes fundadores", foundText: "Para presupuestos de hasta $5,000 al mes: configuración por $300 y 10% de la inversión (mínimo $300) durante los primeros 3 meses, a cambio de una reseña honesta. Plazas limitadas.",
+    consentText: "Usamos cookies para analítica y para medir nuestros anuncios. Puedes aceptarlas o rechazarlas.", consentLink: "Política de privacidad", consentAccept: "Aceptar", consentDecline: "Rechazar", consentSettings: "Configuración de cookies",
     privacyLabel: "Política de privacidad", termsLabel: "Términos del servicio", legalNote: "Este documento solo está disponible en inglés.",
     menuOpen: "Abrir menú", menuClose: "Cerrar menú",
     aiEyebrow: "Asistente de IA para empresas", aiTitle: "Nunca más pierdas un cliente",
@@ -781,6 +832,7 @@ var MMM_I18N = {
         ]],
         ['Your choices', [
           'You can ask us to access, correct or delete the personal information you have sent us by emailing us.',
+          'Visitors in the European Economic Area, the UK and Switzerland are asked for consent before analytics and advertising cookies are used, and can change their choice at any time with the Cookie settings link at the bottom of the page.',
           'You can control cookies in your browser settings, and manage how Meta uses data for ads in your Facebook or Instagram ad preferences. You can opt out of Google Analytics with the Google Analytics Opt-out Browser Add-on, and learn about opting out of interest-based advertising at optout.aboutads.info.'
         ]],
         ['Data retention and security', [
@@ -847,14 +899,33 @@ var MMM_I18N = {
       '<p class="legal-intro">' + esc(L.intro) + '</p>' + secs +
       '</article></div></section>';
   }
+  function renderConsent(t) {
+    var root = document.getElementById('consent');
+    var C = window.MMM_CONSENT || {};
+    if (!root) return;
+    if (!C.eu || C.choice) { root.innerHTML = ''; return; }
+    root.innerHTML = '<div class="consent" role="region" aria-label="Cookies"><p>' + esc(t.consentText) + ' <a href="/privacy/" data-go="privacy">' + esc(t.consentLink) + '</a></p>' +
+      '<div class="consent-btns"><button type="button" class="btn btn-ghost-light" data-consent="denied">' + esc(t.consentDecline) + '</button><button type="button" class="btn btn-gold" data-consent="granted">' + esc(t.consentAccept) + '</button></div></div>';
+  }
+  function setConsent(v) {
+    try { localStorage.setItem('mmm-consent', v); } catch (e) {}
+    window.MMM_CONSENT.choice = v;
+    var g = v === 'granted' ? 'granted' : 'denied';
+    try { if (window.gtag) window.gtag('consent', 'update', { analytics_storage: g, ad_storage: g, ad_user_data: g, ad_personalization: g }); } catch (e) {}
+    try { if (window.fbq) window.fbq('consent', v === 'granted' ? 'grant' : 'revoke'); } catch (e) {}
+    renderConsent(T());
+  }
   function footerHTML(t) {
     return '<footer class="site-footer"><div class="wrap"><span>© 2026 Midas Media Marketing</span>' +
-      '<span class="footer-links"><a href="#/privacy" data-go="privacy">' + esc(t.privacyLabel) + '</a><a href="#/terms" data-go="terms">' + esc(t.termsLabel) + '</a></span>' +
+      '<span class="footer-links"><a href="/privacy/" data-go="privacy">' + esc(t.privacyLabel) + '</a><a href="/terms/" data-go="terms">' + esc(t.termsLabel) + '</a>' + ((window.MMM_CONSENT || {}).eu ? '<button type="button" class="link-btn" data-consent-reset>' + esc(t.consentSettings) + '</button>' : '') + '</span>' +
       '<span>' + esc(t.footer) + '</span></div></footer>';
   }
 
+  function urlFor(page, net) {
+    return page === 'home' ? '/' : page === 'platforms' ? '/platforms/' + (net || 'meta') + '/' : '/' + page + '/';
+  }
   function route() {
-    var h = location.hash.replace(/^#\/?/, '');
+    var h = location.pathname.replace(/index\.html$/, '').replace(/^\/+|\/+$/g, '');
     var parts = h.split('/');
     if (parts[0] === 'platforms') return { page: 'platforms', net: NETS.indexOf(parts[1]) >= 0 ? parts[1] : 'meta' };
     if (parts[0] === 'pricing' || parts[0] === 'careers' || parts[0] === 'privacy' || parts[0] === 'terms') return { page: parts[0] };
@@ -866,20 +937,20 @@ var MMM_I18N = {
   var mmOpen = false;
   function mobileMenu(t) {
     var nets = NETS.map(function (k) {
-      return '<a class="mm-net" href="#/platforms/' + k + '" data-go="platforms" data-net="' + k + '"><span>' + NET_NAMES[k] + '</span>' + (k === 'meta' ? '' : '<span class="badge">' + esc(t.soonLabel) + '</span>') + '</a>';
+      return '<a class="mm-net" href="/platforms/' + k + '/" data-go="platforms" data-net="' + k + '"><span>' + NET_NAMES[k] + '</span>' + (k === 'meta' ? '' : '<span class="badge">' + esc(t.soonLabel) + '</span>') + '</a>';
     }).join('');
     var langs = CODES.map(function (c) {
       return '<button type="button" class="mm-lang' + (c.code === lang ? ' is-on' : '') + '" data-lang="' + c.code + '" aria-pressed="' + (c.code === lang) + '">' + c.label + '</button>';
     }).join('');
     return '<div class="mm" id="mobile-menu" role="dialog" aria-modal="true" aria-label="' + esc(t.menuOpen) + '">' +
-      '<div class="mm-top wrap"><a href="#/" class="logo" data-go="home"><span class="logo-mark">MMM</span><span class="logo-text">Midas Media Marketing</span></a>' +
+      '<div class="mm-top wrap"><a href="/" class="logo" data-go="home"><span class="logo-mark">MMM</span><span class="logo-text">Midas Media Marketing</span></a>' +
       '<button type="button" class="mm-btn mm-close" data-mm-toggle aria-label="' + esc(t.menuClose) + '">' + CLOSE + '</button></div>' +
       '<div class="mm-body wrap">' +
       '<nav class="mm-links" aria-label="Mobile">' +
-      '<a href="#/" data-go="home" data-anchor="services">' + esc(t.navServices) + '</a>' +
-      '<a href="#/pricing" data-go="pricing" data-anchor="process">' + esc(t.navProcess) + '</a>' +
-      '<a href="#/pricing" data-go="pricing">' + esc(t.navPricing) + '</a>' +
-      '<a href="#/careers" data-go="careers">' + esc(t.navCareers) + '</a>' +
+      '<a href="/" data-go="home" data-anchor="services">' + esc(t.navServices) + '</a>' +
+      '<a href="/pricing/" data-go="pricing" data-anchor="process">' + esc(t.navProcess) + '</a>' +
+      '<a href="/pricing/" data-go="pricing">' + esc(t.navPricing) + '</a>' +
+      '<a href="/careers/" data-go="careers">' + esc(t.navCareers) + '</a>' +
       '</nav>' +
       '<div class="mm-group"><p class="mm-label">' + esc(t.navPlatforms) + '</p><div class="mm-nets">' + nets + '</div></div>' +
       '<div class="mm-group"><p class="mm-label">Language</p><div class="mm-langs">' + langs + '</div></div>' +
@@ -899,7 +970,7 @@ var MMM_I18N = {
   function header(t) {
     var nets = NETS.map(function (k) {
       var links = items(t, k).map(function (x) {
-        return '<a class="menu-item" role="menuitem" href="#/platforms/' + k + '" data-go="platforms" data-net="' + k + '" data-anchor="' + esc(x.id) + '">' + esc(x.name) + '</a>';
+        return '<a class="menu-item" role="menuitem" href="/platforms/' + k + '/" data-go="platforms" data-net="' + k + '" data-anchor="' + esc(x.id) + '">' + esc(x.name) + '</a>';
       }).join('');
       return '<div class="dd-sub"><button type="button" class="menu-item sub-btn" aria-haspopup="true"><span class="sub-name">' + NET_NAMES[k] + soon(t, k) + '</span>' + CHEVR + '</button>' +
         '<div class="sub-wrap"><div class="menu" role="menu">' + links + '</div></div></div>';
@@ -910,13 +981,13 @@ var MMM_I18N = {
       return '<button type="button" class="menu-item' + (on ? ' is-on' : '') + '" role="menuitemradio" aria-checked="' + on + '" data-lang="' + c.code + '"><span>' + c.name + '</span><small>' + c.label + '</small></button>';
     }).join('');
     return '<header class="site-header"><div class="wrap hdr">' +
-      '<a href="#/" class="logo" data-go="home"><span class="logo-mark">MMM</span><span class="logo-text">Midas Media Marketing</span></a>' +
+      '<a href="/" class="logo" data-go="home"><span class="logo-mark">MMM</span><span class="logo-text">Midas Media Marketing</span></a>' +
       '<nav class="nav" aria-label="Main">' +
-      '<a class="nav-link" href="#/" data-go="home" data-anchor="services">' + esc(t.navServices) + '</a>' +
-      '<a class="nav-link" href="#/pricing" data-go="pricing" data-anchor="process">' + esc(t.navProcess) + '</a>' +
+      '<a class="nav-link" href="/" data-go="home" data-anchor="services">' + esc(t.navServices) + '</a>' +
+      '<a class="nav-link" href="/pricing/" data-go="pricing" data-anchor="process">' + esc(t.navProcess) + '</a>' +
       '<div class="dd"><button type="button" class="dd-btn" aria-haspopup="true" aria-expanded="false">' + esc(t.navPlatforms) + CHEV + '</button><div class="menu-wrap"><div class="menu" role="menu">' + nets + '</div></div></div>' +
-      '<a class="nav-link" href="#/pricing" data-go="pricing">' + esc(t.navPricing) + '</a>' +
-      '<a class="nav-link" href="#/careers" data-go="careers">' + esc(t.navCareers) + '</a>' +
+      '<a class="nav-link" href="/pricing/" data-go="pricing">' + esc(t.navPricing) + '</a>' +
+      '<a class="nav-link" href="/careers/" data-go="careers">' + esc(t.navCareers) + '</a>' +
       '<div class="dd dd-right"><button type="button" class="dd-btn" aria-haspopup="true" aria-expanded="false" aria-label="Choose language">' + GLOBE + '<span>' + cur.label + '</span>' + CHEV + '</button><div class="menu-wrap"><div class="menu" role="menu" style="min-width:190px">' + langs + '</div></div></div>' +
       '</nav>' +
       '<button type="button" class="mm-btn" data-mm-toggle aria-controls="mobile-menu" aria-expanded="false" aria-label="' + esc(t.menuOpen) + '">' + BURGER + '</button>' +
@@ -949,7 +1020,7 @@ var MMM_I18N = {
       '<p class="eyebrow">' + esc(t.eyebrow) + '</p>' +
       '<h1>' + esc(t.heroA) + '<span class="gold">' + esc(t.heroB) + '</span></h1>' +
       '<p class="hero-sub">' + esc(t.heroSub) + '</p>' +
-      '<div class="row"><a class="btn btn-gold" href="#contact" data-quiz="1">' + esc(t.cta1) + '</a><a class="btn btn-ghost" href="#/pricing" data-go="pricing">' + esc(t.cta2) + '</a></div>' +
+      '<div class="row"><a class="btn btn-gold" href="#contact" data-quiz="1">' + esc(t.cta1) + '</a><a class="btn btn-ghost" href="/pricing/" data-go="pricing">' + esc(t.cta2) + '</a></div>' +
       '<div class="trust">' + t.trust.map(function (x) { return '<span>' + esc(x) + '</span>'; }).join('') + '</div>' +
       '</div><div class="hero-art">' + HERO_ART + '</div></div></section>' +
       '<section id="services" class="sec"><div class="wrap"><div class="head"><p class="eyebrow">' + esc(t.servicesEyebrow) + '</p><h2 class="h2">' + esc(t.servicesTitle) + '</h2></div><div class="grid">' + svc + '</div></div></section>' +
@@ -980,16 +1051,18 @@ var MMM_I18N = {
   function pricing(t) {
     var steps = t.steps.map(function (x) { return '<div class="step"><h3>' + esc(x.title) + '</h3><p>' + esc(x.text) + '</p></div>'; }).join('');
     var addons = t.addons.map(function (x) { return '<div class="addon card"><h4>' + esc(x.title) + '</h4><p class="p">' + esc(x.price) + '</p><p>' + esc(x.text) + '</p></div>'; }).join('');
-    var faq = t.faq.map(function (x) { return '<div><h3>' + esc(x.q) + '</h3><p>' + esc(x.a) + '</p></div>'; }).join('');
+    var faq = [4, 5, 2, 3].map(function (i) { var x = t.faq[i]; return x ? '<div><h3>' + esc(x.q) + '</h3><p>' + esc(x.a) + '</p></div>' : ''; }).join('');
+    var pkgs = t.packages.map(function (x, i) {
+      return '<div class="pkg card' + (i === 1 ? ' dark' : '') + '"><h3>' + esc(x.name) + '</h3><p class="pkg-for">' + esc(x.for) + '</p>' +
+        '<p class="pkg-price">' + esc(x.price) + '</p><p class="pkg-note">' + esc(x.note) + '</p>' +
+        '<ul class="pkg-list">' + x.features.map(function (f) { return '<li>' + esc(f) + '</li>'; }).join('') + '</ul>' +
+        '<a class="btn ' + (i === 1 ? 'btn-gold' : 'btn-dark') + '" href="#contact" data-quiz="1">' + esc(t.cta1) + '</a></div>';
+    }).join('');
     return '<section id="process" class="sec sand"><div class="wrap"><div class="head"><p class="eyebrow">' + esc(t.processEyebrow) + '</p><h2 class="h2">' + esc(t.processTitle) + '</h2></div><div class="grid" style="gap:32px">' + steps + '</div></div></section>' +
       '<section id="pricing" class="sec"><div class="wrap">' +
       '<div class="head"><p class="eyebrow">' + esc(t.pricingEyebrow) + '</p><h1 class="h2">' + esc(t.pricingTitle) + '</h1><p class="lead">' + esc(t.pricingSub) + '</p></div>' +
-      '<div class="grid grid-300">' +
-      '<div class="price-card card"><h3>' + esc(t.setupTitle) + '</h3><span class="pill">' + esc(t.discountBadge) + '</span><div class="price-row"><span class="old">' + esc(t.setupOld) + '</span><p class="price">' + esc(t.setupPrice) + '</p></div><p class="desc">' + esc(t.setupText) + '</p></div>' +
-      '<div class="price-card dark card"><h3>' + esc(t.mgmtTitle) + '</h3><span class="pill">' + esc(t.discountBadge) + '</span><div class="price-row"><span class="old">' + esc(t.mgmtOld) + '</span><p class="price gold">' + esc(t.mgmtPrice) + '</p></div><p class="desc">' + esc(t.mgmtText) + '</p></div>' +
-      '</div>' +
-      '<p class="note">' + esc(t.tiersNote) + '</p>' +
-      '<div class="offer"><div><h3>' + esc(t.offerTitle) + '</h3><p>' + esc(t.offerText) + '</p></div><a class="btn btn-dark" style="min-height:48px" href="#contact" data-quiz="1">' + esc(t.offerBtn) + '</a></div>' +
+      '<div class="pkgs">' + pkgs + '</div>' +
+      '<div class="offer"><div><h3>' + esc(t.foundTitle) + '</h3><p>' + esc(t.foundText) + '</p></div><a class="btn btn-dark" style="min-height:48px" href="#contact" data-quiz="1">' + esc(t.offerBtn) + '</a></div>' +
       '<div class="addons"><div style="max-width:720px"><h3 class="t">' + esc(t.addonsTitle) + '</h3><p class="lead" style="font-size:17px;margin-top:8px">' + esc(t.addonsSub) + '</p></div><div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr))">' + addons + '</div></div>' +
       '</div></section>' +
       '<section class="sec" style="padding-top:0"><div class="wrap"><h2 class="h2" style="font-size:clamp(28px,3.5vw,40px);margin-bottom:32px">' + esc(t.faqTitle) + '</h2><div class="faq">' + faq + '</div></div></section>';
@@ -1037,8 +1110,8 @@ var MMM_I18N = {
     var body = r.page === 'platforms' ? platforms(t, r.net) : r.page === 'pricing' ? pricing(t) : r.page === 'careers' ? careers(t) : (r.page === 'privacy' || r.page === 'terms') ? legalPage(t, r.page) : home(t);
     app.innerHTML = header(t) + '<main>' + body + '</main>' + contact(t, r.page === 'home');
     document.documentElement.lang = lang;
-    var titles = { home: t.eyebrow, platforms: t.navPlatforms, pricing: t.navPricing, careers: t.navCareers, privacy: 'Privacy Policy', terms: 'Terms of Service' };
-    document.title = 'Midas Media Marketing — ' + titles[r.page];
+    var titles = { platforms: t.navPlatforms, pricing: t.navPricing, careers: t.navCareers, privacy: 'Privacy Policy', terms: 'Terms of Service' };
+    document.title = r.page === 'home' ? 'Midas Media Marketing — ' + t.eyebrow : titles[r.page] + ' — Midas Media Marketing';
     var key = r.page + '/' + (r.net || '');
     if (pendingAnchor) {
       var id = pendingAnchor; pendingAnchor = null;
@@ -1049,6 +1122,7 @@ var MMM_I18N = {
     if (lastRoute && key !== lastRoute) track('PageView');
     if (key !== lastRoute && (r.page === 'pricing' || r.page === 'platforms')) track('ViewContent', { content_name: r.page === 'pricing' ? 'Pricing' : 'Platforms: ' + r.net });
     lastRoute = key;
+    renderConsent(t);
     applyMM();
     if (qz.open) renderQuiz();
   }
@@ -1144,7 +1218,7 @@ var MMM_I18N = {
           '<div class="qz-hp" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off" value=""></div>' +
           (msg ? '<p class="qz-msg" role="alert">' + quizMsg(msg, Q) + '</p>' : '') +
           '<button type="submit" class="btn btn-gold"' + (sending ? ' disabled' : '') + '>' + esc(sending ? Q.sending : Q.submit) + '</button>' +
-          '<p class="qz-consent">' + esc(Q.consent.split('{link}')[0]) + '<a href="#/privacy" data-qz-link>' + esc(Q.consentLink) + '</a>' + esc(Q.consent.split('{link}')[1] || '') + '</p>' +
+          '<p class="qz-consent">' + esc(Q.consent.split('{link}')[0]) + '<a href="/privacy/" data-qz-link>' + esc(Q.consentLink) + '</a>' + esc(Q.consent.split('{link}')[1] || '') + '</p>' +
           '</form>';
       }
       var foot = qz.step > 0 ? '<div class="qz-foot"><button type="button" class="qz-back" data-qz-back>← ' + esc(Q.back) + '</button></div>' : '';
@@ -1209,6 +1283,8 @@ var MMM_I18N = {
   document.addEventListener('click', function (e) {
     var el;
     if (e.target.closest('#quiz')) return;
+    if ((el = e.target.closest('[data-consent]'))) { setConsent(el.getAttribute('data-consent')); return; }
+    if ((el = e.target.closest('[data-consent-reset]'))) { try { localStorage.removeItem('mmm-consent'); } catch (err) {} window.MMM_CONSENT.choice = null; renderConsent(T()); return; }
     if ((el = e.target.closest('.btn-contact'))) { track('Contact', { content_name: (el.textContent || '').trim() }); }
     if ((el = e.target.closest('[data-mm-toggle]'))) { setMM(!mmOpen); return; }
     if ((el = e.target.closest('[data-quiz]'))) { e.preventDefault(); closeMenus(); if (mmOpen) setMM(false); openQuiz(); return; }
@@ -1223,9 +1299,9 @@ var MMM_I18N = {
       var page = el.getAttribute('data-go');
       var net = el.getAttribute('data-net');
       pendingAnchor = el.getAttribute('data-anchor');
-      var h = page === 'home' ? '#/' : page === 'platforms' ? '#/platforms/' + (net || 'meta') : '#/' + page;
-      if (location.hash === h || (h === '#/' && (location.hash === '' || location.hash === '#'))) render();
-      else location.hash = h;
+      var u = urlFor(page, net);
+      if (location.pathname !== u) history.pushState({}, '', u);
+      render();
       return;
     }
     if ((el = e.target.closest('[data-scroll]'))) {
@@ -1235,7 +1311,7 @@ var MMM_I18N = {
       return;
     }
     if ((el = e.target.closest('[data-tab]'))) {
-      location.hash = '#/platforms/' + el.getAttribute('data-tab'); return;
+      history.pushState({}, '', urlFor('platforms', el.getAttribute('data-tab'))); render(); return;
     }
     if ((el = e.target.closest('.sub-btn'))) {
       var sub = el.parentNode, wasOpen = sub.classList.contains('open');
@@ -1253,7 +1329,12 @@ var MMM_I18N = {
   });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeMenus(); if (mmOpen) setMM(false); } });
   window.addEventListener('resize', function () { if (mmOpen && window.innerWidth > 860) setMM(false); });
-  window.addEventListener('hashchange', render);
+  window.addEventListener('popstate', render);
+  // old #/page links -> real pages
+  if (/^#\/./.test(location.hash)) {
+    var old = location.hash.replace(/^#\//, '').split('/');
+    history.replaceState({}, '', urlFor(old[0] === 'platforms' ? 'platforms' : (['pricing', 'careers', 'privacy', 'terms'].indexOf(old[0]) >= 0 ? old[0] : 'home'), old[1]));
+  }
   render();
 })();
 
