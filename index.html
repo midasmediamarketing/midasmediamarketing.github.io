@@ -317,6 +317,31 @@ html,body,main{background:var(--paper);color:var(--fg)}body{font-family:Manrope,
 .feed-demo-toggle:hover{color:#ffe1a3}
 .feed-demo-toggle[hidden]{display:none}
 .feed-card [data-feed-value]{font-variant-numeric:tabular-nums}
+
+/* First-visit landing screen, before entering the main site. */
+.entry-page{min-height:100vh;min-height:100svh;display:grid;place-items:center;background:#0b0b0b;padding:38px 22px 28px;color:#f6efe3;text-align:center}
+.entry-content{width:min(100%,660px);margin:auto}
+.entry-brand{display:grid;justify-items:center;gap:13px;margin:0 auto 28px;color:#e8c17c}
+.entry-brand .feed-hand{width:76px}
+.entry-brand h1{margin:0;font-size:12px;font-weight:800;letter-spacing:.25em;text-transform:uppercase}
+.entry-intro{max-width:45ch;margin:0 auto;color:#c7bfb2;font-size:clamp(14px,2vw,17px);line-height:1.55;text-wrap:balance}
+.entry-actions{display:flex;justify-content:center;gap:12px;margin:26px auto 10px}
+.entry-actions .btn{min-height:48px;border-radius:6px;padding-inline:19px;font-size:14px;white-space:nowrap;justify-content:center}
+.entry-actions .entry-skip{background:transparent;border:1px solid #665c4b;color:#f6efe3}
+.entry-actions .entry-skip:hover{background:#262118}
+.entry-actions .btn:focus-visible,.entry-page a:focus-visible,.entry-langs button:focus-visible{outline:2px solid #f2cd87;outline-offset:3px}
+.entry-direct{margin:0 auto 29px}.entry-direct-label{margin:2px 0 7px;color:#c7bfb2;font-size:12px}.entry-whatsapp.btn{gap:8px;min-height:44px;padding:0 16px;border-radius:6px;font-size:13px;color:#efeadf}.entry-whatsapp svg{width:19px;height:19px;color:#54de8a;flex:none}
+.entry-process{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;list-style:none;padding:17px 0 0;margin:0;border-top:1px solid #332c22;text-align:left}
+.entry-process li{padding:0 15px;min-width:0}.entry-process li+li{border-left:1px solid #332c22}
+.entry-process b{display:block;font-size:13px;color:#f5ecd8;line-height:1.35;margin:0 0 5px}
+.entry-process b span{color:#e8c17c;margin-right:7px;font-size:10px;letter-spacing:.06em}
+.entry-process p{color:#c7bfb2;font-size:12px;line-height:1.45;margin:0}
+.entry-foot{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:3px 14px;margin-top:31px;color:#b7aa96;font-size:11px}
+.entry-foot a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.entry-langs{display:flex;align-items:center;gap:1px}
+.entry-langs button{border:0;background:transparent;color:#b7aa96;min-width:33px;min-height:34px;cursor:pointer;font:700 11px Manrope,system-ui}
+.entry-langs button[aria-pressed=true]{color:#f2cd87}
+@media(max-width:560px){.entry-page{padding-block:28px 18px}.entry-brand{gap:8px;margin-bottom:21px}.entry-brand .feed-hand{width:60px}.entry-actions{margin:21px auto 8px;gap:8px}.entry-direct{margin-bottom:19px}.entry-actions .btn{padding-inline:10px;font-size:12px}.entry-process{grid-template-columns:1fr;padding-top:0}.entry-process li,.entry-process li+li{display:grid;grid-template-columns:1fr;gap:2px;padding:9px 0;border:0;border-bottom:1px solid #332c22}.entry-process b{margin:0}.entry-foot{margin-top:14px}}
 </style>
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HR2FWKZM0K"></script>
@@ -1196,11 +1221,33 @@ var MMM_I18N = {
       footerHTML(t);
   }
 
+  // Skip applies to this document only; a fresh load shows the entry page again.
+  var enteredSite = false;
+  var ENTRY = {
+    ru:{intro:'Для того чтобы мы с вами связались, ответьте на четыре коротких вопроса о вашем бизнесе и оставьте контакт.',apply:'Оставить заявку',skip:'Перейти на сайт',direct:'Связаться напрямую',language:'Язык',steps:[['Короткий опрос','Расскажите о бизнесе, целях и бюджете.'],['Рекламная стратегия','Свяжемся с вами и обсудим, как достичь ваших целей.'],['Старт работы','Если всё устраивает, отправим договор и счёт. После оплаты сразу начнём работу.']]},
+    en:{intro:'So we can get in touch, answer four quick questions about your business and leave your contact details.',apply:'Send an inquiry',skip:'Go to website',direct:'Contact us directly',language:'Language',steps:[['Quick questionnaire','Tell us about your business, goals, and budget.'],['Ad strategy','We’ll get in touch to discuss how to reach your goals.'],['Getting started','If it’s a fit, we’ll send an agreement and invoice. We’ll get to work as soon as payment is received.']]},
+    uk:{intro:'Щоб ми могли з вами зв’язатися, дайте відповіді на чотири короткі запитання про ваш бізнес і залиште контакт.',apply:'Залишити заявку',skip:'Перейти на сайт',direct:'Зв’язатися напряму',language:'Мова',steps:[['Коротке опитування','Розкажіть про бізнес, цілі та бюджет.'],['Рекламна стратегія','Зв’яжемося з вами й обговоримо, як досягти ваших цілей.'],['Початок роботи','Якщо все підходить, надішлемо договір і рахунок. Після оплати одразу почнемо роботу.']]},
+    es:{intro:'Para que podamos ponernos en contacto contigo, responde cuatro preguntas breves sobre tu negocio y deja tus datos de contacto.',apply:'Enviar una solicitud',skip:'Ir al sitio web',direct:'Contacto directo',language:'Idioma',steps:[['Cuestionario breve','Cuéntanos sobre tu negocio, tus objetivos y tu presupuesto.'],['Estrategia publicitaria','Nos pondremos en contacto para hablar de cómo alcanzar tus objetivos.'],['Inicio del trabajo','Si estás de acuerdo, te enviamos un contrato y una factura. Empezamos en cuanto se confirme el pago.']]}
+  };
+  // WhatsApp mark from Bootstrap Icons (MIT).
+  var ENTRY_WHATSAPP_ICON = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="whatsapp-icon" aria-hidden="true" focusable="false" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg>';
+  function entryPage(t) {
+    var e=ENTRY[lang];
+    var steps=e.steps.map(function(step,i){return '<li><b><span aria-hidden="true">0'+(i+1)+'</span>'+esc(step[0])+'</b><p>'+esc(step[1])+'</p></li>';}).join('');
+    var langs=['en','es','ru','uk'].map(function(code){return '<button type="button" data-lang="'+code+'" lang="'+code+'" aria-label="'+esc(LANG_NAMES[code])+'" aria-pressed="'+(code===lang)+'">'+code.toUpperCase()+'</button>';}).join('');
+    return '<main class="entry-page" aria-labelledby="entry-title"><div class="entry-content">'+
+      '<div class="entry-brand">'+feedHand+'<h1 id="entry-title">Midas Media Marketing</h1></div><p class="entry-intro">'+esc(e.intro)+'</p>'+
+      '<div class="entry-actions"><button type="button" class="btn btn-gold" data-quiz="1" aria-haspopup="dialog">'+esc(e.apply)+'</button><button type="button" class="btn entry-skip" data-enter-site>'+esc(e.skip)+'</button></div>'+
+      (CONTACT.whatsapp ? '<div class="entry-direct"><p class="entry-direct-label">'+esc(e.direct)+'</p><a class="btn btn-contact entry-whatsapp" href="https://wa.me/'+esc(CONTACT.whatsapp)+'" target="_blank" rel="noopener">'+ENTRY_WHATSAPP_ICON+'<span>WhatsApp</span></a></div>' : '')+
+      '<ol class="entry-process">'+steps+'</ol><div class="entry-foot"><a href="#/privacy" data-go="privacy">'+esc(t.privacyLabel)+'</a><div class="entry-langs" role="group" aria-label="'+esc(e.language)+'">'+langs+'</div></div></div></main>';
+  }
+
   function render() {
     var t = T();
     var r = route();
-    var body = r.page === 'platforms' ? platforms(t, r.net) : r.page === 'pricing' ? pricing(t) : r.page === 'careers' ? careers(t) : (r.page === 'privacy' || r.page === 'terms') ? legalPage(t, r.page) : home(t);
-    app.innerHTML = header(t) + '<main>' + body + '</main>' + contact(t, r.page === 'home');
+    var showEntry = r.page === 'home' && !enteredSite;
+    var body = showEntry ? '' : r.page === 'platforms' ? platforms(t, r.net) : r.page === 'pricing' ? pricing(t) : r.page === 'careers' ? careers(t) : (r.page === 'privacy' || r.page === 'terms') ? legalPage(t, r.page) : home(t);
+    app.innerHTML = showEntry ? entryPage(t) : header(t) + '<main>' + body + '</main>' + contact(t, r.page === 'home');
     document.documentElement.lang = lang;
     var titles = { home: t.eyebrow, platforms: t.navPlatforms, pricing: t.navPricing, careers: t.navCareers, privacy: 'Privacy Policy', terms: 'Terms of Service' };
     document.title = 'Midas Media Marketing — ' + titles[r.page];
@@ -1283,6 +1330,7 @@ var MMM_I18N = {
     return esc(parts[0]) + '<a href="mailto:' + esc(CONTACT.email) + '?subject=' + encodeURIComponent('Free growth plan request') + '">' + esc(Q.errorLink) + '</a>' + esc(parts[1]);
   }
   function renderQuiz() {
+    app.inert = qz.open;
     if (!qz.open) { qroot.hidden = true; qroot.innerHTML = ''; return; }
     var Q = QUIZ[lang] || QUIZ.en;
     var total = Q.q.length + 1;
@@ -1363,7 +1411,7 @@ var MMM_I18N = {
     if (!qz.open) return;
     if (e.key === 'Escape') { closeQuiz(); return; }
     if (e.key === 'Tab') {
-      var f = qroot.querySelectorAll('button:not([disabled]), input:not([tabindex="-1"])');
+      var f = qroot.querySelectorAll('button:not([disabled]), input:not([tabindex="-1"]), a[href]');
       if (!f.length) return;
       var a = f[0], z = f[f.length - 1];
       if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); }
@@ -1374,6 +1422,14 @@ var MMM_I18N = {
   document.addEventListener('click', function (e) {
     var el;
     if (e.target.closest('#quiz')) return;
+    if ((el = e.target.closest('[data-enter-site]'))) {
+      enteredSite = true;
+      render();
+      window.scrollTo(0, 0);
+      var main = app.querySelector('main');
+      if (main) { main.tabIndex = -1; main.focus({preventScroll:true}); }
+      return;
+    }
     if ((el = e.target.closest('[data-feed]'))) {
       premiumFeed = el.getAttribute('data-feed');
       el.parentNode.querySelectorAll('[data-feed]').forEach(function (button) { button.setAttribute('aria-pressed', String(button === el)); });
